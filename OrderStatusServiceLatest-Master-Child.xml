@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="923c5eb3-065b-4e44-9bdb-75f997e4f4a5" activeEnvironment="Default" name="OrderStatusService-Master-Child-ABCOM" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="09d64fa3-f5b2-44dc-b45e-186069f75ee3" wsaVersion="NONE" name="OrderStatusServiceBinding" type="wsdl" bindingName="{http://www.promostandards.org/WSDL/OrderStatusService/1.0.0/}OrderStatusServiceBinding" soapVersion="1_1" anonymous="optional" definition="https://devservices.alphabroder.com/orderStatus-1-0/wsdl/OrderStatusService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://devservices.alphabroder.com/orderStatus-1-0/wsdl/OrderStatusService.wsdl"><con:part><con:url>https://devservices.alphabroder.com/orderStatus-1-0/wsdl/OrderStatusService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="OrderStatus_v1_0_0" targetNamespace="http://www.promostandards.org/WSDL/OrderStatusService/1.0.0/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.promostandards.org/WSDL/OrderStatusService/1.0.0/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.promostandards.org/WSDL/OrderStatusService/1.0.0/" schemaLocation="GetOrderStatusDetailsRequest.xsd"/>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.promostandards.org/WSDL/OrderStatusService/1.0.0/" schemaLocation="GetOrderStatusDetailsResponse.xsd"/>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.promostandards.org/WSDL/OrderStatusService/1.0.0/" schemaLocation="GetOrderStatusTypesRequest.xsd"/>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.promostandards.org/WSDL/OrderStatusService/1.0.0/" schemaLocation="GetOrderStatusTypesResponse.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetOrderStatusDetailsRequestMessage">
+    <wsdl:part name="GetOrderStatusDetailsRequest" element="tns:GetOrderStatusDetailsRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetOrderStatusDetailsResponseMessage">
+    <wsdl:part name="GetOrderStatusDetailsResponse" element="tns:GetOrderStatusDetailsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetOrderStatusTypesRequestMessage">
+    <wsdl:part name="GetOrderStatusTypesRequest" element="tns:GetOrderStatusTypesRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetOrderStatusTypesResponseMessage">
+    <wsdl:part name="GetOrderStatusTypesResponse" element="tns:GetOrderStatusTypesResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="OrderStatusService">
+    <wsdl:operation name="getOrderStatusDetails">
+      <wsdl:input message="tns:GetOrderStatusDetailsRequestMessage"/>
+      <wsdl:output message="tns:GetOrderStatusDetailsResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderStatusTypes">
+      <wsdl:input message="tns:GetOrderStatusTypesRequestMessage"/>
+      <wsdl:output message="tns:GetOrderStatusTypesResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OrderStatusServiceBinding" type="tns:OrderStatusService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getOrderStatusDetails">
+      <soap:operation style="document" soapAction="getOrderStatusDetails"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderStatusTypes">
+      <soap:operation style="document" soapAction="getOrderStatusTypes"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrderStatusService">
+    <wsdl:port name="OrderStatusServiceBinding" binding="tns:OrderStatusServiceBinding">
+      <soap:address location="https://devservices.alphabroder.com/orderStatus-1-0/service/index.php"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://devservices.alphabroder.com/orderStatus-1-0/wsdl/GetOrderStatusDetailsRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/OrderStatusService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="GetOrderStatusDetailsRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="wsVersion">
+          <xsd:annotation>
+            <xsd:documentation>The Standard Version of the Web Service being referenced</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="id">
+          <xsd:annotation>
+            <xsd:documentation>The customerID or any other agreed upon ID.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="password" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The password associated with the customerID.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="queryType" type="xsd:int">
+          <xsd:annotation>
+            <xsd:documentation>The type of query you wish to perform. 1 = PO Number, 2 = Sales Order Number, 3 = Last update, 4 = All Open</xsd:documentation>
+          </xsd:annotation>
+          <!--<xsd:simpleType>
+            <xsd:restriction base="xsd:integer">
+              <xsd:enumeration value="1" />
+              <xsd:enumeration value="2" />
+              <xsd:enumeration value="3" />
+              <xsd:enumeration value="4" />
+            </xsd:restriction>
+          </xsd:simpleType>-->
+        </xsd:element>
+        <xsd:element name="referenceNumber" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The purchase order number associated with the Order. If you pass in a purchaseOrderNumber then you will expect to a response of an array with a SINGLE order status for that purchase order.  If this field is left blank it will assume that you are requesting multiple order statuses.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="statusTimeStamp" type="xsd:dateTime" nillable="true">
+          <xsd:annotation>
+            <xsd:documentation>Beginning date time since last status change. This field will indicate the change date time for any status change GREATER the date time stamp provided.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.com/orderStatus-1-0/wsdl/GetOrderStatusDetailsResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/OrderStatusService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="GetOrderStatusDetailsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="OrderStatusArray">
+          <xsd:annotation>
+            <xsd:documentation>An Array of order status</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="OrderStatus" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="purchaseOrderNumber">
+                      <xsd:annotation>
+                        <xsd:documentation>The associated Purchase Order Number from the customer</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:token">
+                          <xsd:minLength value="1"/>
+                          <xsd:maxLength value="64"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="OrderStatusDetailArray">
+                      <xsd:annotation>
+                        <xsd:documentation>Array of OrderStatusDetail</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="OrderStatusDetail" maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="factoryOrderNumber">
+                                  <xsd:annotation>
+                                    <xsd:documentation>The associated factory sales order number 
+                                      (This is used in the example of internal PO splitting at the factory level)</xsd:documentation>
+                                  </xsd:annotation>
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:token">
+                                      <xsd:minLength value="1"/>
+                                      <xsd:maxLength value="64"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="statusID" nillable="false">
+                                  <xsd:annotation>
+                                    <xsd:documentation>Paired standard order status from allowed values</xsd:documentation>
+                                  </xsd:annotation>
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:integer">
+                                      <xsd:enumeration value="10"/>
+                                      <xsd:enumeration value="11"/>
+                                      <xsd:enumeration value="20"/>
+                                      <xsd:enumeration value="20"/>
+                                      <xsd:enumeration value="30"/>
+                                      <xsd:enumeration value="40"/>
+                                      <xsd:enumeration value="41"/>
+                                      <xsd:enumeration value="42"/>
+                                      <xsd:enumeration value="43"/>
+                                      <xsd:enumeration value="44"/>
+                                      <xsd:enumeration value="60"/>
+                                      <xsd:enumeration value="70"/>
+                                      <xsd:enumeration value="75"/>
+                                      <xsd:enumeration value="80"/>
+                                      <xsd:enumeration value="99"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="statusName" minOccurs="0">
+                                  <xsd:annotation>
+                                    <xsd:documentation>Textual description of statusID</xsd:documentation>
+                                  </xsd:annotation>
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:token">
+                                      <xsd:minLength value="1"/>
+                                      <xsd:maxLength value="256"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="expectedShipDate" minOccurs="0" type="xsd:dateTime" nillable="true">
+                                  <xsd:annotation>
+                                    <xsd:documentation>The expected ship date for the purchase order</xsd:documentation>
+                                  </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element name="expectedDeliveryDate" minOccurs="0" type="xsd:dateTime" nillable="true">
+                                  <xsd:annotation>
+                                    <xsd:documentation>The expected date the order should arrive at customer also known as the “in hands date”</xsd:documentation>
+                                  </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element name="ResponseToArray" minOccurs="0">
+                                  <xsd:annotation>
+                                    <xsd:documentation>An array of human contact information such as email, phone, and rep name so the distributor knows who to get in contact to fix an issue.</xsd:documentation>
+                                  </xsd:annotation>
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="RespondTo" maxOccurs="unbounded">
+                                        <xsd:complexType>
+                                          <xsd:sequence>
+                                            <xsd:element name="name" minOccurs="0">
+                                              <xsd:annotation>
+                                                <xsd:documentation>The name of the person to respond to</xsd:documentation>
+                                              </xsd:annotation>
+                                              <xsd:simpleType>
+                                                <xsd:restriction base="xsd:token">
+                                                  <xsd:minLength value="1"/>
+                                                  <xsd:maxLength value="256"/>
+                                                </xsd:restriction>
+                                              </xsd:simpleType>
+                                            </xsd:element>
+                                            <xsd:element name="emailAddress" minOccurs="0">
+                                              <xsd:annotation>
+                                                <xsd:documentation>A monitored email address that a recipient can send their response to</xsd:documentation>
+                                              </xsd:annotation>
+                                              <xsd:simpleType>
+                                                <xsd:restriction base="xsd:token">
+                                                  <xsd:minLength value="1"/>
+                                                  <xsd:maxLength value="256"/>
+                                                </xsd:restriction>
+                                              </xsd:simpleType>
+                                            </xsd:element>
+                                            <xsd:element name="phoneNumber" minOccurs="0">
+                                              <xsd:annotation>
+                                                <xsd:documentation>The phone number of the person to respond to</xsd:documentation>
+                                              </xsd:annotation>
+                                              <xsd:simpleType>
+                                                <xsd:restriction base="xsd:token">
+                                                  <xsd:minLength value="1"/>
+                                                  <xsd:maxLength value="32"/>
+                                                </xsd:restriction>
+                                              </xsd:simpleType>
+                                            </xsd:element>
+                                          </xsd:sequence>
+                                        </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="additionalExplanation" minOccurs="0">
+                                  <xsd:annotation>
+                                    <xsd:documentation>This allows further detail about the status</xsd:documentation>
+                                  </xsd:annotation>
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="1"/>
+                                      <xsd:maxLength value="1024"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="responseRequired" type="xsd:boolean" minOccurs="0" nillable="false">
+                                  <xsd:annotation>
+                                    <xsd:documentation>True or False to determine if it is necessary to provide information back to the supplier to complete the order</xsd:documentation>
+                                  </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element name="validTimestamp" type="xsd:dateTime">
+                                  <xsd:annotation>
+                                    <xsd:documentation>Time of order status</xsd:documentation>
+                                  </xsd:annotation>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="errorMessage" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Response for any error requiring notification to requestor</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="256"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.com/orderStatus-1-0/wsdl/GetOrderStatusTypesRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/OrderStatusService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="GetOrderStatusTypesRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="wsVersion">
+          <xsd:annotation>
+            <xsd:documentation>The Standard Version of the Web Service being referenced</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="id">
+          <xsd:annotation>
+            <xsd:documentation>The customerID or any other agreed upon ID.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="password" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The password associated with the customerID.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.com/orderStatus-1-0/wsdl/GetOrderStatusTypesResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/OrderStatusService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="GetOrderStatusTypesResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="StatusArray">
+          <xsd:annotation>
+            <xsd:documentation>An Array of order statuses</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Status" maxOccurs="unbounded">
+                <xsd:annotation>
+                  <xsd:documentation>10 - Order Received (Order has been received)
+                    11 - Order Entry Hold (Vendor has a problem with the data in the purchase order, and it is preventing the order from being entered)
+                    20 - Order Confirmed (Order has been received, entered, and accepted)
+                    30 - Pre‐Production (Vendor has begun to process the order, but it is not in production)
+                    40 - General Hold (Something is preventing the order from being entered)
+                    41 - Credit Hold (Vendor is awaiting payment from customer)
+                    42 - Proof Hold (Vendor is awaiting response to proof)
+                    43 - Art Hold (Vendor is awaiting suitable artwork from customer)
+                    44 - Back Order (Hold Order has been backordered; Nothing has shipped yet.)
+                    60 - In Production (Production of the order has started)
+                    70 - In Storage (Order is complete, but vendor is waiting to ship goods)
+                    75 - Partial Shipment (Order has shipped in Part; remaining items in production)
+                    80 - Complete (Order has shipped in full—No further updates will be given)
+                    99 - Canceled (Order has been canceled—No further updates will be given)</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="id" type="xsd:int">
+                      <xsd:annotation>
+                        <xsd:documentation>The numerical value of the order status</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="name">
+                      <xsd:annotation>
+                        <xsd:documentation>The string status name from possible values</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:token">
+                          <xsd:minLength value="1"/>
+                          <xsd:maxLength value="256"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="errorMessage" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Response for any error requiring notification to requestor</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="256"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://devservices.alphabroder.com/orderStatus-1-0/service/index.php</con:endpoint></con:endpoints><con:operation id="d841a541-28d7-49f2-b569-1d0ae4304fcf" isOneWay="false" action="getOrderStatusDetails" name="getOrderStatusDetails" bindingOperationName="getOrderStatusDetails" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="36347889-a086-476e-9da8-0738899b03c0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.com/orderStatus-1-0/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/OrderStatusService/1.0.0/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetOrderStatusDetailsRequest>\r
+         <ns:wsVersion>?</ns:wsVersion>\r
+         <ns:id>?</ns:id>\r
+         <!--Optional:-->\r
+         <ns:password>?</ns:password>\r
+         <ns:queryType>?</ns:queryType>\r
+         <!--Optional:-->\r
+         <ns:referenceNumber>?</ns:referenceNumber>\r
+         <ns:statusTimeStamp>?</ns:statusTimeStamp>\r
+      </ns:GetOrderStatusDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getOrderStatusDetails"/></con:call></con:operation><con:operation id="09e7d148-aeeb-4bd7-9272-0f4057f9b1e3" isOneWay="false" action="getOrderStatusTypes" name="getOrderStatusTypes" bindingOperationName="getOrderStatusTypes" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="81dbc011-fb19-424b-815f-7d6ab092f59c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.com/orderStatus-1-0/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/OrderStatusService/1.0.0/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetOrderStatusTypesRequest>\r
+         <ns:wsVersion>?</ns:wsVersion>\r
+         <ns:id>?</ns:id>\r
+         <!--Optional:-->\r
+         <ns:password>?</ns:password>\r
+      </ns:GetOrderStatusTypesRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getOrderStatusTypes"/></con:call></con:operation></con:interface><con:testSuite id="c79087e0-ac0b-49be-88ed-6765bcf304f3" name="OrderStatusServiceBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="a18437d6-af59-4dbc-ac17-16396ac7b4f4" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getOrderStatusDetails TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="4f278aca-4ea2-478b-a887-4a22ae409e9c" name="PositiveCases" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderStatusServiceBinding</con:interface><con:operation>getOrderStatusDetails</con:operation><con:request name="PositiveCases" id="30012167-888e-47c6-9212-cbfd1c5f8dd9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.com/orderStatus-1-0/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/OrderStatusService/1.0.0/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetOrderStatusDetailsRequest>\r
+         <ns:wsVersion>${#TestCase#VERSIONSTRING}</ns:wsVersion>\r
+         <ns:id>${#TestCase#USERID}</ns:id>\r
+         <!--Optional:-->\r
+         <ns:password>${#TestCase#PASSWORD}</ns:password>\r
+         <ns:queryType>${#TestCase#QUERY}</ns:queryType>\r
+         <!--Optional:-->\r
+         <ns:referenceNumber>${#TestCase#REFNUM}</ns:referenceNumber>\r
+         <ns:statusTimeStamp>${#TestCase#DATE}</ns:statusTimeStamp>\r
+      </ns:GetOrderStatusDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="ea52993d-5853-482b-a6ad-3e73cdc87699" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="44890867-49be-43b4-a583-789b20226afc" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="09901278-c50b-4a27-875e-439291dba22e" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getOrderStatusDetails" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="9109ebba-e03b-402c-b921-c9ee3e0a85ac" name="Sample"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderStatusServiceBinding</con:interface><con:operation>getOrderStatusDetails</con:operation><con:request name="Sample" id="30012167-888e-47c6-9212-cbfd1c5f8dd9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.com/orderStatus-1-0/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/OrderStatusService/1.0.0/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetOrderStatusDetailsRequest>\r
+         <ns:wsVersion>1.0.0</ns:wsVersion>\r
+         <ns:id>19</ns:id>\r
+         <!--Optional:-->\r
+         <ns:password>19</ns:password>\r
+         <ns:queryType>4</ns:queryType>\r
+         <!--Optional:-->\r
+         <ns:referenceNumber>01022018-0</ns:referenceNumber>\r
+         <ns:statusTimeStamp>2018-04-12</ns:statusTimeStamp>\r
+      </ns:GetOrderStatusDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="ea52993d-5853-482b-a6ad-3e73cdc87699" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="44890867-49be-43b4-a583-789b20226afc" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="09901278-c50b-4a27-875e-439291dba22e" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getOrderStatusDetails" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Run" id="9d17f71c-8a18-4502-aeea-4c9c60bc1feb"><con:settings/><con:config><script>//use to keep track of iterations when saving to files
+stepCount = 1
+
+//get the test case name and remove ' test case' from the end of it
+testName = testRunner.testCase.getName().substring(0, testRunner.testCase.getName().indexOf(" "))
+testSuite = testRunner.testCase.testSuite.getName().substring(0, testRunner.testCase.testSuite.getName().indexOf("Binding"))
+log.info(testSuite)
+
+//delete old test results if they exist
+testDir = new File("G:\\"+testSuite+"(ABcom)Positive cases\\"+testName)
+if(testDir.exists()) {
+	testDir.deleteDir()
+}
+
+//reset version
+testRunner.testCase.setPropertyValue('VERSIONSTRING',"1.0.0")
+
+
+//reset user ID
+testRunner.testCase.setPropertyValue('USERID',"grace671")
+
+
+//reset password
+testRunner.testCase.setPropertyValue('PASSWORD',"grace671")
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"1")
+
+//positive test cases
+String[] PO  = [  "01232018-7",  "01262018-14",  "01262018-15"] as String[]
+
+positiveReqTest(PO,'REFNUM')
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"2")
+
+//positive tests for so
+String[] SO  = [  "R1605488",  "R1605485",  "R1605486"] as String[]
+
+positiveReqTest(SO,'REFNUM')
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"3")
+
+//positive test for date
+String[] DATE  = [  "2018-04-10",  "2018-04-11",  "2018-04-12"] as String[]
+
+positiveReqTest(DATE,'DATE')
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"4")
+
+positiveReqTestWithOnlyStepname('For Query 4 of Child account')
+
+//reset user ID
+testRunner.testCase.setPropertyValue('USERID',"grace35")
+
+
+//reset password
+testRunner.testCase.setPropertyValue('PASSWORD',"35827")
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"1")
+
+positiveReqTest(PO,'REFNUM')
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"2")
+
+positiveReqTest(SO,'REFNUM')
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"3")
+
+positiveReqTest(DATE,'DATE')
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"4")
+
+positiveReqTestWithOnlyStepname('For Query 4 of Master account')
+
+	def positiveReqTest(String[] testData, String propName)
+	{
+		String templatename='PositiveCases';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			String filename="PositiveCase of Step_"+stepCount+"_"+propName
+			log.info("Testing Positive case of "+propName+" "+testData[i])
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+
+     def positiveReqTestWithOnlyStepname(String filename)
+	{
+		String templatename='PositiveCases';
+		log.info("Testing Positive case of "+filename)
+		testRunner.runTestStepByName(templatename)
+		saveToFile(filename,templatename)
+		
+	}
+	
+
+	//save the req and req to files
+	def saveToFile(String fileName, String templateName) 
+	{
+		File reqDir = new File(testDir.getAbsolutePath()+"\\Positive case Requests")
+		File resDir = new File(testDir.getAbsolutePath()+"\\Positive case Responses")
+		
+		//create directories if they don't exist
+		if(!testDir.exists()) {
+			reqDir.mkdirs()
+			resDir.mkdirs()
+		}
+		
+		//Request File
+		def myRequest=reqDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def request=context.expand('${'+templateName+'#Request}')
+		new File (myRequest).write(request,"UTF-8")
+		
+		//Response File
+		def myResponse=resDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def response=context.expand('${'+templateName+'#Response}')
+		new File (myResponse).write(response,"UTF-8")
+	}
+
+//testRunner.testCase.getTestStepByName("Run 1").run(testRunner, context)
+</script></con:config></con:testStep><con:testStep type="request" id="f9145c93-9cbc-4558-8f03-46a9a1e21133" name="Negative cases" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderStatusServiceBinding</con:interface><con:operation>getOrderStatusDetails</con:operation><con:request name="Negative cases" id="30012167-888e-47c6-9212-cbfd1c5f8dd9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.com/orderStatus-1-0/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/OrderStatusService/1.0.0/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetOrderStatusDetailsRequest>\r
+         <ns:wsVersion>${#TestCase#VERSIONSTRING}</ns:wsVersion>\r
+         <ns:id>${#TestCase#USERID}</ns:id>\r
+         <!--Optional:-->\r
+         <ns:password>${#TestCase#PASSWORD}</ns:password>\r
+         <ns:queryType>${#TestCase#QUERY}</ns:queryType>\r
+         <!--Optional:-->\r
+         <ns:referenceNumber>${#TestCase#REFNUM}</ns:referenceNumber>\r
+         <ns:statusTimeStamp>${#TestCase#DATE}</ns:statusTimeStamp>\r
+      </ns:GetOrderStatusDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="ea52993d-5853-482b-a6ad-3e73cdc87699" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="44890867-49be-43b4-a583-789b20226afc" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="09901278-c50b-4a27-875e-439291dba22e" name="SOAP Response"/><con:assertion type="XPath Match" id="86864ebe-2f98-4433-86bf-535a6dba95d4" name="XPath Match"><con:configuration><path>declare namespace ns1='http://www.promostandards.org/WSDL/OrderStatusService/1.0.0/';
+
+//ns1:code</path><content>${#TestCase#ERRORCODE}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getOrderStatusDetails" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Run 1" id="5ff93dd8-af24-44b6-8b70-99597416b165"><con:settings/><con:config><script>//use to keep track of iterations when saving to files
+stepCount = 1
+
+//get the test case name and remove ' test case' from the end of it
+testName = testRunner.testCase.getName().substring(0, testRunner.testCase.getName().indexOf(" "))
+testSuite = testRunner.testCase.testSuite.getName().substring(0, testRunner.testCase.testSuite.getName().indexOf("Binding"))
+log.info(testSuite)
+
+//delete old test results if they exist
+testDir = new File("G:\\"+testSuite+"(ABca)Negative cases\\"+testName)
+if(testDir.exists()) {
+	testDir.deleteDir()
+}
+
+//test version
+String[] VERSION = ["",    "1",   "1.A", "*",   "123", "version"] as String[]
+String[] ERROR   = ["", "", "", "", "", ""] as String[]
+
+availLocationsReqTest(VERSION, ERROR, 'VERSIONSTRING')
+
+//reset version
+testRunner.testCase.setPropertyValue('VERSIONSTRING',"1.0.0")
+
+
+//test user ID
+String[] USER  = ["",    "1910", "jack", "*",   "Jill123"] as String[]
+	    ERROR = ["", "",  "",  "", ""] as String[]
+
+availLocationsReqTest(USER, ERROR, 'USERID')
+
+//reset user ID
+testRunner.testCase.setPropertyValue('USERID',"grace671")
+
+
+//test password
+String[] PASS  = ["",    "20",  "pass", "a2b", "p@\$\$"] as String[]
+	    ERROR = ["", "", "",  "", ""] as String[]
+
+availLocationsReqTest(PASS, ERROR, 'PASSWORD')
+
+//reset password
+testRunner.testCase.setPropertyValue('PASSWORD',"grace671")
+
+
+//test prod ID
+String[] QUERY  = ["",    "20",  "abc", "123abc", "p@n7s"] as String[]
+	    ERROR = ["", "", "", "",    ""] as String[]
+
+availLocationsReqTest(QUERY, ERROR, 'QUERY')
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('QUERY',"1")
+
+//test refnum for query 1
+String[] REFNUM  = [ "20",  "abc", "123abc", "p@n7s",  "!@#%"] as String[]
+	    ERROR = [ "", "", "", "", ""] as String[]
+
+availLocationsReqTest(REFNUM, ERROR, 'REFNUM')
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"2")
+
+//test refnum for query 2
+availLocationsReqTest(REFNUM, ERROR, 'REFNUM')
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"3")
+
+//test dates for query 3
+String[] DATES  = [ "20",  "abc", "123abc", "p@n7s",  "!@#%"] as String[]
+	    ERROR = [ "", "", "",    "",  ""] as String[]
+
+availLocationsReqTest(DATES, ERROR, 'DATE')
+
+
+	//method that does the work
+	def availLocationsReqTest(String[] testData, String[] errorCodes, String propName)
+	{
+		String templatename='Negative cases';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			testRunner.testCase.setPropertyValue('ERRORCODE',errorCodes[i])
+			String filename="Step_"+stepCount+"_"+propName
+			log.info("Testing "+propName+" "+testData[i]+" Error Code: "+context.expand('${#TestCase#ERRORCODE}'))
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+
+	//save the req and req to files
+	def saveToFile(String fileName, String templateName) 
+	{
+		File reqDir = new File(testDir.getAbsolutePath()+"\\Negative case Requests")
+		File resDir = new File(testDir.getAbsolutePath()+"\\Negative case Responses")
+		//create directories if they don't exist
+		if(!testDir.exists()) {
+			reqDir.mkdirs()
+			resDir.mkdirs()
+		}
+		//Request File
+		def myRequest=reqDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def request=context.expand('${'+templateName+'#Request}')
+		new File (myRequest).write(request,"UTF-8")
+		
+		//Response File
+		def myResponse=resDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def response=context.expand('${'+templateName+'#Response}')
+		new File (myResponse).write(response,"UTF-8")
+	}
+</script></con:config></con:testStep><con:properties><con:property><con:name>VERSIONSTRING</con:name><con:value>1.0.0</con:value></con:property><con:property><con:name>USERID</con:name><con:value>grace35</con:value></con:property><con:property><con:name>PASSWORD</con:name><con:value>35827</con:value></con:property><con:property><con:name>QUERY</con:name><con:value>4</con:value></con:property><con:property><con:name>REFNUM</con:name><con:value>R1605486</con:value></con:property><con:property><con:name>DATE</con:name><con:value>2018-04-12</con:value></con:property></con:properties></con:testCase><con:testCase id="b4d395f6-1609-4a1a-8ad2-1a8cb562ce4f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getOrderStatusTypes TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="4ba7ffb6-9b69-4de7-9952-e15c2dad2e37" name="getOrderStatusTypes"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrderStatusServiceBinding</con:interface><con:operation>getOrderStatusTypes</con:operation><con:request name="getOrderStatusTypes" id="c16a201a-67d3-4b27-b160-4a58713be944"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.com/orderStatus-1-0/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/OrderStatusService/1.0.0/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetOrderStatusTypesRequest>\r
+         <ns:wsVersion>?</ns:wsVersion>\r
+         <ns:id>?</ns:id>\r
+         <!--Optional:-->\r
+         <ns:password>?</ns:password>\r
+      </ns:GetOrderStatusTypesRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="getOrderStatusTypes"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

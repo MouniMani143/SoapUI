@@ -1,0 +1,3323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="44973f77-5b33-4e6e-b7e4-59ebfb3e1b93" activeEnvironment="Default" name="PricingAndConfiguration(AB_ca)Updated" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="37ecd0ae-e8b3-4c51-9579-fe4b0dad75f6" wsaVersion="NONE" name="PricingAndConfigurationServiceBinding" type="wsdl" bindingName="{http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/}PricingAndConfigurationServiceBinding" soapVersion="1_1" anonymous="optional" definition="https://devservices.alphabroder.ca/productConfig/wsdl/PricingAndConfiguration.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://devservices.alphabroder.ca/productConfig/wsdl/PricingAndConfiguration.wsdl"><con:part><con:url>https://devservices.alphabroder.ca/productConfig/wsdl/PricingAndConfiguration.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="PricingAndConfiguration_v1_0_0" targetNamespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/" xmlns:ns1="http://www.codesynthesis.com/xmlns/xsstl">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" schemaLocation="GetAvailableLocationsRequest.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" schemaLocation="GetAvailableLocationsResponse.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" schemaLocation="GetDecorationColorsRequest.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" schemaLocation="GetDecorationColorsResponse.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" schemaLocation="GetFobPointsRequest.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" schemaLocation="GetFobPointsResponse.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" schemaLocation="GetAvailableChargesRequest.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" schemaLocation="GetAvailableChargesResponse.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" schemaLocation="GetConfigurationAndPricingRequest.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" schemaLocation="GetConfigurationAndPricingResponse.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAvailableLocationsRequestMessage">
+    <wsdl:part name="GetAvailableLocationsRequest" element="tns:GetAvailableLocationsRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetAvailableLocationsResponseMessage">
+    <wsdl:part name="GetAvailableLocationsResponse" element="tns:GetAvailableLocationsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetDecorationColorsRequestMessage">
+    <wsdl:part name="GetDecorationColorsRequest" element="tns:GetDecorationColorsRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetDecorationColorsResponseMessage">
+    <wsdl:part name="GetDecorationColorsResponse" element="tns:GetDecorationColorsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetFobPointsRequestMessage">
+    <wsdl:part name="GetFobPointsRequest" element="tns:GetFobPointsRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetFobPointsResponseMessage">
+    <wsdl:part name="GetFobPointsResponse" element="tns:GetFobPointsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetAvailableChargesRequestMessage">
+    <wsdl:part name="GetAvailableChargesRequest" element="tns:GetAvailableChargesRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetAvailableChargesResponseMessage">
+    <wsdl:part name="GetAvailableChargesResponse" element="tns:GetAvailableChargesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetConfigurationAndPricingRequestMessage">
+    <wsdl:part name="GetConfigurationAndPricingRequest" element="tns:GetConfigurationAndPricingRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetConfigurationAndPricingResponseMessage">
+    <wsdl:part name="GetConfigurationAndPricingResponse" element="tns:GetConfigurationAndPricingResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="PricingAndConfigurationService">
+    <wsdl:operation name="getAvailableLocations">
+      <wsdl:input message="tns:GetAvailableLocationsRequestMessage"/>
+      <wsdl:output message="tns:GetAvailableLocationsResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getDecorationColors">
+      <wsdl:input message="tns:GetDecorationColorsRequestMessage"/>
+      <wsdl:output message="tns:GetDecorationColorsResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getFobPoints">
+      <wsdl:input message="tns:GetFobPointsRequestMessage"/>
+      <wsdl:output message="tns:GetFobPointsResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableCharges">
+      <wsdl:input message="tns:GetAvailableChargesRequestMessage"/>
+      <wsdl:output message="tns:GetAvailableChargesResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getConfigurationAndPricing">
+      <wsdl:input message="tns:GetConfigurationAndPricingRequestMessage"/>
+      <wsdl:output message="tns:GetConfigurationAndPricingResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PricingAndConfigurationServiceBinding" type="tns:PricingAndConfigurationService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getAvailableLocations">
+      <soap:operation soapAction="getAvailableLocations" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDecorationColors">
+      <soap:operation soapAction="getDecorationColors" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFobPoints">
+      <soap:operation soapAction="getFobPoints" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableCharges">
+      <soap:operation soapAction="getAvailableCharges" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getConfigurationAndPricing">
+      <soap:operation soapAction="getConfigurationAndPricing" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PricingAndConfigurationService">
+    <wsdl:port name="PricingAndConfigurationServiceBinding" binding="tns:PricingAndConfigurationServiceBinding">
+      <soap:address location="https://devservices.alphabroder.ca/productConfig/service/index.php"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/productConfig/wsdl/GetAvailableLocationsRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/" schemaLocation="SharedObjectsPricingAndConfiguration.xsd"/>
+  <xsd:element name="GetAvailableLocationsRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:wsVersion"/>
+        <xsd:element ref="ns3:id"/>
+        <xsd:element ref="ns3:password" minOccurs="0"/>
+        <xsd:element ref="ns3:productId"/>
+        <xsd:element ref="ns3:localizationCountry"/>
+        <xsd:element ref="ns3:localizationLanguage"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/productConfig/wsdl/SharedObjectsPricingAndConfiguration.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/" xmlns:ns3="http://www.codesynthesis.com/xmlns/xsstl" xmlns:ns4="http://www.isotc211.org/iso4217/">
+  <xsd:import namespace="http://www.codesynthesis.com/xmlns/xsstl" schemaLocation="iso3166-country-code.xsd"/>
+  <xsd:import namespace="http://www.isotc211.org/iso4217/" schemaLocation="iso4217-currency-code.xsd"/>
+  <xsd:simpleType name="chargeTypeType">
+    <xsd:annotation>
+      <xsd:documentation>The type of charge</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Order"/>
+      <xsd:enumeration value="Run"/>
+      <xsd:enumeration value="Setup"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="decorationUomType">
+    <xsd:annotation>
+      <xsd:documentation>The type of decoration UOM</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Colors"/>
+      <xsd:enumeration value="Inches"/>
+      <xsd:enumeration value="Locations"/>
+      <xsd:enumeration value="Other"/>
+      <xsd:enumeration value="Stitches"/>
+      <xsd:enumeration value="SquareInches"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="QuantityUomType">
+    <xsd:annotation>
+      <xsd:documentation>The type of Quantity UOM</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="BX"/>
+      <xsd:enumeration value="CA"/>
+      <xsd:enumeration value="DZ"/>
+      <xsd:enumeration value="EA"/>
+      <xsd:enumeration value="KT"/>
+      <xsd:enumeration value="PR"/>
+      <xsd:enumeration value="PK"/>
+      <xsd:enumeration value="RL"/>
+      <xsd:enumeration value="ST"/>
+      <xsd:enumeration value="SL"/>
+      <xsd:enumeration value="TH"/>
+      <!--BOX-->
+      <!--CASE-->
+      <!--DOZEN-->
+      <!--EACH-->
+      <!--KIT-->
+      <!--PAIR-->
+      <!--PACKAGE-->
+      <!--ROLL-->
+      <!--SET-->
+      <!--SLEEVE-->
+      <!--THOUSAND-->
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="dimensionUomEnum">
+    <xsd:annotation>
+      <xsd:documentation/>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="MM"/>
+      <xsd:enumeration value="CM"/>
+      <xsd:enumeration value="MR"/>
+      <xsd:enumeration value="IN"/>
+      <xsd:enumeration value="FT"/>
+      <xsd:enumeration value="YD"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="weightUomEnum">
+    <xsd:annotation>
+      <xsd:documentation/>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ME"/>
+      <xsd:enumeration value="KG"/>
+      <xsd:enumeration value="OZ"/>
+      <xsd:enumeration value="LB"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="wsVersion">
+    <xsd:annotation>
+      <xsd:documentation>The Standard Version of the Web Service being referenced</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="id">
+    <xsd:annotation>
+      <xsd:documentation>The customer Id or any other agreed upon Id.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="password">
+    <xsd:annotation>
+      <xsd:documentation>The password associated with the Id</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="localizationCountry">
+    <xsd:annotation>
+      <xsd:documentation>ISO 3166-1 Alpha 2 code for Country</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:maxLength value="2"/>
+        <xsd:minLength value="2"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="localizationLanguage">
+    <xsd:annotation>
+      <xsd:documentation>ISO 639-1 Alpha 2 code for Language</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="2"/>
+        <xsd:maxLength value="2"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="ErrorMessage">
+    <xsd:annotation>
+      <xsd:documentation>Response for any error requiring notification to requestor</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="code" type="xsd:int">
+          <xsd:annotation>
+            <xsd:documentation>Response for any error requiring notification to requestor</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="description">
+          <xsd:annotation>
+            <xsd:documentation>Response for any error requiring notification to requestor</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="256"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="productId">
+    <xsd:annotation>
+      <xsd:documentation>The product ID</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="chargeId" type="xsd:int">
+    <xsd:annotation>
+      <xsd:documentation>The charge ID</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="chargeName">
+    <xsd:annotation>
+      <xsd:documentation>The Charge name</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="chargeType">
+    <xsd:annotation>
+      <xsd:documentation>The charge name</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="ns2:chargeTypeType">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="chargeDescription">
+    <xsd:annotation>
+      <xsd:documentation>The charge description</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="256"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="decorationId" type="xsd:int">
+    <xsd:annotation>
+      <xsd:documentation>The Id of the decoration</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="locationId" type="xsd:int">
+    <xsd:annotation>
+      <xsd:documentation>The location ID</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="decorationName">
+    <xsd:annotation>
+      <xsd:documentation>The name of the decoration</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="decorationGeometry">
+    <xsd:annotation>
+      <xsd:documentation>The geometry of the decoration. Values are enumerated: {Circle, Rectangular, Other}.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="decorationHeight" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The maximum imprint height of the decoration; leave blank if the imprint is not rectangular</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:decimal">
+        <xsd:fractionDigits value="4"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="decorationWidth" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The maximum imprint width of the decoration; leave blank if the imprint is not rectangular</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:decimal">
+        <xsd:fractionDigits value="4"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="decorationDiameter" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The maximum imprint diameter of the decoration; leave blank if the imprint is not circular</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:decimal">
+        <xsd:fractionDigits value="4"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="decorationUom">
+    <xsd:annotation>
+      <xsd:documentation>The unit of measure for the decoration area</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="ns2:decorationUomType">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="decorationUnitsIncludedUom">
+    <xsd:annotation>
+      <xsd:documentation>The decoration UOM</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="locationName">
+    <xsd:annotation>
+      <xsd:documentation>The location name</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="colorId">
+    <xsd:annotation>
+      <xsd:documentation>The color ID</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="colorName">
+    <xsd:annotation>
+      <xsd:documentation>The color name</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="partId">
+    <xsd:annotation>
+      <xsd:documentation>The part ID</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="partDescription">
+    <xsd:annotation>
+      <xsd:documentation>The part Description</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="1024"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="partGroupDescription">
+    <xsd:annotation>
+      <xsd:documentation>The part Description</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="1024"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="partGroup" type="xsd:int">
+    <xsd:annotation>
+      <xsd:documentation>The part Group</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="nextPartGroup" type="xsd:int">
+    <xsd:annotation>
+      <xsd:documentation>The next part Group</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ratio">
+    <xsd:annotation>
+      <xsd:documentation>The part ratio</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:decimal">
+        <xsd:fractionDigits value="4"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="defaultPart" type="xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Is default part</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="partGroupRequired">
+    <xsd:annotation>
+      <xsd:documentation>Is part group required</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:boolean"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="fobId">
+    <xsd:annotation>
+      <xsd:documentation>The fob ID</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="maxDecoration" type="xsd:int">
+    <xsd:annotation>
+      <xsd:documentation>The max decorations</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="minDecoration" type="xsd:int">
+    <xsd:annotation>
+      <xsd:documentation>The min decorations</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="decorationUnitsMax" type="xsd:int" nillable="1">
+    <xsd:annotation>
+      <xsd:documentation>This is the max number of decoration units for this decoration/location combination.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="locationRank" type="xsd:int" nillable="1">
+    <xsd:annotation>
+      <xsd:documentation>The location rank</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="defaultLocation">
+    <xsd:annotation>
+      <xsd:documentation>The default location</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:boolean"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="decorationsIncluded">
+    <xsd:annotation>
+      <xsd:documentation>Number of decorations included</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:int"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="priceType">
+    <xsd:annotation>
+      <xsd:documentation>The type of price requested. Values are enumerated: {List, Net, Customer}.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:annotation>
+        <xsd:documentation/>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="Customer"/>
+        <xsd:enumeration value="List"/>
+        <xsd:enumeration value="Net"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="currency" type="ns4:CurrencyCodeType">
+    <xsd:annotation>
+      <xsd:documentation>The currency the request of the request in ISO 4217 format</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="configurationType">
+    <xsd:annotation>
+      <xsd:documentation>The type of configuration of the product to be returned. Values are enumerated: {Blank, Decorated}</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:annotation>
+        <xsd:documentation/>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="Blank"/>
+        <xsd:enumeration value="Decorated"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="fobPostalCode">
+    <xsd:annotation>
+      <xsd:documentation>The fob point postal code</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="FobArray">
+    <xsd:annotation>
+      <xsd:documentation>An array of FOB points that support this configuration</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Fob" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns2:fobId"/>
+              <xsd:element ref="ns2:fobPostalCode" minOccurs="0"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/productConfig/wsdl/iso3166-country-code.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.codesynthesis.com/xmlns/xsstl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:stl="http://www.codesynthesis.com/xmlns/xsstl">
+  <xsd:annotation>
+    <xsd:documentation>Copyright (C) 2006-2007 Code Synthesis Tools CC
+
+      Redistribution and use with or without modification are permitted
+      under the terms of the new BSD license. See the accompanying LICENSE
+      file.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:simpleType name="ISO3166CountyCode">
+    <xsd:annotation>
+      <xsd:documentation>Two-letter (alpha-2) ISO 3166-1 code for one of the 243 countries.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="AF"/>
+      <!--AFGHANISTAN-->
+      <xsd:enumeration value="AX"/>
+      <!--&Aring;LAND ISLANDS-->
+      <xsd:enumeration value="AL"/>
+      <!--ALBANIA-->
+      <xsd:enumeration value="DZ"/>
+      <!--ALGERIA-->
+      <xsd:enumeration value="AS"/>
+      <!--AMERICAN SAMOA-->
+      <xsd:enumeration value="AD"/>
+      <!--ANDORRA-->
+      <xsd:enumeration value="AO"/>
+      <!--ANGOLA-->
+      <xsd:enumeration value="AI"/>
+      <!--ANGUILLA-->
+      <xsd:enumeration value="AQ"/>
+      <!--ANTARCTICA-->
+      <xsd:enumeration value="AG"/>
+      <!--ANTIGUA AND BARBUDA-->
+      <xsd:enumeration value="AR"/>
+      <!--ARGENTINA-->
+      <xsd:enumeration value="AM"/>
+      <!--ARMENIA-->
+      <xsd:enumeration value="AW"/>
+      <!--ARUBA-->
+      <xsd:enumeration value="AU"/>
+      <!--AUSTRALIA-->
+      <xsd:enumeration value="AT"/>
+      <!--AUSTRIA-->
+      <xsd:enumeration value="AZ"/>
+      <!--AZERBAIJAN-->
+      <xsd:enumeration value="BS"/>
+      <!--BAHAMAS-->
+      <xsd:enumeration value="BH"/>
+      <!--BAHRAIN-->
+      <xsd:enumeration value="BD"/>
+      <!--BANGLADESH-->
+      <xsd:enumeration value="BB"/>
+      <!--BARBADOS-->
+      <xsd:enumeration value="BY"/>
+      <!--BELARUS-->
+      <xsd:enumeration value="BE"/>
+      <!--BELGIUM-->
+      <xsd:enumeration value="BZ"/>
+      <!--BELIZE-->
+      <xsd:enumeration value="BJ"/>
+      <!--BENIN-->
+      <xsd:enumeration value="BM"/>
+      <!--BERMUDA-->
+      <xsd:enumeration value="BT"/>
+      <!--BHUTAN-->
+      <xsd:enumeration value="BO"/>
+      <!--BOLIVIA-->
+      <xsd:enumeration value="BA"/>
+      <!--BOSNIA AND HERZEGOVINA-->
+      <xsd:enumeration value="BW"/>
+      <!--BOTSWANA-->
+      <xsd:enumeration value="BV"/>
+      <!--BOUVET ISLAND-->
+      <xsd:enumeration value="BR"/>
+      <!--BRAZIL-->
+      <xsd:enumeration value="IO"/>
+      <!--BRITISH INDIAN OCEAN TERRITORY-->
+      <xsd:enumeration value="BN"/>
+      <!--BRUNEI DARUSSALAM-->
+      <xsd:enumeration value="BG"/>
+      <!--BULGARIA-->
+      <xsd:enumeration value="BF"/>
+      <!--BURKINA FASO-->
+      <xsd:enumeration value="BI"/>
+      <!--BURUNDI-->
+      <xsd:enumeration value="KH"/>
+      <!--CAMBODIA-->
+      <xsd:enumeration value="CM"/>
+      <!--CAMEROON-->
+      <xsd:enumeration value="CA"/>
+      <!--CANADA-->
+      <xsd:enumeration value="CV"/>
+      <!--CAPE VERDE-->
+      <xsd:enumeration value="KY"/>
+      <!--CAYMAN ISLANDS-->
+      <xsd:enumeration value="CF"/>
+      <!--CENTRAL AFRICAN REPUBLIC-->
+      <xsd:enumeration value="TD"/>
+      <!--CHAD-->
+      <xsd:enumeration value="CL"/>
+      <!--CHILE-->
+      <xsd:enumeration value="CN"/>
+      <!--CHINA-->
+      <xsd:enumeration value="CX"/>
+      <!--CHRISTMAS ISLAND-->
+      <xsd:enumeration value="CC"/>
+      <!--COCOS (KEELING) ISLANDS-->
+      <xsd:enumeration value="CO"/>
+      <!--COLOMBIA-->
+      <xsd:enumeration value="KM"/>
+      <!--COMOROS-->
+      <xsd:enumeration value="CG"/>
+      <!--CONGO-->
+      <xsd:enumeration value="CD"/>
+      <!--CONGO, THE DEMOCRATIC REPUBLIC OF THE-->
+      <xsd:enumeration value="CK"/>
+      <!--COOK ISLANDS-->
+      <xsd:enumeration value="CR"/>
+      <!--COSTA RICA-->
+      <xsd:enumeration value="CI"/>
+      <!--COTE D'IVOIRE-->
+      <xsd:enumeration value="HR"/>
+      <!--CROATIA-->
+      <xsd:enumeration value="CU"/>
+      <!--CUBA-->
+      <xsd:enumeration value="CY"/>
+      <!--CYPRUS-->
+      <xsd:enumeration value="CZ"/>
+      <!--CZECH REPUBLIC-->
+      <xsd:enumeration value="DK"/>
+      <!--DENMARK-->
+      <xsd:enumeration value="DJ"/>
+      <!--DJIBOUTI-->
+      <xsd:enumeration value="DM"/>
+      <!--DOMINICA-->
+      <xsd:enumeration value="DO"/>
+      <!--DOMINICAN REPUBLIC-->
+      <xsd:enumeration value="EC"/>
+      <!--ECUADOR-->
+      <xsd:enumeration value="EG"/>
+      <!--EGYPT-->
+      <xsd:enumeration value="SV"/>
+      <!--EL SALVADOR-->
+      <xsd:enumeration value="GQ"/>
+      <!--EQUATORIAL GUINEA-->
+      <xsd:enumeration value="ER"/>
+      <!--ERITREA-->
+      <xsd:enumeration value="EE"/>
+      <!--ESTONIA-->
+      <xsd:enumeration value="ET"/>
+      <!--ETHIOPIA-->
+      <xsd:enumeration value="FK"/>
+      <!--FALKLAND ISLANDS (MALVINAS)-->
+      <xsd:enumeration value="FO"/>
+      <!--FAROE ISLANDS-->
+      <xsd:enumeration value="FJ"/>
+      <!--FIJI-->
+      <xsd:enumeration value="FI"/>
+      <!--FINLAND-->
+      <xsd:enumeration value="FR"/>
+      <!--FRANCE-->
+      <xsd:enumeration value="GF"/>
+      <!--FRENCH GUIANA-->
+      <xsd:enumeration value="PF"/>
+      <!--FRENCH POLYNESIA-->
+      <xsd:enumeration value="TF"/>
+      <!--FRENCH SOUTHERN TERRITORIES-->
+      <xsd:enumeration value="GA"/>
+      <!--GABON-->
+      <xsd:enumeration value="GM"/>
+      <!--GAMBIA-->
+      <xsd:enumeration value="GE"/>
+      <!--GEORGIA-->
+      <xsd:enumeration value="DE"/>
+      <!--GERMANY-->
+      <xsd:enumeration value="GH"/>
+      <!--GHANA-->
+      <xsd:enumeration value="GI"/>
+      <!--GIBRALTAR-->
+      <xsd:enumeration value="GR"/>
+      <!--GREECE-->
+      <xsd:enumeration value="GL"/>
+      <!--GREENLAND-->
+      <xsd:enumeration value="GD"/>
+      <!--GRENADA-->
+      <xsd:enumeration value="GP"/>
+      <!--GUADELOUPE-->
+      <xsd:enumeration value="GU"/>
+      <!--GUAM-->
+      <xsd:enumeration value="GT"/>
+      <!--GUATEMALA-->
+      <xsd:enumeration value="GG"/>
+      <!--GUERNSEY-->
+      <xsd:enumeration value="GN"/>
+      <!--GUINEA-->
+      <xsd:enumeration value="GW"/>
+      <!--GUINEA-BISSAU-->
+      <xsd:enumeration value="GY"/>
+      <!--GUYANA-->
+      <xsd:enumeration value="HT"/>
+      <!--HAITI-->
+      <xsd:enumeration value="HM"/>
+      <!--HEARD ISLAND AND MCDONALD ISLANDS-->
+      <xsd:enumeration value="VA"/>
+      <!--HOLY SEE (VATICAN CITY STATE)-->
+      <xsd:enumeration value="HN"/>
+      <!--HONDURAS-->
+      <xsd:enumeration value="HK"/>
+      <!--HONG KONG-->
+      <xsd:enumeration value="HU"/>
+      <!--HUNGARY-->
+      <xsd:enumeration value="IS"/>
+      <!--ICELAND-->
+      <xsd:enumeration value="IN"/>
+      <!--INDIA-->
+      <xsd:enumeration value="ID"/>
+      <!--INDONESIA-->
+      <xsd:enumeration value="IR"/>
+      <!--IRAN, ISLAMIC REPUBLIC OF-->
+      <xsd:enumeration value="IQ"/>
+      <!--IRAQ-->
+      <xsd:enumeration value="IE"/>
+      <!--IRELAND-->
+      <xsd:enumeration value="IM"/>
+      <!--ISLE OF MAN-->
+      <xsd:enumeration value="IL"/>
+      <!--ISRAEL-->
+      <xsd:enumeration value="IT"/>
+      <!--ITALY-->
+      <xsd:enumeration value="JM"/>
+      <!--JAMAICA-->
+      <xsd:enumeration value="JP"/>
+      <!--JAPAN-->
+      <xsd:enumeration value="JE"/>
+      <!--JERSEY-->
+      <xsd:enumeration value="JO"/>
+      <!--JORDAN-->
+      <xsd:enumeration value="KZ"/>
+      <!--KAZAKHSTAN-->
+      <xsd:enumeration value="KE"/>
+      <!--KENYA-->
+      <xsd:enumeration value="KI"/>
+      <!--KIRIBATI-->
+      <xsd:enumeration value="KP"/>
+      <!--KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF-->
+      <xsd:enumeration value="KR"/>
+      <!--KOREA, REPUBLIC OF-->
+      <xsd:enumeration value="KW"/>
+      <!--KUWAIT-->
+      <xsd:enumeration value="KG"/>
+      <!--KYRGYZSTAN-->
+      <xsd:enumeration value="LA"/>
+      <!--LAO PEOPLE'S DEMOCRATIC REPUBLIC-->
+      <xsd:enumeration value="LV"/>
+      <!--LATVIA-->
+      <xsd:enumeration value="LB"/>
+      <!--LEBANON-->
+      <xsd:enumeration value="LS"/>
+      <!--LESOTHO-->
+      <xsd:enumeration value="LR"/>
+      <!--LIBERIA-->
+      <xsd:enumeration value="LY"/>
+      <!--LIBYAN ARAB JAMAHIRIYA-->
+      <xsd:enumeration value="LI"/>
+      <!--LIECHTENSTEIN-->
+      <xsd:enumeration value="LT"/>
+      <!--LITHUANIA-->
+      <xsd:enumeration value="LU"/>
+      <!--LUXEMBOURG-->
+      <xsd:enumeration value="MO"/>
+      <!--MACAO-->
+      <xsd:enumeration value="MK"/>
+      <!--MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF-->
+      <xsd:enumeration value="MG"/>
+      <!--MADAGASCAR-->
+      <xsd:enumeration value="MW"/>
+      <!--MALAWI-->
+      <xsd:enumeration value="MY"/>
+      <!--MALAYSIA-->
+      <xsd:enumeration value="MV"/>
+      <!--MALDIVES-->
+      <xsd:enumeration value="ML"/>
+      <!--MALI-->
+      <xsd:enumeration value="MT"/>
+      <!--MALTA-->
+      <xsd:enumeration value="MH"/>
+      <!--MARSHALL ISLANDS-->
+      <xsd:enumeration value="MQ"/>
+      <!--MARTINIQUE-->
+      <xsd:enumeration value="MR"/>
+      <!--MAURITANIA-->
+      <xsd:enumeration value="MU"/>
+      <!--MAURITIUS-->
+      <xsd:enumeration value="YT"/>
+      <!--MAYOTTE-->
+      <xsd:enumeration value="MX"/>
+      <!--MEXICO-->
+      <xsd:enumeration value="FM"/>
+      <!--MICRONESIA, FEDERATED STATES OF-->
+      <xsd:enumeration value="MD"/>
+      <!--MOLDOVA, REPUBLIC OF-->
+      <xsd:enumeration value="MC"/>
+      <!--MONACO-->
+      <xsd:enumeration value="MN"/>
+      <!--MONGOLIA-->
+      <xsd:enumeration value="MS"/>
+      <!--MONTSERRAT-->
+      <xsd:enumeration value="MA"/>
+      <!--MOROCCO-->
+      <xsd:enumeration value="MZ"/>
+      <!--MOZAMBIQUE-->
+      <xsd:enumeration value="MM"/>
+      <!--MYANMAR-->
+      <xsd:enumeration value="NA"/>
+      <!--NAMIBIA-->
+      <xsd:enumeration value="NR"/>
+      <!--NAURU-->
+      <xsd:enumeration value="NP"/>
+      <!--NEPAL-->
+      <xsd:enumeration value="NL"/>
+      <!--NETHERLANDS-->
+      <xsd:enumeration value="AN"/>
+      <!--NETHERLANDS ANTILLES-->
+      <xsd:enumeration value="NC"/>
+      <!--NEW CALEDONIA-->
+      <xsd:enumeration value="NZ"/>
+      <!--NEW ZEALAND-->
+      <xsd:enumeration value="NI"/>
+      <!--NICARAGUA-->
+      <xsd:enumeration value="NE"/>
+      <!--NIGER-->
+      <xsd:enumeration value="NG"/>
+      <!--NIGERIA-->
+      <xsd:enumeration value="NU"/>
+      <!--NIUE-->
+      <xsd:enumeration value="NF"/>
+      <!--NORFOLK ISLAND-->
+      <xsd:enumeration value="MP"/>
+      <!--NORTHERN MARIANA ISLANDS-->
+      <xsd:enumeration value="NO"/>
+      <!--NORWAY-->
+      <xsd:enumeration value="OM"/>
+      <!--OMAN-->
+      <xsd:enumeration value="PK"/>
+      <!--PAKISTAN-->
+      <xsd:enumeration value="PW"/>
+      <!--PALAU-->
+      <xsd:enumeration value="PS"/>
+      <!--PALESTINIAN TERRITORY, OCCUPIED-->
+      <xsd:enumeration value="PA"/>
+      <!--PANAMA-->
+      <xsd:enumeration value="PG"/>
+      <!--PAPUA NEW GUINEA-->
+      <xsd:enumeration value="PY"/>
+      <!--PARAGUAY-->
+      <xsd:enumeration value="PE"/>
+      <!--PERU-->
+      <xsd:enumeration value="PH"/>
+      <!--PHILIPPINES-->
+      <xsd:enumeration value="PN"/>
+      <!--PITCAIRN-->
+      <xsd:enumeration value="PL"/>
+      <!--POLAND-->
+      <xsd:enumeration value="PT"/>
+      <!--PORTUGAL-->
+      <xsd:enumeration value="PR"/>
+      <!--PUERTO RICO-->
+      <xsd:enumeration value="QA"/>
+      <!--QATAR-->
+      <xsd:enumeration value="RE"/>
+      <!--REUNION-->
+      <xsd:enumeration value="RO"/>
+      <!--ROMANIA-->
+      <xsd:enumeration value="RU"/>
+      <!--RUSSIAN FEDERATION-->
+      <xsd:enumeration value="RW"/>
+      <!--RWANDA-->
+      <xsd:enumeration value="SH"/>
+      <!--SAINT HELENA-->
+      <xsd:enumeration value="KN"/>
+      <!--SAINT KITTS AND NEVIS-->
+      <xsd:enumeration value="LC"/>
+      <!--SAINT LUCIA-->
+      <xsd:enumeration value="PM"/>
+      <!--SAINT PIERRE AND MIQUELON-->
+      <xsd:enumeration value="VC"/>
+      <!--SAINT VINCENT AND THE GRENADINES-->
+      <xsd:enumeration value="WS"/>
+      <!--SAMOA-->
+      <xsd:enumeration value="SM"/>
+      <!--SAN MARINO-->
+      <xsd:enumeration value="ST"/>
+      <!--SAO TOME AND PRINCIPE-->
+      <xsd:enumeration value="SA"/>
+      <!--SAUDI ARABIA-->
+      <xsd:enumeration value="SN"/>
+      <!--SENEGAL-->
+      <xsd:enumeration value="CS"/>
+      <!--SERBIA AND MONTENEGRO-->
+      <xsd:enumeration value="SC"/>
+      <!--SEYCHELLES-->
+      <xsd:enumeration value="SL"/>
+      <!--SIERRA LEONE-->
+      <xsd:enumeration value="SG"/>
+      <!--SINGAPORE-->
+      <xsd:enumeration value="SK"/>
+      <!--SLOVAKIA-->
+      <xsd:enumeration value="SI"/>
+      <!--SLOVENIA-->
+      <xsd:enumeration value="SB"/>
+      <!--SOLOMON ISLANDS-->
+      <xsd:enumeration value="SO"/>
+      <!--SOMALIA-->
+      <xsd:enumeration value="ZA"/>
+      <!--SOUTH AFRICA-->
+      <xsd:enumeration value="GS"/>
+      <!--SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS-->
+      <xsd:enumeration value="ES"/>
+      <!--SPAIN-->
+      <xsd:enumeration value="LK"/>
+      <!--SRI LANKA-->
+      <xsd:enumeration value="SD"/>
+      <!--SUDAN-->
+      <xsd:enumeration value="SR"/>
+      <!--SURINAME-->
+      <xsd:enumeration value="SJ"/>
+      <!--SVALBARD AND JAN MAYEN-->
+      <xsd:enumeration value="SZ"/>
+      <!--SWAZILAND-->
+      <xsd:enumeration value="SE"/>
+      <!--SWEDEN-->
+      <xsd:enumeration value="CH"/>
+      <!--SWITZERLAND-->
+      <xsd:enumeration value="SY"/>
+      <!--SYRIAN ARAB REPUBLIC-->
+      <xsd:enumeration value="TW"/>
+      <!--TAIWAN, PROVINCE OF CHINA-->
+      <xsd:enumeration value="TJ"/>
+      <!--TAJIKISTAN-->
+      <xsd:enumeration value="TZ"/>
+      <!--TANZANIA, UNITED REPUBLIC OF-->
+      <xsd:enumeration value="TH"/>
+      <!--THAILAND-->
+      <xsd:enumeration value="TL"/>
+      <!--TIMOR-LESTE-->
+      <xsd:enumeration value="TG"/>
+      <!--TOGO-->
+      <xsd:enumeration value="TK"/>
+      <!--TOKELAU-->
+      <xsd:enumeration value="TO"/>
+      <!--TONGA-->
+      <xsd:enumeration value="TT"/>
+      <!--TRINIDAD AND TOBAGO-->
+      <xsd:enumeration value="TN"/>
+      <!--TUNISIA-->
+      <xsd:enumeration value="TR"/>
+      <!--TURKEY-->
+      <xsd:enumeration value="TM"/>
+      <!--TURKMENISTAN-->
+      <xsd:enumeration value="TC"/>
+      <!--TURKS AND CAICOS ISLANDS-->
+      <xsd:enumeration value="TV"/>
+      <!--TUVALU-->
+      <xsd:enumeration value="UG"/>
+      <!--UGANDA-->
+      <xsd:enumeration value="UA"/>
+      <!--UKRAINE-->
+      <xsd:enumeration value="AE"/>
+      <!--UNITED ARAB EMIRATES-->
+      <xsd:enumeration value="GB"/>
+      <!--UNITED KINGDOM-->
+      <xsd:enumeration value="US"/>
+      <!--UNITED STATES-->
+      <xsd:enumeration value="UM"/>
+      <!--UNITED STATES MINOR OUTLYING ISLANDS-->
+      <xsd:enumeration value="UY"/>
+      <!--URUGUAY-->
+      <xsd:enumeration value="UZ"/>
+      <!--UZBEKISTAN-->
+      <xsd:enumeration value="VU"/>
+      <!--VANUATU-->
+      <xsd:enumeration value="VE"/>
+      <!--VENEZUELA-->
+      <xsd:enumeration value="VN"/>
+      <!--VIET NAM-->
+      <xsd:enumeration value="VG"/>
+      <!--VIRGIN ISLANDS, BRITISH-->
+      <xsd:enumeration value="VI"/>
+      <!--VIRGIN ISLANDS, U.S.-->
+      <xsd:enumeration value="WF"/>
+      <!--WALLIS AND FUTUNA-->
+      <xsd:enumeration value="EH"/>
+      <!--WESTERN SAHARA-->
+      <xsd:enumeration value="YE"/>
+      <!--YEMEN-->
+      <xsd:enumeration value="ZM"/>
+      <!--ZAMBIA-->
+      <xsd:enumeration value="ZW"/>
+      <!--ZIMBABWE-->
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/productConfig/wsdl/iso4217-currency-code.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.isotc211.org/iso4217/" version="1.0" xml:lang="en" xmlns:iso4217="http://www.isotc211.org/iso4217/" xmlns:iso19103="http://www.isotc211.org/iso19103/" xmlns:iso19115="http://www.isotc211.org/iso19115/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!--Type Definitions-->
+  <xs:simpleType name="CurrencyNameType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Afghanistan Afghani"/>
+      <xs:enumeration value="Albania Lek"/>
+      <xs:enumeration value="Algerian Dinar"/>
+      <xs:enumeration value="Angola New Kwanza"/>
+      <xs:enumeration value="Argentine Peso"/>
+      <xs:enumeration value="Armenian Dram"/>
+      <xs:enumeration value="Aruban Guilder"/>
+      <xs:enumeration value="Australian Dollar"/>
+      <xs:enumeration value="Austrian Schilling"/>
+      <xs:enumeration value="Azerbaijanian Manat"/>
+      <xs:enumeration value="Bahamian Dollar"/>
+      <xs:enumeration value="Bahraini Dinar"/>
+      <xs:enumeration value="BangladeshTaka"/>
+      <xs:enumeration value="Barbados Dollar"/>
+      <xs:enumeration value="Belarussian Ruble"/>
+      <xs:enumeration value="Belgian Franc"/>
+      <xs:enumeration value="Belize Dollar"/>
+      <xs:enumeration value="Bermudian Dollar"/>
+      <xs:enumeration value="Bhutan Ngultrum"/>
+      <xs:enumeration value="Bolivia Boliviano"/>
+      <xs:enumeration value="Bosnia Convertible Mark"/>
+      <xs:enumeration value="Botswana Pula"/>
+      <xs:enumeration value="Brazilian Real"/>
+      <xs:enumeration value="Brunei Dollar"/>
+      <xs:enumeration value="Bulgaria Lev"/>
+      <xs:enumeration value="Burundi Franc"/>
+      <xs:enumeration value="Cambodia Riel"/>
+      <xs:enumeration value="Canadian Dollar"/>
+      <xs:enumeration value="Cape Verde Escudo"/>
+      <xs:enumeration value="Cayman Islands Dollar"/>
+      <xs:enumeration value="CFA Franc BCEAO"/>
+      <xs:enumeration value="CFA Franc BEAC"/>
+      <xs:enumeration value="CFP Franc"/>
+      <xs:enumeration value="Chilean Peso"/>
+      <xs:enumeration value="Chinese Yuan Renminbi"/>
+      <xs:enumeration value="Columbian Peso"/>
+      <xs:enumeration value="Comoro Franc"/>
+      <xs:enumeration value="Congo Franc"/>
+      <xs:enumeration value="Costa Rican Colon"/>
+      <xs:enumeration value="Croatian Kuna"/>
+      <xs:enumeration value="Cuban Peso"/>
+      <xs:enumeration value="Cyprus Pound"/>
+      <xs:enumeration value="Czech Koruna"/>
+      <xs:enumeration value="Danish Krone"/>
+      <xs:enumeration value="Deutsche Mark"/>
+      <xs:enumeration value="Dijibouti Franc"/>
+      <xs:enumeration value="Dominican Peso"/>
+      <xs:enumeration value="Dutch Guilder"/>
+      <xs:enumeration value="East Caribbean Dollar"/>
+      <xs:enumeration value="Ecuador Sucre"/>
+      <xs:enumeration value="Egyptian  Pound"/>
+      <xs:enumeration value="El Salvadorian Colon"/>
+      <xs:enumeration value="Eritrea Nakfa"/>
+      <xs:enumeration value="Escudo Caboverdiano"/>
+      <xs:enumeration value="Estonia Kroon"/>
+      <xs:enumeration value="Ethiopia Birr"/>
+      <xs:enumeration value="Euro"/>
+      <xs:enumeration value="Falkland Pound"/>
+      <xs:enumeration value="Fiji Dollar"/>
+      <xs:enumeration value="Finnish Markka"/>
+      <xs:enumeration value="French Franc"/>
+      <xs:enumeration value="Gambia Dalasi"/>
+      <xs:enumeration value="Georgia Lari"/>
+      <xs:enumeration value="Ghana Cedi"/>
+      <xs:enumeration value="Gibraltar Pound"/>
+      <xs:enumeration value="Greek Drachma"/>
+      <xs:enumeration value="Guatemala Quetzal"/>
+      <xs:enumeration value="Guyana Dollar"/>
+      <xs:enumeration value="Haiti Gourde"/>
+      <xs:enumeration value="Honduras Lempira"/>
+      <xs:enumeration value="Hong Kong Dollar"/>
+      <xs:enumeration value="Hungary Forint"/>
+      <xs:enumeration value="Icelandic Krona"/>
+      <xs:enumeration value="Indian Rupee"/>
+      <xs:enumeration value="Indonesia Rupiah"/>
+      <xs:enumeration value="Iranian Riyal"/>
+      <xs:enumeration value="Iraqi Dinar"/>
+      <xs:enumeration value="Irish Punt"/>
+      <xs:enumeration value="Israel Shekel"/>
+      <xs:enumeration value="Italian Lira"/>
+      <xs:enumeration value="Jamaican Dollar"/>
+      <xs:enumeration value="Japanese Yen"/>
+      <xs:enumeration value="Jordanian Dinar"/>
+      <xs:enumeration value="Kazakhstan Tenge"/>
+      <xs:enumeration value="Kenyan Shilling"/>
+      <xs:enumeration value="Kuwaiti Dinar"/>
+      <xs:enumeration value="Kyrgyzstan Som"/>
+      <xs:enumeration value="Laos Kip"/>
+      <xs:enumeration value="Latvia Lat"/>
+      <xs:enumeration value="Lebanese Pound"/>
+      <xs:enumeration value="Lesotho Maloti"/>
+      <xs:enumeration value="Liberian Dollar"/>
+      <xs:enumeration value="Libyan Dinar"/>
+      <xs:enumeration value="Lithuania Litas"/>
+      <xs:enumeration value="Luxembourg Franc"/>
+      <xs:enumeration value="Macao Pataca"/>
+      <xs:enumeration value="Macedonian Denar"/>
+      <xs:enumeration value="Malagasy Franc"/>
+      <xs:enumeration value="Malawian Kwacha"/>
+      <xs:enumeration value="Malaysian Ringgit"/>
+      <xs:enumeration value="Maldives Rufiyaa"/>
+      <xs:enumeration value="Maltese Lira"/>
+      <xs:enumeration value="Mauritania Ouguiya"/>
+      <xs:enumeration value="Mauritius Rupee"/>
+      <xs:enumeration value="Mexican Peso"/>
+      <xs:enumeration value="Moldovian Leu"/>
+      <xs:enumeration value="Mongolia Tugrik"/>
+      <xs:enumeration value="Moroccan Dirham"/>
+      <xs:enumeration value="Mozambique Metical"/>
+      <xs:enumeration value="Myanmar Kyat"/>
+      <xs:enumeration value="Namibian Dollar"/>
+      <xs:enumeration value="Nepalese Rupee"/>
+      <xs:enumeration value="Netherlands Antilles Guilder"/>
+      <xs:enumeration value="New Zaire"/>
+      <xs:enumeration value="New Zealand Dollar"/>
+      <xs:enumeration value="Nicaragua Cordoba"/>
+      <xs:enumeration value="Nigeria Naira"/>
+      <xs:enumeration value="North Korean Won"/>
+      <xs:enumeration value="Norwegian Krone"/>
+      <xs:enumeration value="Pakistani Rupee"/>
+      <xs:enumeration value="Panama Balboa"/>
+      <xs:enumeration value="Papua New Guinea Kina"/>
+      <xs:enumeration value="Paraguay Guarani"/>
+      <xs:enumeration value="Peru New Sol"/>
+      <xs:enumeration value="Philippine Peso"/>
+      <xs:enumeration value="Poland New Zloty"/>
+      <xs:enumeration value="Portuguese Escudo"/>
+      <xs:enumeration value="Qatari Riyal"/>
+      <xs:enumeration value="Riyal Omani"/>
+      <xs:enumeration value="Romanian Leu"/>
+      <xs:enumeration value="Russian Federation Rouble"/>
+      <xs:enumeration value="Rwanda Franc"/>
+      <xs:enumeration value="Sao Tome and Principe Dobra"/>
+      <xs:enumeration value="Saudi Riyal"/>
+      <xs:enumeration value="Seychelles Rupee"/>
+      <xs:enumeration value="Sierra Leone Leone"/>
+      <xs:enumeration value="Singapore Dollar"/>
+      <xs:enumeration value="Slovak Doruna"/>
+      <xs:enumeration value="Slovenia Tolar"/>
+      <xs:enumeration value="Soloman Islands Dollar"/>
+      <xs:enumeration value="Somalia Shilling"/>
+      <xs:enumeration value="South African Rand"/>
+      <xs:enumeration value="South Koerean Won"/>
+      <xs:enumeration value="Spanish Peseta"/>
+      <xs:enumeration value="Sri Lankan Rupee"/>
+      <xs:enumeration value="St Helena Pound"/>
+      <xs:enumeration value="Sterling"/>
+      <xs:enumeration value="Sudanese Pound"/>
+      <xs:enumeration value="Surinam Guilder"/>
+      <xs:enumeration value="Swaziland Lilangeni"/>
+      <xs:enumeration value="Swedish Krona"/>
+      <xs:enumeration value="Swiss Franc"/>
+      <xs:enumeration value="Syrian Pound"/>
+      <xs:enumeration value="Taiwanese NT Dollar"/>
+      <xs:enumeration value="Tajikistan Ruble"/>
+      <xs:enumeration value="Tanzanian Shilling"/>
+      <xs:enumeration value="Thailand Baht"/>
+      <xs:enumeration value="Timor Escudo"/>
+      <xs:enumeration value="Tonga Palanga"/>
+      <xs:enumeration value="Trinidad and Tobago Dollar"/>
+      <xs:enumeration value="Tunasia Tunisian Dinar"/>
+      <xs:enumeration value="Turkish Lira"/>
+      <xs:enumeration value="Turkmenistan Manat"/>
+      <xs:enumeration value="UAE Dirham"/>
+      <xs:enumeration value="Ugandian Shilling"/>
+      <xs:enumeration value="Ukraine Hryvna"/>
+      <xs:enumeration value="Uruguayan New Peso"/>
+      <xs:enumeration value="United States of America Dollar"/>
+      <xs:enumeration value="Uzbekistani Sum"/>
+      <xs:enumeration value="Vanuatu Vatu"/>
+      <xs:enumeration value="Venezuela Bolivar"/>
+      <xs:enumeration value="Vietnam Dong"/>
+      <xs:enumeration value="Western Somoa Tala"/>
+      <xs:enumeration value="Yemen Riyal"/>
+      <xs:enumeration value="Yugoslavia New Dinar"/>
+      <xs:enumeration value="Zambian Kwacha"/>
+      <xs:enumeration value="Zimbabwe Dollar"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CurrencyCodeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AFA"/>
+      <xs:enumeration value="ALL"/>
+      <xs:enumeration value="DZD"/>
+      <xs:enumeration value="AON"/>
+      <xs:enumeration value="ARS"/>
+      <xs:enumeration value="AMD"/>
+      <xs:enumeration value="AWG"/>
+      <xs:enumeration value="AUD"/>
+      <xs:enumeration value="ATS"/>
+      <xs:enumeration value="AZM"/>
+      <xs:enumeration value="BSD"/>
+      <xs:enumeration value="BHD"/>
+      <xs:enumeration value="BDT"/>
+      <xs:enumeration value="BBD"/>
+      <xs:enumeration value="BYR"/>
+      <xs:enumeration value="BEF"/>
+      <xs:enumeration value="BZD"/>
+      <xs:enumeration value="BMD"/>
+      <xs:enumeration value="BTN"/>
+      <xs:enumeration value="BOB"/>
+      <xs:enumeration value="BAM"/>
+      <xs:enumeration value="BWP"/>
+      <xs:enumeration value="BRL"/>
+      <xs:enumeration value="BND"/>
+      <xs:enumeration value="BGL"/>
+      <xs:enumeration value="BIF"/>
+      <xs:enumeration value="KHR"/>
+      <xs:enumeration value="CAD"/>
+      <xs:enumeration value="CVE"/>
+      <xs:enumeration value="KYD"/>
+      <xs:enumeration value="XOF"/>
+      <xs:enumeration value="XAF"/>
+      <xs:enumeration value="XPF"/>
+      <xs:enumeration value="CLP"/>
+      <xs:enumeration value="CNY"/>
+      <xs:enumeration value="COP"/>
+      <xs:enumeration value="KMF"/>
+      <xs:enumeration value="CDF"/>
+      <xs:enumeration value="CRC"/>
+      <xs:enumeration value="HRK"/>
+      <xs:enumeration value="CUP"/>
+      <xs:enumeration value="CYP"/>
+      <xs:enumeration value="CZK"/>
+      <xs:enumeration value="DKK"/>
+      <xs:enumeration value="DEM"/>
+      <xs:enumeration value="DJF"/>
+      <xs:enumeration value="DOP"/>
+      <xs:enumeration value="NLG"/>
+      <xs:enumeration value="XCD"/>
+      <xs:enumeration value="ECS"/>
+      <xs:enumeration value="EGP"/>
+      <xs:enumeration value="SVC"/>
+      <xs:enumeration value="ERN"/>
+      <xs:enumeration value="EEK"/>
+      <xs:enumeration value="ETB"/>
+      <xs:enumeration value="EUR"/>
+      <xs:enumeration value="FKP"/>
+      <xs:enumeration value="FJD"/>
+      <xs:enumeration value="FIM"/>
+      <xs:enumeration value="FRF"/>
+      <xs:enumeration value="GMD"/>
+      <xs:enumeration value="GEL"/>
+      <xs:enumeration value="GHC"/>
+      <xs:enumeration value="GIP"/>
+      <xs:enumeration value="GRD"/>
+      <xs:enumeration value="GTQ"/>
+      <xs:enumeration value="GYD"/>
+      <xs:enumeration value="HTG"/>
+      <xs:enumeration value="HNL"/>
+      <xs:enumeration value="HKD"/>
+      <xs:enumeration value="HUF"/>
+      <xs:enumeration value="ISK"/>
+      <xs:enumeration value="INR"/>
+      <xs:enumeration value="IDR"/>
+      <xs:enumeration value="IRR"/>
+      <xs:enumeration value="IQD"/>
+      <xs:enumeration value="IEP"/>
+      <xs:enumeration value="ILS"/>
+      <xs:enumeration value="ITL"/>
+      <xs:enumeration value="JMD"/>
+      <xs:enumeration value="JPY"/>
+      <xs:enumeration value="JOD"/>
+      <xs:enumeration value="KZT"/>
+      <xs:enumeration value="KES"/>
+      <xs:enumeration value="KWD"/>
+      <xs:enumeration value="KGS"/>
+      <xs:enumeration value="LAK"/>
+      <xs:enumeration value="LVL"/>
+      <xs:enumeration value="LBP"/>
+      <xs:enumeration value="LSL"/>
+      <xs:enumeration value="LRD"/>
+      <xs:enumeration value="LYD"/>
+      <xs:enumeration value="LTL"/>
+      <xs:enumeration value="LUF"/>
+      <xs:enumeration value="MOP"/>
+      <xs:enumeration value="MKD"/>
+      <xs:enumeration value="MGF"/>
+      <xs:enumeration value="MWK"/>
+      <xs:enumeration value="MYR"/>
+      <xs:enumeration value="MVR"/>
+      <xs:enumeration value="MTL"/>
+      <xs:enumeration value="MRO"/>
+      <xs:enumeration value="MUR"/>
+      <xs:enumeration value="MXN"/>
+      <xs:enumeration value="MDL"/>
+      <xs:enumeration value="MNT"/>
+      <xs:enumeration value="MAD"/>
+      <xs:enumeration value="MZM"/>
+      <xs:enumeration value="MMK"/>
+      <xs:enumeration value="NAD"/>
+      <xs:enumeration value="NPR"/>
+      <xs:enumeration value="ANG"/>
+      <xs:enumeration value="ZRN"/>
+      <xs:enumeration value="NZD"/>
+      <xs:enumeration value="NIC"/>
+      <xs:enumeration value="NGN"/>
+      <xs:enumeration value="KPW"/>
+      <xs:enumeration value="NOK"/>
+      <xs:enumeration value="PKR"/>
+      <xs:enumeration value="PAB"/>
+      <xs:enumeration value="PGK"/>
+      <xs:enumeration value="PYG"/>
+      <xs:enumeration value="PEN"/>
+      <xs:enumeration value="PHP"/>
+      <xs:enumeration value="PLN"/>
+      <xs:enumeration value="PTE"/>
+      <xs:enumeration value="QAR"/>
+      <xs:enumeration value="OMR"/>
+      <xs:enumeration value="ROL"/>
+      <xs:enumeration value="RUR"/>
+      <xs:enumeration value="RWF"/>
+      <xs:enumeration value="STD"/>
+      <xs:enumeration value="SAR"/>
+      <xs:enumeration value="SCR"/>
+      <xs:enumeration value="SLL"/>
+      <xs:enumeration value="SGD"/>
+      <xs:enumeration value="SKK"/>
+      <xs:enumeration value="SIT"/>
+      <xs:enumeration value="SBD"/>
+      <xs:enumeration value="SOS"/>
+      <xs:enumeration value="ZAR"/>
+      <xs:enumeration value="KRW"/>
+      <xs:enumeration value="ESP"/>
+      <xs:enumeration value="LKR"/>
+      <xs:enumeration value="SHP"/>
+      <xs:enumeration value="GBP"/>
+      <xs:enumeration value="SDP"/>
+      <xs:enumeration value="SRG"/>
+      <xs:enumeration value="SZL"/>
+      <xs:enumeration value="SEK"/>
+      <xs:enumeration value="CHF"/>
+      <xs:enumeration value="SYP"/>
+      <xs:enumeration value="TWD"/>
+      <xs:enumeration value="TJR"/>
+      <xs:enumeration value="TZS"/>
+      <xs:enumeration value="THB"/>
+      <xs:enumeration value="TPE"/>
+      <xs:enumeration value="TOP"/>
+      <xs:enumeration value="TTD"/>
+      <xs:enumeration value="TND"/>
+      <xs:enumeration value="TRL"/>
+      <xs:enumeration value="TMM"/>
+      <xs:enumeration value="AED"/>
+      <xs:enumeration value="UGX"/>
+      <xs:enumeration value="UAH"/>
+      <xs:enumeration value="UYU"/>
+      <xs:enumeration value="USD"/>
+      <xs:enumeration value="UZS"/>
+      <xs:enumeration value="VUV"/>
+      <xs:enumeration value="VEB"/>
+      <xs:enumeration value="VND"/>
+      <xs:enumeration value="WST"/>
+      <xs:enumeration value="YER"/>
+      <xs:enumeration value="YUM"/>
+      <xs:enumeration value="ZMK"/>
+      <xs:enumeration value="ZWD"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CurrencyNumberType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="004"/>
+      <xs:enumeration value="008"/>
+      <xs:enumeration value="012"/>
+      <xs:enumeration value="024"/>
+      <xs:enumeration value="032"/>
+      <xs:enumeration value="051"/>
+      <xs:enumeration value="533"/>
+      <xs:enumeration value="036"/>
+      <xs:enumeration value="040"/>
+      <xs:enumeration value="031"/>
+      <xs:enumeration value="044"/>
+      <xs:enumeration value="048"/>
+      <xs:enumeration value="050"/>
+      <xs:enumeration value="052"/>
+      <xs:enumeration value="974"/>
+      <xs:enumeration value="056"/>
+      <xs:enumeration value="084"/>
+      <xs:enumeration value="060"/>
+      <xs:enumeration value="064"/>
+      <xs:enumeration value="068"/>
+      <xs:enumeration value="977"/>
+      <xs:enumeration value="072"/>
+      <xs:enumeration value="986"/>
+      <xs:enumeration value="096"/>
+      <xs:enumeration value="100"/>
+      <xs:enumeration value="108"/>
+      <xs:enumeration value="116"/>
+      <xs:enumeration value="124"/>
+      <xs:enumeration value="132"/>
+      <xs:enumeration value="136"/>
+      <xs:enumeration value="952"/>
+      <xs:enumeration value="950"/>
+      <xs:enumeration value="953"/>
+      <xs:enumeration value="152"/>
+      <xs:enumeration value="156"/>
+      <xs:enumeration value="170"/>
+      <xs:enumeration value="174"/>
+      <xs:enumeration value="976"/>
+      <xs:enumeration value="188"/>
+      <xs:enumeration value="191"/>
+      <xs:enumeration value="192"/>
+      <xs:enumeration value="196"/>
+      <xs:enumeration value="203"/>
+      <xs:enumeration value="208"/>
+      <xs:enumeration value="276"/>
+      <xs:enumeration value="262"/>
+      <xs:enumeration value="214"/>
+      <xs:enumeration value="528"/>
+      <xs:enumeration value="951"/>
+      <xs:enumeration value="218"/>
+      <xs:enumeration value="818"/>
+      <xs:enumeration value="222"/>
+      <xs:enumeration value="232"/>
+      <xs:enumeration value="233"/>
+      <xs:enumeration value="230"/>
+      <xs:enumeration value="978"/>
+      <xs:enumeration value="238"/>
+      <xs:enumeration value="242"/>
+      <xs:enumeration value="246"/>
+      <xs:enumeration value="250"/>
+      <xs:enumeration value="270"/>
+      <xs:enumeration value="268"/>
+      <xs:enumeration value="288"/>
+      <xs:enumeration value="292"/>
+      <xs:enumeration value="300"/>
+      <xs:enumeration value="320"/>
+      <xs:enumeration value="328"/>
+      <xs:enumeration value="332"/>
+      <xs:enumeration value="340"/>
+      <xs:enumeration value="344"/>
+      <xs:enumeration value="348"/>
+      <xs:enumeration value="352"/>
+      <xs:enumeration value="356"/>
+      <xs:enumeration value="360"/>
+      <xs:enumeration value="364"/>
+      <xs:enumeration value="368"/>
+      <xs:enumeration value="372"/>
+      <xs:enumeration value="376"/>
+      <xs:enumeration value="380"/>
+      <xs:enumeration value="388"/>
+      <xs:enumeration value="392"/>
+      <xs:enumeration value="400"/>
+      <xs:enumeration value="398"/>
+      <xs:enumeration value="404"/>
+      <xs:enumeration value="414"/>
+      <xs:enumeration value="417"/>
+      <xs:enumeration value="418"/>
+      <xs:enumeration value="428"/>
+      <xs:enumeration value="422"/>
+      <xs:enumeration value="426"/>
+      <xs:enumeration value="430"/>
+      <xs:enumeration value="434"/>
+      <xs:enumeration value="440"/>
+      <xs:enumeration value="442"/>
+      <xs:enumeration value="446"/>
+      <xs:enumeration value="807"/>
+      <xs:enumeration value="450"/>
+      <xs:enumeration value="454"/>
+      <xs:enumeration value="458"/>
+      <xs:enumeration value="462"/>
+      <xs:enumeration value="470"/>
+      <xs:enumeration value="478"/>
+      <xs:enumeration value="480"/>
+      <xs:enumeration value="484"/>
+      <xs:enumeration value="498"/>
+      <xs:enumeration value="496"/>
+      <xs:enumeration value="504"/>
+      <xs:enumeration value="508"/>
+      <xs:enumeration value="104"/>
+      <xs:enumeration value="516"/>
+      <xs:enumeration value="524"/>
+      <xs:enumeration value="532"/>
+      <xs:enumeration value="186"/>
+      <xs:enumeration value="554"/>
+      <xs:enumeration value="558"/>
+      <xs:enumeration value="566"/>
+      <xs:enumeration value="408"/>
+      <xs:enumeration value="578"/>
+      <xs:enumeration value="586"/>
+      <xs:enumeration value="590"/>
+      <xs:enumeration value="598"/>
+      <xs:enumeration value="600"/>
+      <xs:enumeration value="604"/>
+      <xs:enumeration value="608"/>
+      <xs:enumeration value="985"/>
+      <xs:enumeration value="620"/>
+      <xs:enumeration value="634"/>
+      <xs:enumeration value="512"/>
+      <xs:enumeration value="642"/>
+      <xs:enumeration value="810"/>
+      <xs:enumeration value="646"/>
+      <xs:enumeration value="678"/>
+      <xs:enumeration value="682"/>
+      <xs:enumeration value="690"/>
+      <xs:enumeration value="694"/>
+      <xs:enumeration value="702"/>
+      <xs:enumeration value="703"/>
+      <xs:enumeration value="705"/>
+      <xs:enumeration value="090"/>
+      <xs:enumeration value="706"/>
+      <xs:enumeration value="710"/>
+      <xs:enumeration value="410"/>
+      <xs:enumeration value="724"/>
+      <xs:enumeration value="144"/>
+      <xs:enumeration value="654"/>
+      <xs:enumeration value="826"/>
+      <xs:enumeration value="736"/>
+      <xs:enumeration value="740"/>
+      <xs:enumeration value="748"/>
+      <xs:enumeration value="752"/>
+      <xs:enumeration value="756"/>
+      <xs:enumeration value="760"/>
+      <xs:enumeration value="901"/>
+      <xs:enumeration value="762"/>
+      <xs:enumeration value="834"/>
+      <xs:enumeration value="764"/>
+      <xs:enumeration value="626"/>
+      <xs:enumeration value="776"/>
+      <xs:enumeration value="780"/>
+      <xs:enumeration value="788"/>
+      <xs:enumeration value="792"/>
+      <xs:enumeration value="795"/>
+      <xs:enumeration value="784"/>
+      <xs:enumeration value="800"/>
+      <xs:enumeration value="980"/>
+      <xs:enumeration value="858"/>
+      <xs:enumeration value="840"/>
+      <xs:enumeration value="860"/>
+      <xs:enumeration value="548"/>
+      <xs:enumeration value="862"/>
+      <xs:enumeration value="704"/>
+      <xs:enumeration value="882"/>
+      <xs:enumeration value="886"/>
+      <xs:enumeration value="891"/>
+      <xs:enumeration value="894"/>
+      <xs:enumeration value="716"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/productConfig/wsdl/GetAvailableLocationsResponse.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2016 rel. 2 (http://www.altova.com) by Hit Promotional Products (Hit Promotional Products)-->
+<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/" schemaLocation="SharedObjectsPricingAndConfiguration.xsd"/>
+  <xsd:element name="AvailableLocation">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:locationId"/>
+        <xsd:element ref="ns3:locationName"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetAvailableLocationsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="AvailableLocationArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>An Array of location names</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:AvailableLocation" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="ns3:ErrorMessage" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/productConfig/wsdl/GetDecorationColorsRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/" schemaLocation="SharedObjectsPricingAndConfiguration.xsd"/>
+  <xsd:element name="GetDecorationColorsRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:wsVersion"/>
+        <xsd:element ref="ns3:id"/>
+        <xsd:element ref="ns3:password" minOccurs="0"/>
+        <xsd:element ref="ns3:locationId"/>
+        <xsd:element ref="ns3:productId"/>
+        <xsd:element ref="ns3:decorationId" minOccurs="0"/>
+        <xsd:element ref="ns3:localizationCountry"/>
+        <xsd:element ref="ns3:localizationLanguage"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/productConfig/wsdl/GetDecorationColorsResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/" schemaLocation="SharedObjectsPricingAndConfiguration.xsd"/>
+  <xsd:element name="Color">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:colorId"/>
+        <xsd:element ref="ns3:colorName"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="DecorationMethod">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:decorationId"/>
+        <xsd:element ref="ns3:decorationName"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetDecorationColorsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="DecorationColors" minOccurs="0">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ColorArray" minOccurs="0">
+                <xsd:annotation>
+                  <xsd:documentation>An Array of colors</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element ref="ns1:Color" maxOccurs="unbounded"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element ref="ns3:productId"/>
+              <xsd:element ref="ns3:locationId"/>
+              <xsd:element name="DecorationMethodArray" minOccurs="0">
+                <xsd:annotation>
+                  <xsd:documentation>An Array of decoration method</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element ref="ns1:DecorationMethod" maxOccurs="unbounded"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="pmsMatch" type="xsd:boolean" nillable="true" minOccurs="1">
+                <xsd:annotation>
+                  <xsd:documentation>PMS match or nto</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="fullColor" type="xsd:boolean" nillable="true" minOccurs="1">
+                <xsd:annotation>
+                  <xsd:documentation>Full Color or not</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="ns3:ErrorMessage" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/productConfig/wsdl/GetFobPointsRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/" schemaLocation="SharedObjectsPricingAndConfiguration.xsd"/>
+  <xsd:element name="GetFobPointsRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:wsVersion"/>
+        <xsd:element ref="ns3:id"/>
+        <xsd:element ref="ns3:password" minOccurs="0"/>
+        <xsd:element ref="ns3:productId"/>
+        <xsd:element ref="ns3:localizationCountry"/>
+        <xsd:element ref="ns3:localizationLanguage"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/productConfig/wsdl/GetFobPointsResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/" schemaLocation="SharedObjectsPricingAndConfiguration.xsd"/>
+  <xsd:element name="FobPoint">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:fobId"/>
+        <xsd:element name="fobCity">
+          <xsd:annotation>
+            <xsd:documentation>The fob city</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="fobState">
+          <xsd:annotation>
+            <xsd:documentation>The fob state</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element ref="ns3:fobPostalCode"/>
+        <xsd:element name="fobCountry">
+          <xsd:annotation>
+            <xsd:documentation>The fob country</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="CurrencySupportedArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>An Array of currencies supported</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:CurrencySupported" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="ProductArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>An Array of Product Ids</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:Product" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="CurrencySupported">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:currency"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Product">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:productId"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetFobPointsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="FobPointArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>An Array of fob points</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:FobPoint" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="ns3:ErrorMessage" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/productConfig/wsdl/GetAvailableChargesRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/" schemaLocation="SharedObjectsPricingAndConfiguration.xsd"/>
+  <xsd:element name="GetAvailableChargesRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:wsVersion"/>
+        <xsd:element ref="ns3:id"/>
+        <xsd:element ref="ns3:password" minOccurs="0"/>
+        <xsd:element ref="ns3:productId" minOccurs="0"/>
+        <xsd:element ref="ns3:localizationCountry"/>
+        <xsd:element ref="ns3:localizationLanguage"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/productConfig/wsdl/GetAvailableChargesResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/" schemaLocation="SharedObjectsPricingAndConfiguration.xsd"/>
+  <xsd:element name="AvailableCharge">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:chargeId"/>
+        <xsd:element ref="ns3:chargeName"/>
+        <xsd:element ref="ns3:chargeDescription"/>
+        <xsd:element ref="ns3:chargeType"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetAvailableChargesResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="AvailableChargeArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>An Array of charges</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:AvailableCharge" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="ns3:ErrorMessage" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/productConfig/wsdl/GetConfigurationAndPricingRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/" schemaLocation="SharedObjectsPricingAndConfiguration.xsd"/>
+  <xsd:element name="GetConfigurationAndPricingRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:wsVersion"/>
+        <xsd:element ref="ns3:id"/>
+        <xsd:element ref="ns3:password" minOccurs="0"/>
+        <xsd:element ref="ns3:productId"/>
+        <xsd:element ref="ns3:partId" minOccurs="0"/>
+        <xsd:element ref="ns3:currency"/>
+        <xsd:element ref="ns3:fobId"/>
+        <xsd:element ref="ns3:priceType"/>
+        <xsd:element ref="ns3:localizationCountry"/>
+        <xsd:element ref="ns3:localizationLanguage"/>
+        <xsd:element ref="ns3:configurationType"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/productConfig/wsdl/GetConfigurationAndPricingResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/" schemaLocation="SharedObjectsPricingAndConfiguration.xsd"/>
+  <xsd:element name="Part">
+    <xsd:annotation>
+      <xsd:documentation>This object contains information about a part</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:partId"/>
+        <xsd:element ref="ns3:partDescription" minOccurs="0"/>
+        <xsd:element name="PartPriceArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>An Array of part prices</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:PartPrice" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="ns3:partGroup"/>
+        <xsd:element ref="ns3:nextPartGroup" minOccurs="0"/>
+        <xsd:element ref="ns3:partGroupRequired"/>
+        <xsd:element ref="ns3:partGroupDescription"/>
+        <xsd:element ref="ns3:ratio"/>
+        <xsd:element ref="ns3:defaultPart"/>
+        <xsd:element name="LocationIdArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>An Array of location id</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="LocationId" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element ref="ns3:locationId"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="PartPrice">
+    <xsd:annotation>
+      <xsd:documentation>This object contains pricing a product based on the partId.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="minQuantity" type="xsd:int">
+          <xsd:annotation>
+            <xsd:documentation>The minimum quantity</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="price">
+          <xsd:annotation>
+            <xsd:documentation>The price</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:decimal">
+              <xsd:fractionDigits value="4"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="discountCode" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The discount code</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="1"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="priceUom">
+          <xsd:annotation>
+            <xsd:documentation>Enumerated list of unit of measure used to describe the price</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="ns3:QuantityUomType">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="2"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="priceEffectiveDate" type="xsd:dateTime" nillable="true">
+          <xsd:annotation>
+            <xsd:documentation>The price effective date</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="priceExpiryDate" type="xsd:dateTime" nillable="true">
+          <xsd:annotation>
+            <xsd:documentation>The price expiry date</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Location">
+    <xsd:annotation>
+      <xsd:documentation>This object contains decoration and location details for a given part</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:locationId"/>
+        <xsd:element ref="ns3:locationName"/>
+        <xsd:element name="DecorationArray">
+          <xsd:annotation>
+            <xsd:documentation>An Array of decorations</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:Decoration" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="ns3:decorationsIncluded"/>
+        <xsd:element ref="ns3:defaultLocation"/>
+        <xsd:element ref="ns3:maxDecoration"/>
+        <xsd:element ref="ns3:minDecoration"/>
+        <xsd:element ref="ns3:locationRank"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Decoration">
+    <xsd:annotation>
+      <xsd:documentation>This object contains decoration information that are valid for a specific location</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:decorationId"/>
+        <xsd:element ref="ns3:decorationName" minOccurs="0"/>
+        <xsd:element ref="ns3:decorationGeometry"/>
+        <xsd:element ref="ns3:decorationHeight"/>
+        <xsd:element ref="ns3:decorationWidth"/>
+        <xsd:element ref="ns3:decorationDiameter"/>
+        <xsd:element ref="ns3:decorationUom"/>
+        <xsd:element name="allowSubForDefaultLocation" type="xsd:boolean" nillable="true">
+          <xsd:annotation>
+            <xsd:documentation>Buyer is allowed to substitute a decoration location without changing the price</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="allowSubForDefaultMethod" type="xsd:boolean" nillable="true">
+          <xsd:annotation>
+            <xsd:documentation>Buyer is allowed to substitute a decoration method without changing the price</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="itemPartQuantityLTM" type="xsd:int" nillable="1" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Specifies the Part Quantity where the Less than Minimum (LTM) Setup Charge Applies.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="ChargeArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>An Array of charges</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:Charge" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="decorationUnitsIncluded" type="xsd:int" nillable="1" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The number of included decoration units.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element ref="ns3:decorationUnitsIncludedUom" minOccurs="0"/>
+        <xsd:element ref="ns3:decorationUnitsMax" minOccurs="0"/>
+        <xsd:element name="defaultDecoration" type="xsd:boolean" nillable="true">
+          <xsd:annotation>
+            <xsd:documentation>The default decoration</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="leadTime" type="xsd:int" nillable="1" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Lead Time</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="rushLeadTime" type="xsd:int" nillable="1" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Rush Lead Time</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Charge">
+    <xsd:annotation>
+      <xsd:documentation>This object contains a charge that is associated with the setup of the product, location and decoration configuration.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:chargeId"/>
+        <xsd:element ref="ns3:chargeName"/>
+        <xsd:element ref="ns3:chargeDescription"/>
+        <xsd:element ref="ns3:chargeType"/>
+        <xsd:element name="ChargePriceArray">
+          <xsd:annotation>
+            <xsd:documentation>An Array of  charge price</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:ChargePrice" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="chargesAppliesLTM" type="xsd:boolean" nillable="true" minOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation>The charges applies LTM</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="chargesPerLocation" type="xsd:int" nillable="true">
+          <xsd:annotation>
+            <xsd:documentation>The number of times a charge will occur per location</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="chargesPerColor" type="xsd:int" nillable="true">
+          <xsd:annotation>
+            <xsd:documentation>The number of times a charge will occur per color</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ChargePrice">
+    <xsd:annotation>
+      <xsd:documentation>This object contains a single line of a price grid represented by an X and Y axis.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="xMinQty" type="xsd:int">
+          <xsd:annotation>
+            <xsd:documentation>The minimum quantity x grid</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="xUom">
+          <xsd:annotation>
+            <xsd:documentation>The x grid uom</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="ns3:QuantityUomType">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="2"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="yMinQty" type="xsd:int">
+          <xsd:annotation>
+            <xsd:documentation>The minimum quantity y grid</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="yUom" type="ns3:decorationUomType">
+          <xsd:annotation>
+            <xsd:documentation>The y grid uom</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="price">
+          <xsd:annotation>
+            <xsd:documentation>The price</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:decimal">
+              <xsd:fractionDigits value="4"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="discountCode" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The discount code</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="1"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="repeatPrice">
+          <xsd:annotation>
+            <xsd:documentation>repeat price</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:decimal">
+              <xsd:fractionDigits value="4"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="repeatDiscountCode" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The repeat discount code</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="1"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="priceEffectiveDate" type="xsd:dateTime" nillable="true">
+          <xsd:annotation>
+            <xsd:documentation>The price effective date</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="priceExpiryDate" type="xsd:dateTime" nillable="true">
+          <xsd:annotation>
+            <xsd:documentation>The price expiry date</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Configuration">
+    <xsd:annotation>
+      <xsd:documentation>An object to hold Configuration data</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="PartArray">
+          <xsd:annotation>
+            <xsd:documentation>An Array of parts</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:Part" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="LocationArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>An Array of Location</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:Location" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="ns3:productId"/>
+        <xsd:element ref="ns3:currency"/>
+        <xsd:element ref="ns3:FobArray"/>
+        <xsd:element ref="ns3:priceType"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetConfigurationAndPricingResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns1:Configuration" minOccurs="0"/>
+        <xsd:element ref="ns3:ErrorMessage" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint></con:endpoints><con:operation id="9c825625-3dc2-4712-a85b-ef67bb899975" isOneWay="false" action="getAvailableCharges" name="getAvailableCharges" bindingOperationName="getAvailableCharges" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="76aa74a1-ec59-4042-9560-66fc829d5b3d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetAvailableChargesRequest>\r
+         <shar:wsVersion>?</shar:wsVersion>\r
+         <shar:id>?</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>?</shar:password>\r
+         <!--Optional:-->\r
+         <shar:productId>?</shar:productId>\r
+         <shar:localizationCountry>?</shar:localizationCountry>\r
+         <shar:localizationLanguage>?</shar:localizationLanguage>\r
+      </ns:GetAvailableChargesRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getAvailableCharges"/></con:call></con:operation><con:operation id="24e4f316-5afb-4b8b-890e-7fbf56838225" isOneWay="false" action="getAvailableLocations" name="getAvailableLocations" bindingOperationName="getAvailableLocations" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7a897535-d080-491f-afdd-9f2f68f379f2" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetAvailableLocationsRequest>\r
+         <shar:wsVersion>?</shar:wsVersion>\r
+         <shar:id>?</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>?</shar:password>\r
+         <shar:productId>?</shar:productId>\r
+         <shar:localizationCountry>?</shar:localizationCountry>\r
+         <shar:localizationLanguage>?</shar:localizationLanguage>\r
+      </ns:GetAvailableLocationsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getAvailableLocations"/></con:call></con:operation><con:operation id="54da2adb-5967-45ed-a7d0-16a00496839e" isOneWay="false" action="getConfigurationAndPricing" name="getConfigurationAndPricing" bindingOperationName="getConfigurationAndPricing" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="33cf3860-036a-4763-bbce-fd948efe1d1f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetConfigurationAndPricingRequest>\r
+         <shar:wsVersion>?</shar:wsVersion>\r
+         <shar:id>?</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>?</shar:password>\r
+         <shar:productId>?</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>?</shar:partId>\r
+         <shar:currency>?</shar:currency>\r
+         <shar:fobId>?</shar:fobId>\r
+         <shar:priceType>?</shar:priceType>\r
+         <shar:localizationCountry>?</shar:localizationCountry>\r
+         <shar:localizationLanguage>?</shar:localizationLanguage>\r
+         <shar:configurationType>?</shar:configurationType>\r
+      </ns:GetConfigurationAndPricingRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getConfigurationAndPricing"/></con:call></con:operation><con:operation id="e41b476d-2be5-4468-b08e-485be4e998e1" isOneWay="false" action="getDecorationColors" name="getDecorationColors" bindingOperationName="getDecorationColors" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1ed20e63-ec75-4164-89ba-28881a2a3ed6" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetDecorationColorsRequest>\r
+         <shar:wsVersion>?</shar:wsVersion>\r
+         <shar:id>?</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>?</shar:password>\r
+         <shar:locationId>?</shar:locationId>\r
+         <shar:productId>?</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:decorationId>?</shar:decorationId>\r
+         <shar:localizationCountry>?</shar:localizationCountry>\r
+         <shar:localizationLanguage>?</shar:localizationLanguage>\r
+      </ns:GetDecorationColorsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getDecorationColors"/></con:call></con:operation><con:operation id="20db0ee9-35e8-400b-9474-4100e29ebd24" isOneWay="false" action="getFobPoints" name="getFobPoints" bindingOperationName="getFobPoints" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="958d671e-1462-4788-886b-caf47ed54436" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetFobPointsRequest>\r
+         <shar:wsVersion>?</shar:wsVersion>\r
+         <shar:id>?</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>?</shar:password>\r
+         <shar:productId>?</shar:productId>\r
+         <shar:localizationCountry>?</shar:localizationCountry>\r
+         <shar:localizationLanguage>?</shar:localizationLanguage>\r
+      </ns:GetFobPointsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getFobPoints"/></con:call></con:operation></con:interface><con:testSuite id="5ac45348-8328-477a-b13a-da6e1e7cb4c8" name="PricingAndConfigurationService"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="683e1687-ec10-47c0-8328-b88cec71955c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getAvailableCharges TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="6860b458-e9d0-41fd-a2ac-bc9c71eaa6e4" name="getAvailableCharges" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PricingAndConfigurationServiceBinding</con:interface><con:operation>getAvailableCharges</con:operation><con:request name="getAvailableCharges" id="5bebcd65-185e-4bf6-8261-3ce86fecb9f6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetAvailableChargesRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <!--Optional:-->\r
+         <shar:productId>${#TestCase#PRODID}</shar:productId>\r
+         <shar:localizationCountry>${#TestCase#COUNTRY}</shar:localizationCountry>\r
+         <shar:localizationLanguage>${#TestCase#LOCALE}</shar:localizationLanguage>\r
+      </ns:GetAvailableChargesRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="0dfd76e7-b69a-4d13-9727-de951cc6aa47" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="126ad745-4af6-471b-b6b3-a1bfefbd0f87" name="SOAP Response"/><con:assertion type="XPath Match" id="d26cbfd4-42df-45d0-8e90-3176e82b23ff" name="XPath Match"><con:configuration><path>declare namespace ns1='http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/';
+
+//ns1:code</path><content>${#TestCase#ERRORCODE}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getAvailableCharges" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="getAvailableChargesErrorTests" id="7749995b-a7c1-4711-bc22-62efabea273f"><con:settings/><con:config><script>${QUERY}</script></con:config></con:testStep><con:testStep type="request" id="55257921-4074-4f56-8dd9-4535c826b6ee" name="PositiceCaseofAvailableCharges" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PricingAndConfigurationServiceBinding</con:interface><con:operation>getAvailableCharges</con:operation><con:request name="PositiceCaseofAvailableCharges" id="5bebcd65-185e-4bf6-8261-3ce86fecb9f6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetAvailableChargesRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <!--Optional:-->\r
+         <shar:productId>${#TestCase#PRODID}</shar:productId>\r
+         <shar:localizationCountry>${#TestCase#COUNTRY}</shar:localizationCountry>\r
+         <shar:localizationLanguage>${#TestCase#LOCALE}</shar:localizationLanguage>\r
+      </ns:GetAvailableChargesRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="0dfd76e7-b69a-4d13-9727-de951cc6aa47" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="126ad745-4af6-471b-b6b3-a1bfefbd0f87" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getAvailableCharges" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="4bf85e37-8428-4335-87e0-c75e391a52fa" name="Sample"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PricingAndConfigurationServiceBinding</con:interface><con:operation>getAvailableCharges</con:operation><con:request name="Sample" id="5bebcd65-185e-4bf6-8261-3ce86fecb9f6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetAvailableChargesRequest>\r
+         <shar:wsVersion>1.0.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:productId>G200</shar:productId>\r
+         <shar:localizationCountry>CA</shar:localizationCountry>\r
+         <shar:localizationLanguage>en</shar:localizationLanguage>\r
+      </ns:GetAvailableChargesRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="0dfd76e7-b69a-4d13-9727-de951cc6aa47" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="126ad745-4af6-471b-b6b3-a1bfefbd0f87" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getAvailableCharges" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>VERSIONSTRING</con:name><con:value>1.0.0</con:value></con:property><con:property><con:name>ERRORCODE</con:name><con:value>125</con:value></con:property><con:property><con:name>USERID</con:name><con:value>19</con:value></con:property><con:property><con:name>PASSWORD</con:name><con:value>19</con:value></con:property><con:property><con:name>PRODID</con:name><con:value>d100</con:value></con:property><con:property><con:name>COUNTRY</con:name><con:value>CA</con:value></con:property><con:property><con:name>LOCALE</con:name><con:value>en</con:value></con:property></con:properties></con:testCase><con:testCase id="1724894a-4fff-422c-adab-cc75b717632d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getAvailableLocations TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="e75cb74f-42bc-44bc-ae5b-c56e79dc6616" name="getAvailableLocations" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PricingAndConfigurationServiceBinding</con:interface><con:operation>getAvailableLocations</con:operation><con:request name="getAvailableLocations" id="bfeed7e1-9660-4766-afac-cf1fffb74732"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetAvailableLocationsRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <shar:productId>${#TestCase#PRODID}</shar:productId>\r
+         <shar:localizationCountry>${#TestCase#COUNTRY}</shar:localizationCountry>\r
+         <shar:localizationLanguage>${#TestCase#LOCALE}</shar:localizationLanguage>\r
+      </ns:GetAvailableLocationsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="15dd5b7f-802f-4981-9bca-8fafb6cc0b5d" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="325f0037-0478-4b89-9e1f-44577717ca2c" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" id="e83d9bf9-a5bd-48ae-93fd-b7daa2e00c56" name="Not SOAP Fault"/><con:assertion type="XPath Match" id="44a97dde-7495-42e7-9563-d002d2a606c9" name="XPath Match"><con:configuration><path>declare namespace ns1='http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/';
+
+//ns1:code</path><content>${#TestCase#ERRORCODE}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getAvailableLocations" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="getAvailableLocationsErrorTests" id="de264446-9f7e-433f-aa14-9bc1648aff22"><con:settings/><con:config><script>//use to keep track of iterations when saving to files
+stepCount = 1
+
+//get the test case name and remove ' test case' from the end of it
+testName = testRunner.testCase.getName().substring(0, testRunner.testCase.getName().indexOf(" "))
+testSuite = testRunner.testCase.testSuite.getName().substring(0, testRunner.testCase.testSuite.getName().indexOf("Service"))
+log.info(testSuite)
+
+//delete old test results if they exist
+testDir = new File("C:\\"+testSuite+"(ABca)\\"+testName)
+if(testDir.exists()) {
+	testDir.deleteDir()
+}
+
+
+//test version
+String[] VERSION = ["",    "1",   "1.A", "*",   "123", "version"] as String[]
+String[] ERROR   = ["120", "125", "125", "125", "125", "125"] as String[]
+
+availLocationsReqTest(VERSION, ERROR, 'VERSIONSTRING')
+
+//reset version
+testRunner.testCase.setPropertyValue('VERSIONSTRING',"1.0.0")
+
+
+//test user ID
+String[] USER  = ["",    "1910", "jack", "*",   "Jill123"] as String[]
+	    ERROR = ["120", "105",  "105",  "105", "105"] as String[]
+
+availLocationsReqTest(USER, ERROR, 'USERID')
+
+//reset user ID
+testRunner.testCase.setPropertyValue('USERID',"19")
+
+
+//test password
+String[] PASS  = ["",    "20",  "pass", "a2b", "p@\$\$"] as String[]
+	    ERROR = ["110", "105", "105",  "105", "105"] as String[]
+
+availLocationsReqTest(PASS, ERROR, 'PASSWORD')
+
+//reset password
+testRunner.testCase.setPropertyValue('PASSWORD',"19")
+
+
+//test prod ID
+String[] PROD  = ["",    "20",  "abc", "123abc", "p@n7s"] as String[]
+	    ERROR = ["120", "130", "130", "130",    "130"] as String[]
+
+availLocationsReqTest(PROD, ERROR, 'PRODID')
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('PRODID',"d100")
+
+
+//test Country
+String[] COUNTRY  = ["",    "20",  "AA",  "1C",  "*@"] as String[]
+	    ERROR    = ["120", "125", "125", "125", "125"] as String[]
+
+availLocationsReqTest(COUNTRY, ERROR, 'COUNTRY')
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('COUNTRY',"CA")
+
+
+//test Locale
+String[] LOCALE   = ["",    "20",  "AA",  "1C",  "*@"] as String[]
+	    ERROR    = ["120", "125", "125", "125", "125"] as String[]
+
+availLocationsReqTest(LOCALE, ERROR, 'LOCALE')
+
+//reset Locale
+testRunner.testCase.setPropertyValue('LOCALE',"en")
+
+String[] LOC   = ["en", "fr"] as String[]
+
+positiveReqTest(LOC,'LOCALE')
+
+//reset Locale
+testRunner.testCase.setPropertyValue('LOCALE',"en")
+
+	//method that does the work
+	def availLocationsReqTest(String[] testData, String[] errorCodes, String propName)
+	{
+		String templatename='getAvailableLocations';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			testRunner.testCase.setPropertyValue('ERRORCODE',errorCodes[i])
+			String filename="Step_"+stepCount+"_"+propName
+			log.info("Testing "+propName+" "+testData[i]+" Error Code: "+context.expand('${#TestCase#ERRORCODE}'))
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+
+	def positiveReqTest(String[] testData, String propName)
+	{
+		String templatename='PositiveCasegetAvailableLocations';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			String filename="PositiveCase of Step_"+stepCount+"_"+propName
+			log.info("Testing Positive case of "+propName+" "+testData[i])
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+	//save the req and req to files
+	def saveToFile(String fileName, String templateName) 
+	{
+		File reqDir = new File(testDir.getAbsolutePath()+"\\Request")
+		File resDir = new File(testDir.getAbsolutePath()+"\\Response")
+		//create directories if they don't exist
+		if(!testDir.exists()) {
+			reqDir.mkdirs()
+			resDir.mkdirs()
+		}
+		//Request File
+		def myRequest=reqDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def request=context.expand('${'+templateName+'#Request}')
+		new File (myRequest).write(request,"UTF-8")
+		
+		//Response File
+		def myResponse=resDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def response=context.expand('${'+templateName+'#Response}')
+		new File (myResponse).write(response,"UTF-8")
+	}
+</script></con:config></con:testStep><con:testStep type="request" id="4785b02b-5659-4e13-946e-e3df1e460e9a" name="PositiveCasegetAvailableLocations" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PricingAndConfigurationServiceBinding</con:interface><con:operation>getAvailableLocations</con:operation><con:request name="PositiveCasegetAvailableLocations" id="bfeed7e1-9660-4766-afac-cf1fffb74732"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetAvailableLocationsRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <shar:productId>${#TestCase#PRODID}</shar:productId>\r
+         <shar:localizationCountry>${#TestCase#COUNTRY}</shar:localizationCountry>\r
+         <shar:localizationLanguage>${#TestCase#LOCALE}</shar:localizationLanguage>\r
+      </ns:GetAvailableLocationsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="15dd5b7f-802f-4981-9bca-8fafb6cc0b5d" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="325f0037-0478-4b89-9e1f-44577717ca2c" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" id="e83d9bf9-a5bd-48ae-93fd-b7daa2e00c56" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getAvailableLocations" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="4f1e4c51-f51c-4c3b-af7c-d43dd14fc9d4" name="Sample"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PricingAndConfigurationServiceBinding</con:interface><con:operation>getAvailableLocations</con:operation><con:request name="Sample" id="bfeed7e1-9660-4766-afac-cf1fffb74732"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetAvailableLocationsRequest>\r
+         <shar:wsVersion>1.0.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <shar:productId>G200</shar:productId>\r
+         <shar:localizationCountry>CA</shar:localizationCountry>\r
+         <shar:localizationLanguage>en</shar:localizationLanguage>\r
+      </ns:GetAvailableLocationsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="15dd5b7f-802f-4981-9bca-8fafb6cc0b5d" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="325f0037-0478-4b89-9e1f-44577717ca2c" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" id="e83d9bf9-a5bd-48ae-93fd-b7daa2e00c56" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getAvailableLocations" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>VERSIONSTRING</con:name><con:value>1.0.0</con:value></con:property><con:property><con:name>ERRORCODE</con:name><con:value>125</con:value></con:property><con:property><con:name>USERID</con:name><con:value>19</con:value></con:property><con:property><con:name>PASSWORD</con:name><con:value>19</con:value></con:property><con:property><con:name>PRODID</con:name><con:value>d100</con:value></con:property><con:property><con:name>COUNTRY</con:name><con:value>CA</con:value></con:property><con:property><con:name>LOCALE</con:name><con:value>en</con:value></con:property></con:properties></con:testCase><con:testCase id="ab96504f-9d6d-4959-935f-ca8cfbfb09b1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getConfigurationAndPricing TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="2d578029-9b0e-4386-8b57-d08c7ead7f39" name="getConfigurationAndPricing" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PricingAndConfigurationServiceBinding</con:interface><con:operation>getConfigurationAndPricing</con:operation><con:request name="getConfigurationAndPricing" id="04929902-d5c9-4bf6-a5e1-68cd69cc8493"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetConfigurationAndPricingRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <shar:productId>${#TestCase#PRODID}</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <shar:currency>${#TestCase#CURRENCY}</shar:currency>\r
+         <shar:fobId>${#TestCase#FOBID}</shar:fobId>\r
+         <shar:priceType>${#TestCase#PRICETYPE}</shar:priceType>\r
+         <shar:localizationCountry>${#TestCase#COUNTRY}</shar:localizationCountry>\r
+         <shar:localizationLanguage>${#TestCase#LOCALE}</shar:localizationLanguage>\r
+         <shar:configurationType>${#TestCase#CUSTOME}</shar:configurationType>\r
+      </ns:GetConfigurationAndPricingRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="72b31d07-1ae0-4a79-b873-fdb3a663b3f3" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="637941c0-3f30-4e29-aa56-ca1da420ebfd" name="SOAP Response"/><con:assertion type="XPath Match" id="1d6a42c0-925b-4c8a-a9aa-5f4c7b5bf681" name="XPath Match"><con:configuration><path>declare namespace ns1='http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/';
+
+//ns1:code</path><content>${#TestCase#ERRORCODE}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getConfigurationAndPricing" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="getConfigurationAndPricingErrorTests" id="f1414007-6d60-4465-95f9-da0a21e8efc8"><con:settings/><con:config><script>//use to keep track of iterations when saving to files
+stepCount = 1
+
+//get the test case name and remove ' test case' from the end of it
+testName = testRunner.testCase.getName().substring(0, testRunner.testCase.getName().indexOf(" "))
+testSuite = testRunner.testCase.testSuite.getName().substring(0, testRunner.testCase.testSuite.getName().indexOf("Service"))
+log.info(testSuite)
+
+//delete old test results if they exist
+testDir = new File("C:\\"+testSuite+"(ABca)\\"+testName)
+if(testDir.exists()) {
+	testDir.deleteDir()
+}
+
+
+//test version
+String[] VERSION = ["",    "1",   "1.A", "*",   "123", "version"] as String[]
+String[] ERROR   = ["120", "125", "125", "125", "125", "125"] as String[]
+
+availLocationsReqTest(VERSION, ERROR, 'VERSIONSTRING')
+
+//reset version
+testRunner.testCase.setPropertyValue('VERSIONSTRING',"1.0.0")
+
+
+//test user ID
+String[] USER  = ["",    "1910", "jack", "*",   "Jill123"] as String[]
+	    ERROR = ["120", "105",  "105",  "105", "105"] as String[]
+
+availLocationsReqTest(USER, ERROR, 'USERID')
+
+//reset user ID
+testRunner.testCase.setPropertyValue('USERID',"19")
+
+
+//test password
+String[] PASS  = ["",    "20",  "pass", "a2b", "p@\$\$"] as String[]
+	    ERROR = ["110", "105", "105",  "105", "105"] as String[]
+
+availLocationsReqTest(PASS, ERROR, 'PASSWORD')
+
+//reset password
+testRunner.testCase.setPropertyValue('PASSWORD',"19")
+
+
+//test prod ID
+String[] PROD  = ["",    "20",  "abc", "123abc", "p@n7s"] as String[]
+	    ERROR = ["120", "130", "130", "130",    "130"] as String[]
+
+availLocationsReqTest(PROD, ERROR, 'PRODID')
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('PRODID',"G800")
+
+//test currency
+String[] CURRENC  = ["",    "1910", "jack", "*",   "Jill123"] as String[]
+
+availLocationsInvalidReqTest(CURRENC,'CURRENCY')
+
+//reset currency
+testRunner.testCase.setPropertyValue('CURRENCY',"USD")
+
+//test FOBID
+String[] FOB  = ["",    "1910", "jack", "*",   "Jill123"] as String[]
+
+availLocationsInvalidReqTest(FOB,'FOBID')
+
+//reset FOBID
+testRunner.testCase.setPropertyValue('FOBID',"CC")
+
+//test priceType
+String[] PRICE  = ["",    "1910", "jack", "*",   "Jill123"] as String[]
+
+availLocationsInvalidReqTest(PRICE,'PRICETYPE')
+
+//reset priceType
+testRunner.testCase.setPropertyValue('PRICETYPE',"Customer")
+
+//test Country
+String[] COUNTRY  = ["",    "20",  "AA",  "1C",  "*@"] as String[]
+	    ERROR    = ["120", "125", "125", "125", "125"] as String[]
+
+availLocationsReqTest(COUNTRY, ERROR, 'COUNTRY')
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('COUNTRY',"US")
+
+
+//test Locale
+String[] LOCALE   = ["",    "20",  "AA",  "1C",  "*@"] as String[]
+	    ERROR    = ["120", "125", "125", "125", "125"] as String[]
+
+availLocationsReqTest(LOCALE, ERROR, 'LOCALE')
+
+//reset Locale
+testRunner.testCase.setPropertyValue('LOCALE',"en")
+
+//test CustomType
+String[] CUSTOM  = ["",    "1910", "jack", "*",   "Jill123"] as String[]
+
+availLocationsInvalidReqTest(CUSTOM,'CUSTOME')
+
+//reset CustomeType
+testRunner.testCase.setPropertyValue('CUSTOME',"Blank")
+
+//positive cases
+//test priceType
+String[] PRICE1  = ["Customer",    "list", "Net"] as String[]
+
+positiveTestcase(PRICE1,'PRICETYPE')
+
+testRunner.testCase.setPropertyValue('PRICETYPE',"Customer")
+
+//test languages
+String[] LOCALE1   = ["en",    "fr"] as String[]
+
+positiveTestcase(LOCALE1,'LOCALE')
+
+//reset Locale
+testRunner.testCase.setPropertyValue('LOCALE',"en")
+
+	//method that does the work
+	def availLocationsReqTest(String[] testData, String[] errorCodes, String propName)
+	{
+		String templatename='getConfigurationAndPricing';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			testRunner.testCase.setPropertyValue('ERRORCODE',errorCodes[i])
+			String filename="Step_"+stepCount+"_"+propName
+			log.info("Testing "+propName+" "+testData[i]+" Error Code: "+context.expand('${#TestCase#ERRORCODE}'))
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+
+ //using a different template for requests that don't throw an error code
+	def availLocationsInvalidReqTest(String[] testData, String propName)
+	{
+		String templatename='getConfigurationAndPricingInvalidMessage';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			String filename="Step_"+stepCount+"_"+propName
+			log.info("Testing "+propName+" "+testData[i])
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+
+
+
+def positiveTestcase(String[] testData, String propName)
+	{
+		String templatename='PositiveCaseforgetConfigurationAndPricing';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			String filename="Positive case of Step_"+stepCount+"_"+propName
+			log.info("Positive case for Testing "+propName+" "+testData[i])
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+
+	
+	//save the req and req to files
+	def saveToFile(String fileName, String templateName) 
+	{
+		File reqDir = new File(testDir.getAbsolutePath()+"\\Request")
+		File resDir = new File(testDir.getAbsolutePath()+"\\Response")
+		//create directories if they don't exist
+		if(!testDir.exists()) {
+			reqDir.mkdirs()
+			resDir.mkdirs()
+		}
+		//Request File
+		def myRequest=reqDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def request=context.expand('${'+templateName+'#Request}')
+		new File (myRequest).write(request,"UTF-8")
+		
+		//Response File
+		def myResponse=resDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def response=context.expand('${'+templateName+'#Response}')
+		new File (myResponse).write(response,"UTF-8")
+	}
+</script></con:config></con:testStep><con:testStep type="request" id="fb54a850-a6df-45c6-8394-8dbf4dbe6f69" name="getConfigurationAndPricingInvalidMessage" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PricingAndConfigurationServiceBinding</con:interface><con:operation>getConfigurationAndPricing</con:operation><con:request name="getConfigurationAndPricingInvalidMessage" id="04929902-d5c9-4bf6-a5e1-68cd69cc8493"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetConfigurationAndPricingRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <shar:productId>${#TestCase#PRODID}</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <shar:currency>${#TestCase#CURRENCY}</shar:currency>\r
+         <shar:fobId>${#TestCase#FOBID}</shar:fobId>\r
+         <shar:priceType>${#TestCase#PRICETYPE}</shar:priceType>\r
+         <shar:localizationCountry>${#TestCase#COUNTRY}</shar:localizationCountry>\r
+         <shar:localizationLanguage>${#TestCase#LOCALE}</shar:localizationLanguage>\r
+         <shar:configurationType>${#TestCase#CUSTOME}</shar:configurationType>\r
+      </ns:GetConfigurationAndPricingRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="72b31d07-1ae0-4a79-b873-fdb3a663b3f3" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="637941c0-3f30-4e29-aa56-ca1da420ebfd" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getConfigurationAndPricing" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="3e5583cd-1083-4e96-b2d8-8bf97c6ab2d1" name="PositiveCaseforgetConfigurationAndPricing" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PricingAndConfigurationServiceBinding</con:interface><con:operation>getConfigurationAndPricing</con:operation><con:request name="PositiveCaseforgetConfigurationAndPricing" id="04929902-d5c9-4bf6-a5e1-68cd69cc8493"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetConfigurationAndPricingRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <shar:productId>${#TestCase#PRODID}</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <shar:currency>${#TestCase#CURRENCY}</shar:currency>\r
+         <shar:fobId>${#TestCase#FOBID}</shar:fobId>\r
+         <shar:priceType>${#TestCase#PRICETYPE}</shar:priceType>\r
+         <shar:localizationCountry>${#TestCase#COUNTRY}</shar:localizationCountry>\r
+         <shar:localizationLanguage>${#TestCase#LOCALE}</shar:localizationLanguage>\r
+         <shar:configurationType>${#TestCase#CUSTOME}</shar:configurationType>\r
+      </ns:GetConfigurationAndPricingRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="72b31d07-1ae0-4a79-b873-fdb3a663b3f3" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="637941c0-3f30-4e29-aa56-ca1da420ebfd" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" id="b4496174-a04b-4e3c-b1ba-3513b82e6f2b" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getConfigurationAndPricing" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="6449d7d7-37a9-4e27-b768-56df620ea00c" name="Sample"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PricingAndConfigurationServiceBinding</con:interface><con:operation>getConfigurationAndPricing</con:operation><con:request name="Sample" id="04929902-d5c9-4bf6-a5e1-68cd69cc8493"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetConfigurationAndPricingRequest>\r
+         <shar:wsVersion>1.0.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <shar:currency>USD</shar:currency>\r
+         <shar:fobId>RH</shar:fobId>\r
+         <shar:priceType>Customer</shar:priceType>\r
+         <shar:localizationCountry>CA</shar:localizationCountry>\r
+         <shar:localizationLanguage>en</shar:localizationLanguage>\r
+         <shar:configurationType>decorated</shar:configurationType>\r
+      </ns:GetConfigurationAndPricingRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="72b31d07-1ae0-4a79-b873-fdb3a663b3f3" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="637941c0-3f30-4e29-aa56-ca1da420ebfd" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" id="b4496174-a04b-4e3c-b1ba-3513b82e6f2b" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getConfigurationAndPricing" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>VERSIONSTRING</con:name><con:value>1.0.0</con:value></con:property><con:property><con:name>ERRORCODE</con:name><con:value>125</con:value></con:property><con:property><con:name>USERID</con:name><con:value>19</con:value></con:property><con:property><con:name>PASSWORD</con:name><con:value>19</con:value></con:property><con:property><con:name>PRODID</con:name><con:value>G800</con:value></con:property><con:property><con:name>CURRENCY</con:name><con:value>USD</con:value></con:property><con:property><con:name>FOBID</con:name><con:value>CC</con:value></con:property><con:property><con:name>PRICETYPE</con:name><con:value>CC</con:value></con:property><con:property><con:name>COUNTRY</con:name><con:value>US</con:value></con:property><con:property><con:name>LOCALE</con:name><con:value>en</con:value></con:property><con:property><con:name>CUSTOME</con:name><con:value>Blank</con:value></con:property></con:properties></con:testCase><con:testCase id="474d93c0-6907-44dd-8b92-08e37e28eebb" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getDecorationColors TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="58828ec7-9a18-4a11-8f9e-10c5d06e4e20" name="getDecorationColors" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PricingAndConfigurationServiceBinding</con:interface><con:operation>getDecorationColors</con:operation><con:request name="getDecorationColors" id="10225264-be56-4055-a0d5-433df4fe24a6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetDecorationColorsRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <shar:locationId>${#TestCase#LOCID}</shar:locationId>\r
+         <shar:productId>${#TestCase#PRODID}</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:decorationId>${#TestCase#DECORATIONID}</shar:decorationId>\r
+         <shar:localizationCountry>${#TestCase#COUNTRY}</shar:localizationCountry>\r
+         <shar:localizationLanguage>${#TestCase#LOCALE}</shar:localizationLanguage>\r
+      </ns:GetDecorationColorsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="0c02621f-4600-4f9f-9d00-e4e17fc9f6a6" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="ab518bc3-11a1-441f-ad9b-7551ab4be06c" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="9c633b64-8e7f-4d38-b350-4a488102976d" name="SOAP Response"/><con:assertion type="XPath Match" id="4313615c-d7c0-4350-8389-7fbb5b4f3ca2" name="XPath Match"><con:configuration><path>declare namespace ns1='http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/';
+
+//ns1:code</path><content>${#TestCase#ERRORCODE}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getDecorationColors" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="getDecorationColorsErrorTests" id="a38777a0-ba3b-400f-88fc-e05107716705"><con:settings/><con:config><script>//use to keep track of iterations when saving to files
+stepCount = 1
+
+//get the test case name and remove ' test case' from the end of it
+testName = testRunner.testCase.getName().substring(0, testRunner.testCase.getName().indexOf(" "))
+testSuite = testRunner.testCase.testSuite.getName().substring(0, testRunner.testCase.testSuite.getName().indexOf("Service"))
+log.info(testSuite)
+
+//delete old test results if they exist
+testDir = new File("C:\\"+testSuite+"(ABca)\\"+testName)
+if(testDir.exists()) {
+	testDir.deleteDir()
+}
+
+
+//test version
+String[] VERSION = ["",    "1",   "1.A", "*",   "123", "version"] as String[]
+String[] ERROR   = ["120", "125", "125", "125", "125", "125"] as String[]
+
+availLocationsReqTest(VERSION, ERROR, 'VERSIONSTRING')
+
+//reset version
+testRunner.testCase.setPropertyValue('VERSIONSTRING',"1.0.0")
+
+
+//test user ID
+String[] USER  = ["",    "1910", "jack", "*",   "Jill123"] as String[]
+	    ERROR = ["120", "105",  "105",  "105", "105"] as String[]
+
+availLocationsReqTest(USER, ERROR, 'USERID')
+
+//reset user ID
+testRunner.testCase.setPropertyValue('USERID',"19")
+
+
+//test password
+String[] PASS  = ["",    "20",  "pass", "a2b", "p@\$\$"] as String[]
+	    ERROR = ["110", "105", "105",  "105", "105"] as String[]
+
+availLocationsReqTest(PASS, ERROR, 'PASSWORD')
+
+//reset password
+testRunner.testCase.setPropertyValue('PASSWORD',"19")
+
+//test Location ID
+//location ID is required, and is only numeric
+String[] LOCID   = ["207", ""] as String[]
+	    ERROR    = ["140", "120"] as String[]
+	    
+availLocationsReqTest(LOCID, ERROR, 'LOCID')
+
+String[] LOCAID   = ["AA",  "1C",  "*@"] as String[]
+
+availLocationsInvalidReqTest(LOCAID, 'LOCID')
+
+//reset location ID
+testRunner.testCase.setPropertyValue('LOCID','8')
+
+
+//test Decoration ID
+//decoration ID is not required, and only numeric
+String[] DECOID   = ["AA",  "1C",  "*@"] as String[]
+
+availLocationsInvalidReqTest(DECOID, 'DECORATIONID')
+
+//reset Decoration ID
+testRunner.testCase.setPropertyValue('DECORATIONID',"2")
+
+
+
+//test prod ID
+String[] PROD  = ["",    "20",  "abc", "123abc", "p@n7s"] as String[]
+	    ERROR = ["120", "130", "130", "130",    "130"] as String[]
+
+availLocationsReqTest(PROD, ERROR, 'PRODID')
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('PRODID',"d100")
+
+
+//test Country
+String[] COUNTRY  = ["",    "20",  "AA",  "1C",  "*@"] as String[]
+	    ERROR    = ["120", "125", "125", "125", "125"] as String[]
+
+availLocationsReqTest(COUNTRY, ERROR, 'COUNTRY')
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('COUNTRY',"CA")
+
+
+//test Locale
+String[] LOCALE   = ["",    "20",  "AA",  "1C",  "*@"] as String[]
+	    ERROR    = ["120", "125", "125", "125", "125"] as String[]
+
+availLocationsReqTest(LOCALE, ERROR, 'LOCALE')
+
+//reset Locale
+testRunner.testCase.setPropertyValue('LOCALE',"en")
+
+String[] LOC   = ["en",    "fr"] as String[]
+
+PositivecasegetDecorationColors(LOC, 'LOCALE')
+
+testRunner.testCase.setPropertyValue('LOCALE',"en")
+
+	//method that does the work
+	def availLocationsReqTest(String[] testData, String[] errorCodes, String propName)
+	{
+		String templatename='getDecorationColors';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			testRunner.testCase.setPropertyValue('ERRORCODE',errorCodes[i])
+			String filename="Step_"+stepCount+"_"+propName
+			log.info("Testing "+propName+" "+testData[i]+" Error Code: "+context.expand('${#TestCase#ERRORCODE}'))
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+
+ //using a different template for requests that don't throw an error code
+	def availLocationsInvalidReqTest(String[] testData, String propName)
+	{
+		String templatename='getDecorationColorsInvalidStringError';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			String filename="Step_"+stepCount+"_"+propName
+			log.info("Testing "+propName+" "+testData[i])
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+
+def PositivecasegetDecorationColors(String[] testData, String propName)
+	{
+		String templatename='PositiveCasegetDecorationColors';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			String filename="Positive case of Step_"+stepCount+"_"+propName
+			log.info("Positive case of Testing "+propName+" "+testData[i])
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+
+	
+	//save the req and req to files
+	def saveToFile(String fileName, String templateName) 
+	{
+		File reqDir = new File(testDir.getAbsolutePath()+"\\Request")
+		File resDir = new File(testDir.getAbsolutePath()+"\\Response")
+		//create directories if they don't exist
+		if(!testDir.exists()) {
+			reqDir.mkdirs()
+			resDir.mkdirs()
+		}
+		//Request File
+		def myRequest=reqDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def request=context.expand('${'+templateName+'#Request}')
+		new File (myRequest).write(request,"UTF-8")
+		
+		//Response File
+		def myResponse=resDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def response=context.expand('${'+templateName+'#Response}')
+		new File (myResponse).write(response,"UTF-8")
+	}
+</script></con:config></con:testStep><con:testStep type="request" id="1878c597-e33d-4897-8377-ee84fd1d59b1" name="getDecorationColorsInvalidStringError" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PricingAndConfigurationServiceBinding</con:interface><con:operation>getDecorationColors</con:operation><con:request name="getDecorationColorsInvalidStringError" id="10225264-be56-4055-a0d5-433df4fe24a6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetDecorationColorsRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <shar:locationId>${#TestCase#LOCID}</shar:locationId>\r
+         <shar:productId>${#TestCase#PRODID}</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:decorationId>${#TestCase#DECORATIONID}</shar:decorationId>\r
+         <shar:localizationCountry>${#TestCase#COUNTRY}</shar:localizationCountry>\r
+         <shar:localizationLanguage>${#TestCase#LOCALE}</shar:localizationLanguage>\r
+      </ns:GetDecorationColorsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="262fb806-041e-4734-9c7d-afc2f0cf2442" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="9ae94cfb-77dd-4d8e-bf79-47b1ec55c4c5" name="SOAP Response"/><con:assertion type="Not SOAP Fault Assertion" id="27691374-c3ca-4b02-a035-0c8b4da7ae21" name="SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getDecorationColors" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="getDecorationColorsNoDecoID" id="c90eafd5-711d-4db8-b3a4-b9e527123242"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PricingAndConfigurationServiceBinding</con:interface><con:operation>getDecorationColors</con:operation><con:request name="getDecorationColorsNoDecoID" id="4fad5d11-5ee4-48fb-85c1-b9bbc43b7569"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns:GetDecorationColorsRequest>
+         <shar:wsVersion>1.0.0</shar:wsVersion>
+         <shar:id>19</shar:id>
+         <!--Optional:-->
+         <shar:password>19</shar:password>
+         <shar:locationId>8</shar:locationId>
+         <shar:productId>d100</shar:productId>
+         <!--Optional:-->
+         <shar:decorationId></shar:decorationId>
+         <shar:localizationCountry>US</shar:localizationCountry>
+         <shar:localizationLanguage>en</shar:localizationLanguage>
+      </ns:GetDecorationColorsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="131f92ba-8cb7-47d9-8837-e3ee6b1951a7"/><con:assertion type="Schema Compliance" id="4c46029d-2c1c-4711-8cbd-405a804b45cc"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="914cd4d7-d356-4d06-9da4-2c831e48f9e6"/><con:assertion type="Valid HTTP Status Codes" id="098f33b8-d276-4aec-b5a1-f697b839e01f" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="b47d5c3e-33da-4433-af16-ab0b1ba1cd66" name="PositiveCasegetDecorationColors" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PricingAndConfigurationServiceBinding</con:interface><con:operation>getDecorationColors</con:operation><con:request name="PositiveCasegetDecorationColors" id="10225264-be56-4055-a0d5-433df4fe24a6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetDecorationColorsRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <shar:locationId>${#TestCase#LOCID}</shar:locationId>\r
+         <shar:productId>${#TestCase#PRODID}</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:decorationId>${#TestCase#DECORATIONID}</shar:decorationId>\r
+         <shar:localizationCountry>${#TestCase#COUNTRY}</shar:localizationCountry>\r
+         <shar:localizationLanguage>${#TestCase#LOCALE}</shar:localizationLanguage>\r
+      </ns:GetDecorationColorsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="262fb806-041e-4734-9c7d-afc2f0cf2442" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="9ae94cfb-77dd-4d8e-bf79-47b1ec55c4c5" name="SOAP Response"/><con:assertion type="Not SOAP Fault Assertion" id="27691374-c3ca-4b02-a035-0c8b4da7ae21" name="SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getDecorationColors" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="f9776012-f05e-45f3-b425-3fd3a8122dfb" name="Sample"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PricingAndConfigurationServiceBinding</con:interface><con:operation>getDecorationColors</con:operation><con:request name="Sample" id="10225264-be56-4055-a0d5-433df4fe24a6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetDecorationColorsRequest>\r
+         <shar:wsVersion>1.0.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <shar:locationId>3</shar:locationId>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:decorationId></shar:decorationId>\r
+         <shar:localizationCountry>CA</shar:localizationCountry>\r
+         <shar:localizationLanguage>en</shar:localizationLanguage>\r
+      </ns:GetDecorationColorsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="262fb806-041e-4734-9c7d-afc2f0cf2442" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="9ae94cfb-77dd-4d8e-bf79-47b1ec55c4c5" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getDecorationColors" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>VERSIONSTRING</con:name><con:value>1.0.0</con:value></con:property><con:property><con:name>ERRORCODE</con:name><con:value>125</con:value></con:property><con:property><con:name>USERID</con:name><con:value>19</con:value></con:property><con:property><con:name>PASSWORD</con:name><con:value>19</con:value></con:property><con:property><con:name>LOCATIONID</con:name><con:value>8</con:value></con:property><con:property><con:name>LOCID</con:name><con:value>8</con:value></con:property><con:property><con:name>DECORATIONID</con:name><con:value>2</con:value></con:property><con:property><con:name>PRODID</con:name><con:value>d100</con:value></con:property><con:property><con:name>COUNTRY</con:name><con:value>US</con:value></con:property><con:property><con:name>LOCALE</con:name><con:value>en</con:value></con:property></con:properties></con:testCase><con:testCase id="63cef66f-a578-4cb5-846a-c239c0e883db" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getFobPoints TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="e31c72bf-813b-428c-8679-9f8bb5b23ea7" name="getFobPoints" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PricingAndConfigurationServiceBinding</con:interface><con:operation>getFobPoints</con:operation><con:request name="getFobPoints" id="4d44b847-0876-49f0-8e0e-02b2540ba3f3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetFobPointsRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <shar:productId>${#TestCase#PRODID}</shar:productId>\r
+         <shar:localizationCountry>${#TestCase#COUNTRY}</shar:localizationCountry>\r
+         <shar:localizationLanguage>${#TestCase#LOCALE}</shar:localizationLanguage>\r
+      </ns:GetFobPointsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="XPath Match" id="104d68fa-cff2-4877-9de9-3a01bc327b54" name="XPath Match"><con:configuration><path>declare namespace ns1='http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/';
+
+//ns1:code</path><content>${#TestCase#ERRORCODE}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Schema Compliance" id="57184ca5-e213-45c7-8468-2f9c2d946aab" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="d7feb13d-b219-4540-b7f1-8e8c6c173cce" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="9900ced2-002c-4b13-8647-e17ccb90317c" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getFobPoints" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="getFobPointsErrorTests" id="b5560abf-f77e-40b3-beca-93c36dc51c69"><con:settings/><con:config><script>//use to keep track of iterations when saving to files
+stepCount = 1
+
+//get the test case name and remove ' test case' from the end of it
+testName = testRunner.testCase.getName().substring(0, testRunner.testCase.getName().indexOf(" "))
+testSuite = testRunner.testCase.testSuite.getName().substring(0, testRunner.testCase.testSuite.getName().indexOf("Service"))
+log.info(testSuite)
+
+//delete old test results if they exist
+testDir = new File("C:\\"+testSuite+"(ABca)\\"+testName)
+if(testDir.exists()) {
+	testDir.deleteDir()
+}
+
+
+//test version
+String[] VERSION = ["",    "1",   "1.A", "*",   "123", "version"] as String[]
+String[] ERROR   = ["120", "125", "125", "125", "125", "125"] as String[]
+
+availLocationsReqTest(VERSION, ERROR, 'VERSIONSTRING')
+
+//reset version
+testRunner.testCase.setPropertyValue('VERSIONSTRING',"1.0.0")
+
+
+//test user ID
+String[] USER  = ["",    "1910", "jack", "*",   "Jill123"] as String[]
+	    ERROR = ["120", "105",  "105",  "105", "105"] as String[]
+
+availLocationsReqTest(USER, ERROR, 'USERID')
+
+//reset user ID
+testRunner.testCase.setPropertyValue('USERID',"19")
+
+
+//test password
+String[] PASS  = ["",    "20",  "pass", "a2b", "p@\$\$"] as String[]
+	    ERROR = ["110", "105", "105",  "105", "105"] as String[]
+
+availLocationsReqTest(PASS, ERROR, 'PASSWORD')
+
+//reset password
+testRunner.testCase.setPropertyValue('PASSWORD',"19")
+
+
+
+//test prod ID
+String[] PROD  = ["20",  "abc", "123abc", "p@n7s"] as String[]
+	    ERROR = ["130", "130", "130",    "130"] as String[]
+
+availLocationsReqTest(PROD, ERROR, 'PRODID')
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('PRODID',"d100")
+
+
+//test Country
+String[] COUNTRY  = ["",    "20",  "AA",  "1C",  "*@"] as String[]
+	    ERROR    = ["120", "125", "125", "125", "125"] as String[]
+
+availLocationsReqTest(COUNTRY, ERROR, 'COUNTRY')
+
+//reset Country
+testRunner.testCase.setPropertyValue('COUNTRY',"CA")
+
+
+//test Locale
+String[] LOCALE   = ["",    "20",  "AA",  "1C",  "*@"] as String[]
+	    ERROR    = ["120", "125", "125", "125", "125"] as String[]
+
+availLocationsReqTest(LOCALE, ERROR, 'LOCALE')
+
+//reset Locale
+testRunner.testCase.setPropertyValue('LOCALE',"en")
+
+String[] PRODUCT  = [""] as String[]
+
+positiveCaseTest(PRODUCT,'PRODID')
+
+testRunner.testCase.setPropertyValue('PRODID',"d100")
+
+String[] LOC1   = ["en",    "fr"] as String[]
+
+positiveCaseTest(LOC1,'LOCALE')
+
+testRunner.testCase.setPropertyValue('LOCALE',"en")
+
+	//method that does the work
+	def availLocationsReqTest(String[] testData, String[] errorCodes, String propName)
+	{
+		String templatename='getFobPoints';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			testRunner.testCase.setPropertyValue('ERRORCODE',errorCodes[i])
+			String filename="Step_"+stepCount+"_"+propName
+			log.info("Testing "+propName+" "+testData[i]+" Error Code: "+context.expand('${#TestCase#ERRORCODE}'))
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+
+ //using a different template for requests that don't throw an error code
+	def availLocationsInvalidReqTest(String[] testData, String propName)
+	{
+		String templatename='getDecorationColorsInvalidStringError';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			String filename="Step_"+stepCount+"_"+propName
+			log.info("Testing "+propName+" "+testData[i])
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+
+def positiveCaseTest(String[] testData, String propName)
+	{
+		String templatename='PositiveCaseOfFobPoints';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			String filename="Positive case of Step_"+stepCount+"_"+propName
+			log.info("Positive case Testing of "+propName+" "+testData[i])
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+	
+	//save the req and req to files
+	def saveToFile(String fileName, String templateName) 
+	{
+		File reqDir = new File(testDir.getAbsolutePath()+"\\Request")
+		File resDir = new File(testDir.getAbsolutePath()+"\\Response")
+		//create directories if they don't exist
+		if(!testDir.exists()) {
+			reqDir.mkdirs()
+			resDir.mkdirs()
+		}
+		//Request File
+		def myRequest=reqDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def request=context.expand('${'+templateName+'#Request}')
+		new File (myRequest).write(request,"UTF-8")
+		
+		//Response File
+		def myResponse=resDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def response=context.expand('${'+templateName+'#Response}')
+		new File (myResponse).write(response,"UTF-8")
+	}
+</script></con:config></con:testStep><con:testStep type="request" id="5ec497a4-a6fe-497b-add9-51bdb28149d2" name="PositiveCaseOfFobPoints" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PricingAndConfigurationServiceBinding</con:interface><con:operation>getFobPoints</con:operation><con:request name="PositiveCaseOfFobPoints" id="4d44b847-0876-49f0-8e0e-02b2540ba3f3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetFobPointsRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <shar:productId>${#TestCase#PRODID}</shar:productId>\r
+         <shar:localizationCountry>${#TestCase#COUNTRY}</shar:localizationCountry>\r
+         <shar:localizationLanguage>${#TestCase#LOCALE}</shar:localizationLanguage>\r
+      </ns:GetFobPointsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="57184ca5-e213-45c7-8468-2f9c2d946aab" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="d7feb13d-b219-4540-b7f1-8e8c6c173cce" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="9900ced2-002c-4b13-8647-e17ccb90317c" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getFobPoints" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="f0d58b8d-8170-4928-85bf-1c358bd231c9" name="Sample"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PricingAndConfigurationServiceBinding</con:interface><con:operation>getFobPoints</con:operation><con:request name="Sample" id="4d44b847-0876-49f0-8e0e-02b2540ba3f3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/productConfig/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetFobPointsRequest>\r
+         <shar:wsVersion>1.0.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <shar:productId>G200</shar:productId>\r
+         <shar:localizationCountry>CA</shar:localizationCountry>\r
+         <shar:localizationLanguage>en</shar:localizationLanguage>\r
+      </ns:GetFobPointsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="57184ca5-e213-45c7-8468-2f9c2d946aab" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="d7feb13d-b219-4540-b7f1-8e8c6c173cce" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="9900ced2-002c-4b13-8647-e17ccb90317c" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getFobPoints" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>VERSIONSTRING</con:name><con:value>1.0.0</con:value></con:property><con:property><con:name>ERRORCODE</con:name><con:value>125</con:value></con:property><con:property><con:name>USERID</con:name><con:value>19</con:value></con:property><con:property><con:name>PASSWORD</con:name><con:value>19</con:value></con:property><con:property><con:name>PRODID</con:name><con:value>d100</con:value></con:property><con:property><con:name>COUNTRY</con:name><con:value>CA</con:value></con:property><con:property><con:name>LOCALE</con:name><con:value>en</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

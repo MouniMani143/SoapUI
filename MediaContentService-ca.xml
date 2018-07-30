@@ -1,0 +1,1103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="09e63182-6937-4b1b-8195-870288ae8245" activeEnvironment="Default" name="Media_Content_Service_AB-ca" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="3f541952-578e-45b8-a38d-6dbbe8f4f621" wsaVersion="NONE" name="MediaContentServiceBinding" type="wsdl" bindingName="{http://www.promostandards.org/WSDL/MediaService/1.0.0/}MediaContentServiceBinding" soapVersion="1_1" anonymous="optional" definition="http://devservices.alphabroder.ca/media/wsdl/MediaContentService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://devservices.alphabroder.ca/media/wsdl/MediaContentService.wsdl"><con:part><con:url>http://devservices.alphabroder.ca/media/wsdl/MediaContentService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="Media_v1_0_0" targetNamespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" schemaLocation="GetMediaContentRequest.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" schemaLocation="GetMediaContentResponse.xsd"/>
+    </xsd:schema>
+    <!--<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" schemaLocation="GetMediaFeedRequest.xsd"/>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" schemaLocation="GetMediaFeedResponse.xsd"/>
+		</xsd:schema>-->
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" schemaLocation="GetMediaDateModifiedRequest.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" schemaLocation="GetMediaDateModifiedResponse.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetMediaContentResponseMessage">
+    <wsdl:part name="GetMediaContentResponse" element="tns:GetMediaContentResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetMediaContentRequestMessage">
+    <wsdl:part name="GetMediaContentRequest" element="tns:GetMediaContentRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetMediaDateModifiedRequestMessage">
+    <wsdl:part name="parameter" element="tns:GetMediaDateModifiedRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetMediaDateModifiedResponseMessage">
+    <wsdl:part name="parameter" element="tns:GetMediaDateModifiedResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="MediaContentService">
+    <wsdl:operation name="getMediaContent">
+      <wsdl:input message="tns:GetMediaContentRequestMessage"/>
+      <wsdl:output message="tns:GetMediaContentResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getMediaDateModified">
+      <wsdl:input message="tns:GetMediaDateModifiedRequestMessage"/>
+      <wsdl:output message="tns:GetMediaDateModifiedResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MediaContentServiceBinding" type="tns:MediaContentService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getMediaContent">
+      <soap:operation soapAction="getMediaContent" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMediaDateModified">
+      <soap:operation soapAction="urn:getMediaDateModified" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MediaContentService">
+    <wsdl:port name="MediaServiceBinding" binding="tns:MediaContentServiceBinding">
+      <soap:address location="https://devservices.alphabroder.ca/media/service/index.php"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://devservices.alphabroder.ca/media/wsdl/GetMediaContentRequest.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2016 (x64) (http://www.altova.com) by Network Admin (Leedsworld Inc.)-->
+<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/" schemaLocation="SharedMediaObjects.xsd"/>
+  <xsd:element name="GetMediaContentRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:wsVersion"/>
+        <xsd:element ref="ns2:id"/>
+        <xsd:element ref="ns2:password" minOccurs="0"/>
+        <xsd:element ref="ns2:cultureName" minOccurs="0"/>
+        <xsd:element ref="ns2:mediaType"/>
+        <xsd:element ref="ns2:productId"/>
+        <xsd:element ref="ns2:partId" minOccurs="0"/>
+        <xsd:element name="classType" type="xsd:int" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The part ID associated to the product ID.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://devservices.alphabroder.ca/media/wsdl/SharedMediaObjects.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">
+  <xsd:simpleType name="mediaTypeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Image"/>
+      <xsd:enumeration value="Video"/>
+      <xsd:enumeration value="Audio"/>
+      <xsd:enumeration value="Document"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="sourceTypeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Web"/>
+      <xsd:enumeration value="Ftp"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="wsVersion">
+    <xsd:annotation>
+      <xsd:documentation>The Standard Version of the Web Service being referenced</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="id">
+    <xsd:annotation>
+      <xsd:documentation>The customer Id or any other agreed upon Id.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="password">
+    <xsd:annotation>
+      <xsd:documentation>The password associated with the Id</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="cultureName" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>The language culture name.  This tailors the response to a specific culture. i.e. language, units of measure, etc. Null assumes en-US.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="errorMessage">
+    <xsd:annotation>
+      <xsd:documentation>Response for any error requiring notification to requestor</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="code" type="xsd:int">
+          <xsd:annotation>
+            <xsd:documentation>Response for any error requiring notification to requestor</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="description">
+          <xsd:annotation>
+            <xsd:documentation>Response for any error requiring notification to requestor</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="256"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="changeTimeStamp" type="xsd:dateTime">
+    <xsd:annotation>
+      <xsd:documentation>The date time since last change in UTC</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="productId">
+    <xsd:annotation>
+      <xsd:documentation>The product Id</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="partId">
+    <xsd:annotation>
+      <xsd:documentation>The part Id associated to the product ID.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="mediaType" type="ns2:mediaTypeType">
+    <xsd:annotation>
+      <xsd:documentation>The type of media</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://devservices.alphabroder.ca/media/wsdl/GetMediaContentResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/" schemaLocation="SharedMediaObjects.xsd"/>
+  <xsd:element name="MediaContent">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:productId"/>
+        <xsd:element ref="ns2:partId" minOccurs="0"/>
+        <xsd:element name="url">
+          <xsd:annotation>
+            <xsd:documentation>The URL of the media location.  Any valid URL can be returned including prefixes like http and ftp.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="1024"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element ref="ns2:mediaType"/>
+        <xsd:element name="ClassTypeArray">
+          <xsd:annotation>
+            <xsd:documentation>An array of ClassType objects that classify of the media.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:ClassType" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="fileSize" type="xsd:double" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The file size</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="width" type="xsd:decimal" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Width</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="height" type="xsd:decimal" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Height</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="dpi" type="xsd:int" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Dots per inch</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="color" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The color description</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="256"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="DecorationArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>An array of decoration objects that describe the decorations associated with the media</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:Decoration" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="LocationArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>An array of location objects that describe the locations associated with the media</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:Location" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="decorationId" type="xsd:int" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Deprecated.  Use DecorationArray.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="description" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Information about the media</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="1024"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="singlePart" type="xsd:boolean">
+          <xsd:annotation>
+            <xsd:documentation>Identifies whether the partId one to one corresponds with the image</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element ref="ns2:changeTimeStamp" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ClassType">
+    <xsd:annotation>
+      <xsd:documentation>The type of media</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="classTypeId" type="xsd:int">
+          <xsd:annotation>
+            <xsd:documentation>The classification of the media</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="classTypeName">
+          <xsd:annotation>
+            <xsd:documentation>The classification short name</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Decoration">
+    <xsd:annotation>
+      <xsd:documentation>The type of media</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="decorationId" type="xsd:int">
+          <xsd:annotation>
+            <xsd:documentation>The decoration id associated with the media</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="decorationName">
+          <xsd:annotation>
+            <xsd:documentation>The name of the decoration associated with the id</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:maxLength value="64"/>
+              <xsd:minLength value="1"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Location">
+    <xsd:annotation>
+      <xsd:documentation>The type of media</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="locationId" type="xsd:int">
+          <xsd:annotation>
+            <xsd:documentation>The location id associated with the media</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="locationName">
+          <xsd:annotation>
+            <xsd:documentation>The name of the location associated with the id</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetMediaContentResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="MediaContentArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>An array of different selections the product is offered and can be provided as a filter to Inventory Service getInventoryLevels.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:MediaContent" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="ns2:errorMessage" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://devservices.alphabroder.ca/media/wsdl/GetMediaDateModifiedRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/" schemaLocation="SharedMediaObjects.xsd"/>
+  <xsd:element name="GetMediaDateModifiedRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:wsVersion"/>
+        <xsd:element ref="ns2:id"/>
+        <xsd:element ref="ns2:password" minOccurs="0"/>
+        <xsd:element ref="ns2:cultureName" minOccurs="0"/>
+        <xsd:element ref="ns2:changeTimeStamp"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://devservices.alphabroder.ca/media/wsdl/GetMediaDateModifiedResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/" schemaLocation="SharedMediaObjects.xsd"/>
+  <xsd:element name="MediaDateModified">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:productId"/>
+        <xsd:element ref="ns2:partId"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetMediaDateModifiedResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="MediaDateModifiedArray" minOccurs="0">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:MediaDateModified" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="ns2:errorMessage" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint></con:endpoints><con:operation id="b7911ffc-2af7-4727-b46d-7552597c4921" isOneWay="false" action="getMediaContent" name="getMediaContent" bindingOperationName="getMediaContent" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="70cb2d25-58b5-4bb5-bee4-ffa614fb80ed" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>Image</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>1007</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getMediaContent"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="040bfc62-c46c-47fc-a790-3c57b5944ea9" isOneWay="false" action="urn:getMediaDateModified" name="getMediaDateModified" bindingOperationName="getMediaDateModified" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3e5a9b58-5ffa-422d-92bb-6f555e1fc764" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaDateModifiedRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName>en</shar:cultureName>\r
+         <shar:changeTimeStamp>?</shar:changeTimeStamp>\r
+      </ns:GetMediaDateModifiedRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:getMediaDateModified"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="285f3878-24f2-4584-bdef-79ee06be0e80" name="getMediaContent"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="d49892a9-9751-4aa5-b285-c1e61421d41c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media,prodid" searchProperties="true"><con:settings/><con:testStep type="request" id="381efa9e-9c1d-4e78-bb04-5c8f0e3cfb58" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>${Properties#user}</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>${Properties#pass}</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>Image</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType></ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="properties" name="Properties" id="f2845acb-982f-488a-9bc3-2140b572f5c1"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>user</con:name><con:value/></con:property><con:property><con:name>pass</con:name><con:value/></con:property><con:property><con:name>Count</con:name><con:value>0</con:value></con:property><con:property><con:name>Next</con:name><con:value/></con:property><con:property><con:name>Total</con:name></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="Loop step" id="6b3f18ea-2210-4efd-a43e-ec0fcd1d11ce"><con:settings/><con:config><script>def myTestCase = context.testCase
+ 
+def runner
+ 
+propTestStep = myTestCase.getTestStepByName("Properties") // get the Property TestStep
+ 
+endLoop = propTestStep.getPropertyValue("StopLoop").toString()
+ 
+if (endLoop.toString() == "T" || endLoop.toString()=="True" || endLoop.toString()=="true")
+ 
+{
+ 
+log.info ("Exit Groovy Data Source Looper")
+ 
+assert true
+ 
+}
+ 
+else
+ 
+{
+ 
+testRunner.gotoStepByName("data driver") //setStartStep
+ 
+}</script></con:config></con:testStep><con:loadTest id="d9bf7ba0-ab66-4e72-8f94-706904de62df" name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>40</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase id="72022721-c76e-467d-b924-864911608c8b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media,prodid,partid" searchProperties="true"><con:settings/><con:testStep type="request" id="2229e8f5-5bd0-4e27-a897-2bf1755eafe5" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>Image</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>B21058082</shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType></ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="a139c235-edd3-459d-b8d3-410fba1f1df6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media,prodid,partid,classtyope(1001)" searchProperties="true"><con:settings/><con:testStep type="request" id="e4735c59-d785-46da-9c63-be2ef48b62a3" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>Image</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>B21058082</shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>1007</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="643ed9eb-0478-49d6-902e-1c72c699e9ee" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(Img),changing prodid,partid,classtype(1007)" searchProperties="true"><con:settings/><con:testStep type="request" id="c151f90c-10d0-4560-973e-4b70ff1f8931" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>Image</shar:mediaType>\r
+         <shar:productId>G200</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>B11107528</shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>1007</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="e2d19dd5-c7fe-42d0-bf88-89c9301345d5" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(Img),changing prodid,partid,classtype(1008)" searchProperties="true"><con:settings/><con:testStep type="request" id="441e9ab1-eaa5-4058-9fb9-a68631166524" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>Image</shar:mediaType>\r
+         <shar:productId>G200</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>B11107528</shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>1008</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="7256f6cf-6eb7-4ffe-a12a-d69032ab220c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(Img),changing prodid,partid,classtype(1009)" searchProperties="true"><con:settings/><con:testStep type="request" id="f98eabfb-4678-4ca3-85be-f97a69ed41e9" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>Image</shar:mediaType>\r
+         <shar:productId>G200</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>B11107528</shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>1009</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="e6109ba3-ff60-4bb4-a2af-39b4b87c59c9" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(Img),changing prodid,partid,classtype(1010)" searchProperties="true"><con:settings/><con:testStep type="request" id="93f61e80-a28e-4e9f-9b62-a50a9b3bed8a" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>Image</shar:mediaType>\r
+         <shar:productId>G540</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>B15207527</shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>1010</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="018ee77b-c06a-463f-a8c1-b61f8128cdaa" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(Img),changing prodid,classtype(None)" searchProperties="true"><con:settings/><con:testStep type="request" id="4c701568-b1dc-4462-9817-3c57b1fdac62" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>Image</shar:mediaType>\r
+         <shar:productId>980</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>None</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="35ab0240-87c2-47be-abd6-549779c6b512" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(Img),changing prodid,classtype(Alpha)" searchProperties="true"><con:settings/><con:testStep type="request" id="929c23aa-eaef-442f-bdce-3ecc51f8386e" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>Image</shar:mediaType>\r
+         <shar:productId>6010</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>Alpha</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="3adfbde2-68ec-44e3-86a5-4bb39a3791fe" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(Img),changing prodid,partid,classtype(2000)" searchProperties="true"><con:settings/><con:testStep type="request" id="6473e721-e61f-46bd-85c7-6c9a676f99d4" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>Image</shar:mediaType>\r
+         <shar:productId>N6210</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>B062NL437</shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>2000</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="7915bae7-4ff4-46e2-830b-423b422f73a4" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(document),changing prodid" searchProperties="true"><con:settings/><con:testStep type="request" id="a40d59a2-e052-4fe2-8c04-4a26d68cfd13" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>document</shar:mediaType>\r
+         <shar:productId>G200</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType></ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="da110fe5-0098-4781-86a6-bf9dffd71447" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(document),changing prodid,partid" searchProperties="true"><con:settings/><con:testStep type="request" id="381cb711-0a17-47da-bbf6-8f367965b037" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>document</shar:mediaType>\r
+         <shar:productId>N6210</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>B062NL437</shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType></ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="d4d6998d-b428-4839-ab80-7a50f320a79a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(document),changing prodid,partid,classtype(4000)" searchProperties="true"><con:settings/><con:testStep type="request" id="8f3e2ef0-2d79-4853-922a-6c2eea8e4aae" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>document</shar:mediaType>\r
+         <shar:productId>N6210</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>B062NL437</shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>4000</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="34d4a0b8-3239-41c5-bc19-bf90aa6d18fa" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(document),changing prodid,partid,classtype(4002)" searchProperties="true"><con:settings/><con:testStep type="request" id="b057f080-e14c-4bf4-b5f0-0cb88821c64b" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>document</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>B21058082</shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>4002</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="6133c63b-8f1d-4ff5-90f9-3de6a77717b0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(document),changing prodid,partid,classtype(4005)" searchProperties="true"><con:settings/><con:testStep type="request" id="80779196-50cc-4343-a6db-1da1057d92d7" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>document</shar:mediaType>\r
+         <shar:productId>G728</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>B12707007</shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>4005</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="ecd03315-a953-4222-810d-9fce4acb911c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(document),changing prodid,partid,classtype(None)" searchProperties="true"><con:settings/><con:testStep type="request" id="8a209385-2e13-4f72-b3e5-f3ade1503c32" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>document</shar:mediaType>\r
+         <shar:productId>G728</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>B12707007</shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>None</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="86f51cc4-87ee-475c-9181-039532ffbc45" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(document),changing prodid,partid,classtype(Alpha)" searchProperties="true"><con:settings/><con:testStep type="request" id="5b490c93-d2c6-447c-bc83-fd167e7159ee" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>document</shar:mediaType>\r
+         <shar:productId>G728</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>B12707007</shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>Alpha</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="92715489-d41f-4047-812e-21a891a44fed" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(video),changing prodid" searchProperties="true"><con:settings/><con:testStep type="request" id="5829fd17-d1f2-4215-955a-b2954c037de4" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>video</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType></ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="05b383a3-e2b3-4c15-bdd6-690023b2ce04" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(video),changing prodid,partid" searchProperties="true"><con:settings/><con:testStep type="request" id="554e3988-e7d8-4671-8b8d-834674c1f66b" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>video</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>B21058016</shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType></ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="deb8f0aa-87ea-4c81-ab5f-467a539f2e05" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(video),changing prodid,partid,classtype(2000)" searchProperties="true"><con:settings/><con:testStep type="request" id="790f16d7-cb82-423f-9567-c9918da94031" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>video</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>B21058016</shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>2000</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="7e60a37a-c046-40a5-b795-4d24c0aa58e8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(video),changing prodid,partid,classtype(None)" searchProperties="true"><con:settings/><con:testStep type="request" id="5806a5a9-fc13-4a32-9ebe-6f0f679e192b" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>video</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>B21058016</shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>None</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="93df68ff-8344-4592-9dd9-70e9e17907eb" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="valid-ver,id,pass,media(video),changing prodid,classtype(Alpha)" searchProperties="true"><con:settings/><con:testStep type="request" id="f20a68b2-4909-41de-a901-5ef787e5d054" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>video</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>Alpha</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="bc079225-ac8c-4379-8ca6-76d46d053e17" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="empty-password" searchProperties="true"><con:settings/><con:testStep type="request" id="25bb0960-cbd9-40a3-b3cf-7763c90e9d47" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password></shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>video</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>Alpha</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="7443a735-3e0f-475d-b9f8-e88c1cdab794" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Wrong-version" searchProperties="true"><con:settings/><con:testStep type="request" id="b27cc078-59a4-41fc-a5a7-fe46b5f30153" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>video</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType></ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="a14feb3b-f1f2-4194-a7ab-e125fe0d2e83" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="empty-version" searchProperties="true"><con:settings/><con:testStep type="request" id="9026c68b-879d-4fce-9832-12c20918daba" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion></shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>video</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType></ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="b310627a-a76b-4af6-b3e7-7bd034b6ce17" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="wrong-id" searchProperties="true"><con:settings/><con:testStep type="request" id="410881c5-ae85-4124-adb1-fe9967a17bad" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>1</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>video</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType></ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="d5d8b8e6-ea8c-4c73-a4da-beab191a3264" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="empty-id" searchProperties="true"><con:settings/><con:testStep type="request" id="08f0eac7-c5af-44ac-bd19-39c301c9ecdd" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id></shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>video</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType></ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="e5fcf2e4-aada-4ab4-a732-0ab0c1ce47e0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="wrong-pwd" searchProperties="true"><con:settings/><con:testStep type="request" id="3253addb-4dd5-45d1-b0ab-81c771b47e62" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>1</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>video</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType></ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="0808cbcc-4ce2-421b-a776-625997e14988" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="wrong-media" searchProperties="true"><con:settings/><con:testStep type="request" id="70a999a4-343f-4c16-ad5f-6a7b1c5cfc12" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>vid</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType></ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="5076ef1c-2e48-4b8f-8b04-da27ebc006e4" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="empty -media" searchProperties="true"><con:settings/><con:testStep type="request" id="015de90a-5a5e-4d4d-a236-dfa5ac2fb453" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType></shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType></ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="9f42301e-46bd-4588-921b-6137a4d078af" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="wrong-productid" searchProperties="true"><con:settings/><con:testStep type="request" id="4e3c2ee4-7abd-4470-858e-92b59d34c024" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>video</shar:mediaType>\r
+         <shar:productId>D</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType></ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="8223f900-612e-4163-aa1a-2bdf273dba37" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="empty-productid" searchProperties="true"><con:settings/><con:testStep type="request" id="467bb408-24cf-4094-b742-26ab476fd376" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>video</shar:mediaType>\r
+         <shar:productId></shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType></ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="1027f1f6-9a86-4807-8285-f5793d44e92c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="wrong-partid" searchProperties="true"><con:settings/><con:testStep type="request" id="7ebe00a1-8003-4aac-8190-8c3449d0b489" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>video</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>12345</shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType></ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="53989fcf-0d82-4610-b148-80373f9556ef" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="wrong-classtype" searchProperties="true"><con:settings/><con:testStep type="request" id="060dcfda-84f7-46e4-afe0-d308f9d19666" name="getMediaContent"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent" id="b55962e6-fc76-452e-bf9f-b2bfcdb1354c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>video</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType>2</ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40e274e3-e8d8-447c-b374-26999a49cd47" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="c3c99c17-4780-4214-bde0-29e65ece0a66" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="dfa120ac-2a04-4778-ab90-e64dddbb8fc4" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getMediaContent" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

@@ -1,0 +1,1963 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="b0b1b300-fa29-4d03-bd50-ea1f22f3b192" activeEnvironment="Default" name="InvoiceService-ABCOM" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="ecc69fba-25ff-483a-aad1-51b5b7a7b526" wsaVersion="NONE" name="InvoiceServiceBinding" type="wsdl" bindingName="{http://www.promostandards.org/WSDL/Invoice/1.0.0/}InvoiceServiceBinding" soapVersion="1_1" anonymous="optional" definition="https://devservices.alphabroder.com/invoice/wsdl/InvoiceService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://devservices.alphabroder.com/invoice/wsdl/InvoiceService.wsdl"><con:part><con:url>https://devservices.alphabroder.com/invoice/wsdl/InvoiceService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="Invoice_v1_0_0" targetNamespace="http://www.promostandards.org/WSDL/Invoice/1.0.0/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.promostandards.org/WSDL/Invoice/1.0.0/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="http://www.promostandards.org/WSDL/Invoice/1.0.0/SharedObjects/" xmlns:ns1="http://www.codesynthesis.com/xmlns/xsstl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/Invoice/1.0.0/" schemaLocation="GetInvoicesRequest.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/Invoice/1.0.0/" schemaLocation="GetInvoicesResponse.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetInvoicesRequestMessage">
+    <wsdl:part name="GetInvoicesRequest" element="tns:GetInvoicesRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetInvoicesResponseMessage">
+    <wsdl:part name="GetInvoicesResponse" element="tns:GetInvoicesResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="InvoiceService">
+    <wsdl:operation name="getInvoices">
+      <wsdl:input message="tns:GetInvoicesRequestMessage"/>
+      <wsdl:output message="tns:GetInvoicesResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InvoiceServiceBinding" type="tns:InvoiceService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getInvoices">
+      <soap:operation soapAction="getInvoices" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InvoiceService">
+    <wsdl:port name="InvoiceServiceBinding" binding="tns:InvoiceServiceBinding">
+      <soap:address location="https://devservices.alphabroder.com/invoice/service/index.php"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://devservices.alphabroder.com/invoice/wsdl/GetInvoicesRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/Invoice/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/Invoice/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/Invoice/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/Invoice/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/Invoice/1.0.0/SharedObjects/" schemaLocation="SharedObjectsInvoice.xsd"/>
+  <xsd:element name="GetInvoicesRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:wsVersion"/>
+        <xsd:element ref="ns3:id" minOccurs="0"/>
+        <xsd:element ref="ns3:password"/>
+        <xsd:element ref="ns3:queryType"/>
+        <xsd:element ref="ns3:referenceNumber" minOccurs="0"/>
+        <xsd:element ref="ns3:invoiceRequestedDate" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.com/invoice/wsdl/SharedObjectsInvoice.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/Invoice/1.0.0/SharedObjects/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/Invoice/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/Invoice/1.0.0/SharedObjects/" xmlns:ns3="http://www.codesynthesis.com/xmlns/xsstl" xmlns:ns4="http://www.isotc211.org/iso4217/">
+  <xsd:import namespace="http://www.codesynthesis.com/xmlns/xsstl" schemaLocation="iso3166-country-code.xsd"/>
+  <xsd:import namespace="http://www.isotc211.org/iso4217/" schemaLocation="iso4217-currency-code.xsd"/>
+  <xsd:element name="wsVersion">
+    <xsd:annotation>
+      <xsd:documentation>The Standard Version of the Web Service being referenced</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="id">
+    <xsd:annotation>
+      <xsd:documentation>The customer Id or any other agreed upon Id.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="password">
+    <xsd:annotation>
+      <xsd:documentation>The password associated with the Id</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="invoiceNumber">
+    <xsd:annotation>
+      <xsd:documentation>The invoice number</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="localizationCountry">
+    <xsd:annotation>
+      <xsd:documentation>ISO 3166-1 Alpha 2 code for Country</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:maxLength value="2"/>
+        <xsd:minLength value="2"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="localizationLanguage">
+    <xsd:annotation>
+      <xsd:documentation>ISO 639-1 Alpha 2 code for Language</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="2"/>
+        <xsd:maxLength value="2"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="ErrorMessage">
+    <xsd:annotation>
+      <xsd:documentation>Response for any error requiring notification to requester</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="code" type="xsd:int">
+          <xsd:annotation>
+            <xsd:documentation>Response for any error requiring notification to requester</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="description">
+          <xsd:annotation>
+            <xsd:documentation>Response for any error requiring notification to requester</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="256"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:simpleType name="invoiceType">
+    <xsd:annotation>
+      <xsd:documentation>The type of Invoice</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="INVOICE"/>
+      <xsd:enumeration value="CREDIT MEMO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="queryType">
+    <xsd:annotation>
+      <xsd:documentation>The type of query you wish to perform. 1 = PO Number, 2 = Invoice Number, 3 = Invoice date search</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:int">
+      <xsd:enumeration value="1"/>
+      <xsd:enumeration value="2"/>
+      <xsd:enumeration value="3"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="accountName">
+    <xsd:annotation>
+      <xsd:documentation>The Account Name</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="accountNumber">
+    <xsd:annotation>
+      <xsd:documentation>The Account Number</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="city">
+    <xsd:annotation>
+      <xsd:documentation>The city</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="state">
+    <xsd:annotation>
+      <xsd:documentation>The state</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="5"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="postalCode">
+    <xsd:annotation>
+      <xsd:documentation>The postal code</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="purchaseOrderNumber">
+    <xsd:annotation>
+      <xsd:documentation>The purchase order number</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="referenceNumber">
+    <xsd:annotation>
+      <xsd:documentation>The purchase order/sales order/invoice number associated with the order</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="salesOrderNumber">
+    <xsd:annotation>
+      <xsd:documentation>The sales order number</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="invoiceRequestedDate" type="xsd:dateTime">
+    <xsd:annotation>
+      <xsd:documentation>The date of the invoice used in search method 3</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="invoiceDate" type="xsd:dateTime">
+    <xsd:annotation>
+      <xsd:documentation>The date of the invoice</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="queryType">
+    <xsd:simpleType>
+      <xsd:restriction base="ns2:queryType"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="invoiceType">
+    <xsd:simpleType>
+      <xsd:restriction base="ns2:invoiceType">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="AccountInfo">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:accountName" minOccurs="0"/>
+        <xsd:element ref="ns2:accountNumber" minOccurs="0"/>
+        <xsd:element name="AddressLinesArray" maxOccurs="4">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element ref="ns2:city" minOccurs="0"/>
+        <xsd:element ref="ns2:state" minOccurs="0"/>
+        <xsd:element ref="ns2:postalCode" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="terms">
+    <xsd:annotation>
+      <xsd:documentation>The terms</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="fob">
+    <xsd:annotation>
+      <xsd:documentation>The fob ID</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="salesAmount">
+    <xsd:annotation>
+      <xsd:documentation>The sales amount</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:decimal">
+        <xsd:fractionDigits value="4"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="totalAmount">
+    <xsd:annotation>
+      <xsd:documentation>The invoice amount</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:decimal">
+        <xsd:fractionDigits value="4"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="shippingAndHandlingAmount">
+    <xsd:annotation>
+      <xsd:documentation>The shipping and handling amount</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:decimal">
+        <xsd:fractionDigits value="4"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="advancePaymentAmount">
+    <xsd:annotation>
+      <xsd:documentation>The advance payment amount</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:decimal">
+        <xsd:fractionDigits value="4"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="invoiceAmount">
+    <xsd:annotation>
+      <xsd:documentation>The invoice amount</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:decimal">
+        <xsd:fractionDigits value="4"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="currency" type="ns4:CurrencyCodeType"/>
+  <xsd:element name="invoiceLineItemId">
+    <xsd:annotation>
+      <xsd:documentation>The id of the line item</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:int"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="invoiceLineItemNumber">
+    <xsd:annotation>
+      <xsd:documentation>The invoice line item number</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:decimal">
+        <xsd:fractionDigits value="4"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="purchaseOrderLineItemNumber">
+    <xsd:annotation>
+      <xsd:documentation>The purchase order line item number</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:decimal">
+        <xsd:fractionDigits value="4"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:simpleType name="lineItemType">
+    <xsd:annotation>
+      <xsd:documentation>The line item type</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="LINE ITEM"/>
+      <xsd:enumeration value="TAX"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="orderedQuantity">
+    <xsd:annotation>
+      <xsd:documentation>The ordered quantity</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:decimal"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="invoiceQuantity">
+    <xsd:annotation>
+      <xsd:documentation>The invoice quantity</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:decimal"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="backOrderedQuantity">
+    <xsd:annotation>
+      <xsd:documentation>The back ordered quantity</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:decimal"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="quantityUOM">
+    <xsd:annotation>
+      <xsd:documentation>The quantity UOM</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="lineItemDescription">
+    <xsd:annotation>
+      <xsd:documentation>The line item description</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="1024"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="unitPrice">
+    <xsd:annotation>
+      <xsd:documentation>The unit price</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:decimal">
+        <xsd:fractionDigits value="4"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="extendedPrice">
+    <xsd:annotation>
+      <xsd:documentation>The extended price</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:decimal">
+        <xsd:fractionDigits value="4"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="lineItemTax" type="xsd:boolean"/>
+  <xsd:simpleType name="lineItemTaxType">
+    <xsd:annotation>
+      <xsd:documentation>The line item tax type</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="SALES"/>
+      <xsd:enumeration value="HST/GST"/>
+      <xsd:enumeration value="PST"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="lineItemType">
+    <xsd:simpleType>
+      <xsd:restriction base="ns2:lineItemType">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="lineItemTaxType">
+    <xsd:simpleType>
+      <xsd:restriction base="ns2:lineItemTaxType">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="InvoiceLineItem">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:invoiceLineItemId"/>
+        <xsd:element ref="ns2:invoiceLineItemNumber" minOccurs="0"/>
+        <xsd:element ref="ns2:purchaseOrderLineItemNumber" minOccurs="0"/>
+        <xsd:element ref="ns2:lineItemType"/>
+        <xsd:element ref="ns2:orderedQuantity" minOccurs="0"/>
+        <xsd:element ref="ns2:invoiceQuantity"/>
+        <xsd:element ref="ns2:backOrderedQuantity" minOccurs="0"/>
+        <xsd:element ref="ns2:quantityUOM"/>
+        <xsd:element ref="ns2:lineItemDescription"/>
+        <xsd:element ref="ns2:unitPrice"/>
+        <xsd:element ref="ns2:extendedPrice"/>
+        <xsd:element ref="ns2:lineItemTax"/>
+        <xsd:element ref="ns2:lineItemTaxType" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.com/invoice/wsdl/iso3166-country-code.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.codesynthesis.com/xmlns/xsstl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:stl="http://www.codesynthesis.com/xmlns/xsstl">
+  <xsd:annotation>
+    <xsd:documentation>Copyright (C) 2006-2007 Code Synthesis Tools CC
+
+      Redistribution and use with or without modification are permitted
+      under the terms of the new BSD license. See the accompanying LICENSE
+      file.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:simpleType name="ISO3166CountyCode">
+    <xsd:annotation>
+      <xsd:documentation>Two-letter (alpha-2) ISO 3166-1 code for one of the 243 countries.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="AF"/>
+      <!--AFGHANISTAN-->
+      <xsd:enumeration value="AX"/>
+      <!--&Aring;LAND ISLANDS-->
+      <xsd:enumeration value="AL"/>
+      <!--ALBANIA-->
+      <xsd:enumeration value="DZ"/>
+      <!--ALGERIA-->
+      <xsd:enumeration value="AS"/>
+      <!--AMERICAN SAMOA-->
+      <xsd:enumeration value="AD"/>
+      <!--ANDORRA-->
+      <xsd:enumeration value="AO"/>
+      <!--ANGOLA-->
+      <xsd:enumeration value="AI"/>
+      <!--ANGUILLA-->
+      <xsd:enumeration value="AQ"/>
+      <!--ANTARCTICA-->
+      <xsd:enumeration value="AG"/>
+      <!--ANTIGUA AND BARBUDA-->
+      <xsd:enumeration value="AR"/>
+      <!--ARGENTINA-->
+      <xsd:enumeration value="AM"/>
+      <!--ARMENIA-->
+      <xsd:enumeration value="AW"/>
+      <!--ARUBA-->
+      <xsd:enumeration value="AU"/>
+      <!--AUSTRALIA-->
+      <xsd:enumeration value="AT"/>
+      <!--AUSTRIA-->
+      <xsd:enumeration value="AZ"/>
+      <!--AZERBAIJAN-->
+      <xsd:enumeration value="BS"/>
+      <!--BAHAMAS-->
+      <xsd:enumeration value="BH"/>
+      <!--BAHRAIN-->
+      <xsd:enumeration value="BD"/>
+      <!--BANGLADESH-->
+      <xsd:enumeration value="BB"/>
+      <!--BARBADOS-->
+      <xsd:enumeration value="BY"/>
+      <!--BELARUS-->
+      <xsd:enumeration value="BE"/>
+      <!--BELGIUM-->
+      <xsd:enumeration value="BZ"/>
+      <!--BELIZE-->
+      <xsd:enumeration value="BJ"/>
+      <!--BENIN-->
+      <xsd:enumeration value="BM"/>
+      <!--BERMUDA-->
+      <xsd:enumeration value="BT"/>
+      <!--BHUTAN-->
+      <xsd:enumeration value="BO"/>
+      <!--BOLIVIA-->
+      <xsd:enumeration value="BA"/>
+      <!--BOSNIA AND HERZEGOVINA-->
+      <xsd:enumeration value="BW"/>
+      <!--BOTSWANA-->
+      <xsd:enumeration value="BV"/>
+      <!--BOUVET ISLAND-->
+      <xsd:enumeration value="BR"/>
+      <!--BRAZIL-->
+      <xsd:enumeration value="IO"/>
+      <!--BRITISH INDIAN OCEAN TERRITORY-->
+      <xsd:enumeration value="BN"/>
+      <!--BRUNEI DARUSSALAM-->
+      <xsd:enumeration value="BG"/>
+      <!--BULGARIA-->
+      <xsd:enumeration value="BF"/>
+      <!--BURKINA FASO-->
+      <xsd:enumeration value="BI"/>
+      <!--BURUNDI-->
+      <xsd:enumeration value="KH"/>
+      <!--CAMBODIA-->
+      <xsd:enumeration value="CM"/>
+      <!--CAMEROON-->
+      <xsd:enumeration value="CA"/>
+      <!--CANADA-->
+      <xsd:enumeration value="CV"/>
+      <!--CAPE VERDE-->
+      <xsd:enumeration value="KY"/>
+      <!--CAYMAN ISLANDS-->
+      <xsd:enumeration value="CF"/>
+      <!--CENTRAL AFRICAN REPUBLIC-->
+      <xsd:enumeration value="TD"/>
+      <!--CHAD-->
+      <xsd:enumeration value="CL"/>
+      <!--CHILE-->
+      <xsd:enumeration value="CN"/>
+      <!--CHINA-->
+      <xsd:enumeration value="CX"/>
+      <!--CHRISTMAS ISLAND-->
+      <xsd:enumeration value="CC"/>
+      <!--COCOS (KEELING) ISLANDS-->
+      <xsd:enumeration value="CO"/>
+      <!--COLOMBIA-->
+      <xsd:enumeration value="KM"/>
+      <!--COMOROS-->
+      <xsd:enumeration value="CG"/>
+      <!--CONGO-->
+      <xsd:enumeration value="CD"/>
+      <!--CONGO, THE DEMOCRATIC REPUBLIC OF THE-->
+      <xsd:enumeration value="CK"/>
+      <!--COOK ISLANDS-->
+      <xsd:enumeration value="CR"/>
+      <!--COSTA RICA-->
+      <xsd:enumeration value="CI"/>
+      <!--COTE D'IVOIRE-->
+      <xsd:enumeration value="HR"/>
+      <!--CROATIA-->
+      <xsd:enumeration value="CU"/>
+      <!--CUBA-->
+      <xsd:enumeration value="CY"/>
+      <!--CYPRUS-->
+      <xsd:enumeration value="CZ"/>
+      <!--CZECH REPUBLIC-->
+      <xsd:enumeration value="DK"/>
+      <!--DENMARK-->
+      <xsd:enumeration value="DJ"/>
+      <!--DJIBOUTI-->
+      <xsd:enumeration value="DM"/>
+      <!--DOMINICA-->
+      <xsd:enumeration value="DO"/>
+      <!--DOMINICAN REPUBLIC-->
+      <xsd:enumeration value="EC"/>
+      <!--ECUADOR-->
+      <xsd:enumeration value="EG"/>
+      <!--EGYPT-->
+      <xsd:enumeration value="SV"/>
+      <!--EL SALVADOR-->
+      <xsd:enumeration value="GQ"/>
+      <!--EQUATORIAL GUINEA-->
+      <xsd:enumeration value="ER"/>
+      <!--ERITREA-->
+      <xsd:enumeration value="EE"/>
+      <!--ESTONIA-->
+      <xsd:enumeration value="ET"/>
+      <!--ETHIOPIA-->
+      <xsd:enumeration value="FK"/>
+      <!--FALKLAND ISLANDS (MALVINAS)-->
+      <xsd:enumeration value="FO"/>
+      <!--FAROE ISLANDS-->
+      <xsd:enumeration value="FJ"/>
+      <!--FIJI-->
+      <xsd:enumeration value="FI"/>
+      <!--FINLAND-->
+      <xsd:enumeration value="FR"/>
+      <!--FRANCE-->
+      <xsd:enumeration value="GF"/>
+      <!--FRENCH GUIANA-->
+      <xsd:enumeration value="PF"/>
+      <!--FRENCH POLYNESIA-->
+      <xsd:enumeration value="TF"/>
+      <!--FRENCH SOUTHERN TERRITORIES-->
+      <xsd:enumeration value="GA"/>
+      <!--GABON-->
+      <xsd:enumeration value="GM"/>
+      <!--GAMBIA-->
+      <xsd:enumeration value="GE"/>
+      <!--GEORGIA-->
+      <xsd:enumeration value="DE"/>
+      <!--GERMANY-->
+      <xsd:enumeration value="GH"/>
+      <!--GHANA-->
+      <xsd:enumeration value="GI"/>
+      <!--GIBRALTAR-->
+      <xsd:enumeration value="GR"/>
+      <!--GREECE-->
+      <xsd:enumeration value="GL"/>
+      <!--GREENLAND-->
+      <xsd:enumeration value="GD"/>
+      <!--GRENADA-->
+      <xsd:enumeration value="GP"/>
+      <!--GUADELOUPE-->
+      <xsd:enumeration value="GU"/>
+      <!--GUAM-->
+      <xsd:enumeration value="GT"/>
+      <!--GUATEMALA-->
+      <xsd:enumeration value="GG"/>
+      <!--GUERNSEY-->
+      <xsd:enumeration value="GN"/>
+      <!--GUINEA-->
+      <xsd:enumeration value="GW"/>
+      <!--GUINEA-BISSAU-->
+      <xsd:enumeration value="GY"/>
+      <!--GUYANA-->
+      <xsd:enumeration value="HT"/>
+      <!--HAITI-->
+      <xsd:enumeration value="HM"/>
+      <!--HEARD ISLAND AND MCDONALD ISLANDS-->
+      <xsd:enumeration value="VA"/>
+      <!--HOLY SEE (VATICAN CITY STATE)-->
+      <xsd:enumeration value="HN"/>
+      <!--HONDURAS-->
+      <xsd:enumeration value="HK"/>
+      <!--HONG KONG-->
+      <xsd:enumeration value="HU"/>
+      <!--HUNGARY-->
+      <xsd:enumeration value="IS"/>
+      <!--ICELAND-->
+      <xsd:enumeration value="IN"/>
+      <!--INDIA-->
+      <xsd:enumeration value="ID"/>
+      <!--INDONESIA-->
+      <xsd:enumeration value="IR"/>
+      <!--IRAN, ISLAMIC REPUBLIC OF-->
+      <xsd:enumeration value="IQ"/>
+      <!--IRAQ-->
+      <xsd:enumeration value="IE"/>
+      <!--IRELAND-->
+      <xsd:enumeration value="IM"/>
+      <!--ISLE OF MAN-->
+      <xsd:enumeration value="IL"/>
+      <!--ISRAEL-->
+      <xsd:enumeration value="IT"/>
+      <!--ITALY-->
+      <xsd:enumeration value="JM"/>
+      <!--JAMAICA-->
+      <xsd:enumeration value="JP"/>
+      <!--JAPAN-->
+      <xsd:enumeration value="JE"/>
+      <!--JERSEY-->
+      <xsd:enumeration value="JO"/>
+      <!--JORDAN-->
+      <xsd:enumeration value="KZ"/>
+      <!--KAZAKHSTAN-->
+      <xsd:enumeration value="KE"/>
+      <!--KENYA-->
+      <xsd:enumeration value="KI"/>
+      <!--KIRIBATI-->
+      <xsd:enumeration value="KP"/>
+      <!--KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF-->
+      <xsd:enumeration value="KR"/>
+      <!--KOREA, REPUBLIC OF-->
+      <xsd:enumeration value="KW"/>
+      <!--KUWAIT-->
+      <xsd:enumeration value="KG"/>
+      <!--KYRGYZSTAN-->
+      <xsd:enumeration value="LA"/>
+      <!--LAO PEOPLE'S DEMOCRATIC REPUBLIC-->
+      <xsd:enumeration value="LV"/>
+      <!--LATVIA-->
+      <xsd:enumeration value="LB"/>
+      <!--LEBANON-->
+      <xsd:enumeration value="LS"/>
+      <!--LESOTHO-->
+      <xsd:enumeration value="LR"/>
+      <!--LIBERIA-->
+      <xsd:enumeration value="LY"/>
+      <!--LIBYAN ARAB JAMAHIRIYA-->
+      <xsd:enumeration value="LI"/>
+      <!--LIECHTENSTEIN-->
+      <xsd:enumeration value="LT"/>
+      <!--LITHUANIA-->
+      <xsd:enumeration value="LU"/>
+      <!--LUXEMBOURG-->
+      <xsd:enumeration value="MO"/>
+      <!--MACAO-->
+      <xsd:enumeration value="MK"/>
+      <!--MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF-->
+      <xsd:enumeration value="MG"/>
+      <!--MADAGASCAR-->
+      <xsd:enumeration value="MW"/>
+      <!--MALAWI-->
+      <xsd:enumeration value="MY"/>
+      <!--MALAYSIA-->
+      <xsd:enumeration value="MV"/>
+      <!--MALDIVES-->
+      <xsd:enumeration value="ML"/>
+      <!--MALI-->
+      <xsd:enumeration value="MT"/>
+      <!--MALTA-->
+      <xsd:enumeration value="MH"/>
+      <!--MARSHALL ISLANDS-->
+      <xsd:enumeration value="MQ"/>
+      <!--MARTINIQUE-->
+      <xsd:enumeration value="MR"/>
+      <!--MAURITANIA-->
+      <xsd:enumeration value="MU"/>
+      <!--MAURITIUS-->
+      <xsd:enumeration value="YT"/>
+      <!--MAYOTTE-->
+      <xsd:enumeration value="MX"/>
+      <!--MEXICO-->
+      <xsd:enumeration value="FM"/>
+      <!--MICRONESIA, FEDERATED STATES OF-->
+      <xsd:enumeration value="MD"/>
+      <!--MOLDOVA, REPUBLIC OF-->
+      <xsd:enumeration value="MC"/>
+      <!--MONACO-->
+      <xsd:enumeration value="MN"/>
+      <!--MONGOLIA-->
+      <xsd:enumeration value="MS"/>
+      <!--MONTSERRAT-->
+      <xsd:enumeration value="MA"/>
+      <!--MOROCCO-->
+      <xsd:enumeration value="MZ"/>
+      <!--MOZAMBIQUE-->
+      <xsd:enumeration value="MM"/>
+      <!--MYANMAR-->
+      <xsd:enumeration value="NA"/>
+      <!--NAMIBIA-->
+      <xsd:enumeration value="NR"/>
+      <!--NAURU-->
+      <xsd:enumeration value="NP"/>
+      <!--NEPAL-->
+      <xsd:enumeration value="NL"/>
+      <!--NETHERLANDS-->
+      <xsd:enumeration value="AN"/>
+      <!--NETHERLANDS ANTILLES-->
+      <xsd:enumeration value="NC"/>
+      <!--NEW CALEDONIA-->
+      <xsd:enumeration value="NZ"/>
+      <!--NEW ZEALAND-->
+      <xsd:enumeration value="NI"/>
+      <!--NICARAGUA-->
+      <xsd:enumeration value="NE"/>
+      <!--NIGER-->
+      <xsd:enumeration value="NG"/>
+      <!--NIGERIA-->
+      <xsd:enumeration value="NU"/>
+      <!--NIUE-->
+      <xsd:enumeration value="NF"/>
+      <!--NORFOLK ISLAND-->
+      <xsd:enumeration value="MP"/>
+      <!--NORTHERN MARIANA ISLANDS-->
+      <xsd:enumeration value="NO"/>
+      <!--NORWAY-->
+      <xsd:enumeration value="OM"/>
+      <!--OMAN-->
+      <xsd:enumeration value="PK"/>
+      <!--PAKISTAN-->
+      <xsd:enumeration value="PW"/>
+      <!--PALAU-->
+      <xsd:enumeration value="PS"/>
+      <!--PALESTINIAN TERRITORY, OCCUPIED-->
+      <xsd:enumeration value="PA"/>
+      <!--PANAMA-->
+      <xsd:enumeration value="PG"/>
+      <!--PAPUA NEW GUINEA-->
+      <xsd:enumeration value="PY"/>
+      <!--PARAGUAY-->
+      <xsd:enumeration value="PE"/>
+      <!--PERU-->
+      <xsd:enumeration value="PH"/>
+      <!--PHILIPPINES-->
+      <xsd:enumeration value="PN"/>
+      <!--PITCAIRN-->
+      <xsd:enumeration value="PL"/>
+      <!--POLAND-->
+      <xsd:enumeration value="PT"/>
+      <!--PORTUGAL-->
+      <xsd:enumeration value="PR"/>
+      <!--PUERTO RICO-->
+      <xsd:enumeration value="QA"/>
+      <!--QATAR-->
+      <xsd:enumeration value="RE"/>
+      <!--REUNION-->
+      <xsd:enumeration value="RO"/>
+      <!--ROMANIA-->
+      <xsd:enumeration value="RU"/>
+      <!--RUSSIAN FEDERATION-->
+      <xsd:enumeration value="RW"/>
+      <!--RWANDA-->
+      <xsd:enumeration value="SH"/>
+      <!--SAINT HELENA-->
+      <xsd:enumeration value="KN"/>
+      <!--SAINT KITTS AND NEVIS-->
+      <xsd:enumeration value="LC"/>
+      <!--SAINT LUCIA-->
+      <xsd:enumeration value="PM"/>
+      <!--SAINT PIERRE AND MIQUELON-->
+      <xsd:enumeration value="VC"/>
+      <!--SAINT VINCENT AND THE GRENADINES-->
+      <xsd:enumeration value="WS"/>
+      <!--SAMOA-->
+      <xsd:enumeration value="SM"/>
+      <!--SAN MARINO-->
+      <xsd:enumeration value="ST"/>
+      <!--SAO TOME AND PRINCIPE-->
+      <xsd:enumeration value="SA"/>
+      <!--SAUDI ARABIA-->
+      <xsd:enumeration value="SN"/>
+      <!--SENEGAL-->
+      <xsd:enumeration value="CS"/>
+      <!--SERBIA AND MONTENEGRO-->
+      <xsd:enumeration value="SC"/>
+      <!--SEYCHELLES-->
+      <xsd:enumeration value="SL"/>
+      <!--SIERRA LEONE-->
+      <xsd:enumeration value="SG"/>
+      <!--SINGAPORE-->
+      <xsd:enumeration value="SK"/>
+      <!--SLOVAKIA-->
+      <xsd:enumeration value="SI"/>
+      <!--SLOVENIA-->
+      <xsd:enumeration value="SB"/>
+      <!--SOLOMON ISLANDS-->
+      <xsd:enumeration value="SO"/>
+      <!--SOMALIA-->
+      <xsd:enumeration value="ZA"/>
+      <!--SOUTH AFRICA-->
+      <xsd:enumeration value="GS"/>
+      <!--SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS-->
+      <xsd:enumeration value="ES"/>
+      <!--SPAIN-->
+      <xsd:enumeration value="LK"/>
+      <!--SRI LANKA-->
+      <xsd:enumeration value="SD"/>
+      <!--SUDAN-->
+      <xsd:enumeration value="SR"/>
+      <!--SURINAME-->
+      <xsd:enumeration value="SJ"/>
+      <!--SVALBARD AND JAN MAYEN-->
+      <xsd:enumeration value="SZ"/>
+      <!--SWAZILAND-->
+      <xsd:enumeration value="SE"/>
+      <!--SWEDEN-->
+      <xsd:enumeration value="CH"/>
+      <!--SWITZERLAND-->
+      <xsd:enumeration value="SY"/>
+      <!--SYRIAN ARAB REPUBLIC-->
+      <xsd:enumeration value="TW"/>
+      <!--TAIWAN, PROVINCE OF CHINA-->
+      <xsd:enumeration value="TJ"/>
+      <!--TAJIKISTAN-->
+      <xsd:enumeration value="TZ"/>
+      <!--TANZANIA, UNITED REPUBLIC OF-->
+      <xsd:enumeration value="TH"/>
+      <!--THAILAND-->
+      <xsd:enumeration value="TL"/>
+      <!--TIMOR-LESTE-->
+      <xsd:enumeration value="TG"/>
+      <!--TOGO-->
+      <xsd:enumeration value="TK"/>
+      <!--TOKELAU-->
+      <xsd:enumeration value="TO"/>
+      <!--TONGA-->
+      <xsd:enumeration value="TT"/>
+      <!--TRINIDAD AND TOBAGO-->
+      <xsd:enumeration value="TN"/>
+      <!--TUNISIA-->
+      <xsd:enumeration value="TR"/>
+      <!--TURKEY-->
+      <xsd:enumeration value="TM"/>
+      <!--TURKMENISTAN-->
+      <xsd:enumeration value="TC"/>
+      <!--TURKS AND CAICOS ISLANDS-->
+      <xsd:enumeration value="TV"/>
+      <!--TUVALU-->
+      <xsd:enumeration value="UG"/>
+      <!--UGANDA-->
+      <xsd:enumeration value="UA"/>
+      <!--UKRAINE-->
+      <xsd:enumeration value="AE"/>
+      <!--UNITED ARAB EMIRATES-->
+      <xsd:enumeration value="GB"/>
+      <!--UNITED KINGDOM-->
+      <xsd:enumeration value="US"/>
+      <!--UNITED STATES-->
+      <xsd:enumeration value="UM"/>
+      <!--UNITED STATES MINOR OUTLYING ISLANDS-->
+      <xsd:enumeration value="UY"/>
+      <!--URUGUAY-->
+      <xsd:enumeration value="UZ"/>
+      <!--UZBEKISTAN-->
+      <xsd:enumeration value="VU"/>
+      <!--VANUATU-->
+      <xsd:enumeration value="VE"/>
+      <!--VENEZUELA-->
+      <xsd:enumeration value="VN"/>
+      <!--VIET NAM-->
+      <xsd:enumeration value="VG"/>
+      <!--VIRGIN ISLANDS, BRITISH-->
+      <xsd:enumeration value="VI"/>
+      <!--VIRGIN ISLANDS, U.S.-->
+      <xsd:enumeration value="WF"/>
+      <!--WALLIS AND FUTUNA-->
+      <xsd:enumeration value="EH"/>
+      <!--WESTERN SAHARA-->
+      <xsd:enumeration value="YE"/>
+      <!--YEMEN-->
+      <xsd:enumeration value="ZM"/>
+      <!--ZAMBIA-->
+      <xsd:enumeration value="ZW"/>
+      <!--ZIMBABWE-->
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.com/invoice/wsdl/iso4217-currency-code.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.isotc211.org/iso4217/" version="1.0" xml:lang="en" xmlns:iso4217="http://www.isotc211.org/iso4217/" xmlns:iso19103="http://www.isotc211.org/iso19103/" xmlns:iso19115="http://www.isotc211.org/iso19115/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!--Type Definitions-->
+  <xs:simpleType name="CurrencyNameType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Afghanistan Afghani"/>
+      <xs:enumeration value="Albania Lek"/>
+      <xs:enumeration value="Algerian Dinar"/>
+      <xs:enumeration value="Angola New Kwanza"/>
+      <xs:enumeration value="Argentine Peso"/>
+      <xs:enumeration value="Armenian Dram"/>
+      <xs:enumeration value="Aruban Guilder"/>
+      <xs:enumeration value="Australian Dollar"/>
+      <xs:enumeration value="Austrian Schilling"/>
+      <xs:enumeration value="Azerbaijanian Manat"/>
+      <xs:enumeration value="Bahamian Dollar"/>
+      <xs:enumeration value="Bahraini Dinar"/>
+      <xs:enumeration value="BangladeshTaka"/>
+      <xs:enumeration value="Barbados Dollar"/>
+      <xs:enumeration value="Belarussian Ruble"/>
+      <xs:enumeration value="Belgian Franc"/>
+      <xs:enumeration value="Belize Dollar"/>
+      <xs:enumeration value="Bermudian Dollar"/>
+      <xs:enumeration value="Bhutan Ngultrum"/>
+      <xs:enumeration value="Bolivia Boliviano"/>
+      <xs:enumeration value="Bosnia Convertible Mark"/>
+      <xs:enumeration value="Botswana Pula"/>
+      <xs:enumeration value="Brazilian Real"/>
+      <xs:enumeration value="Brunei Dollar"/>
+      <xs:enumeration value="Bulgaria Lev"/>
+      <xs:enumeration value="Burundi Franc"/>
+      <xs:enumeration value="Cambodia Riel"/>
+      <xs:enumeration value="Canadian Dollar"/>
+      <xs:enumeration value="Cape Verde Escudo"/>
+      <xs:enumeration value="Cayman Islands Dollar"/>
+      <xs:enumeration value="CFA Franc BCEAO"/>
+      <xs:enumeration value="CFA Franc BEAC"/>
+      <xs:enumeration value="CFP Franc"/>
+      <xs:enumeration value="Chilean Peso"/>
+      <xs:enumeration value="Chinese Yuan Renminbi"/>
+      <xs:enumeration value="Columbian Peso"/>
+      <xs:enumeration value="Comoro Franc"/>
+      <xs:enumeration value="Congo Franc"/>
+      <xs:enumeration value="Costa Rican Colon"/>
+      <xs:enumeration value="Croatian Kuna"/>
+      <xs:enumeration value="Cuban Peso"/>
+      <xs:enumeration value="Cyprus Pound"/>
+      <xs:enumeration value="Czech Koruna"/>
+      <xs:enumeration value="Danish Krone"/>
+      <xs:enumeration value="Deutsche Mark"/>
+      <xs:enumeration value="Dijibouti Franc"/>
+      <xs:enumeration value="Dominican Peso"/>
+      <xs:enumeration value="Dutch Guilder"/>
+      <xs:enumeration value="East Caribbean Dollar"/>
+      <xs:enumeration value="Ecuador Sucre"/>
+      <xs:enumeration value="Egyptian  Pound"/>
+      <xs:enumeration value="El Salvadorian Colon"/>
+      <xs:enumeration value="Eritrea Nakfa"/>
+      <xs:enumeration value="Escudo Caboverdiano"/>
+      <xs:enumeration value="Estonia Kroon"/>
+      <xs:enumeration value="Ethiopia Birr"/>
+      <xs:enumeration value="Euro"/>
+      <xs:enumeration value="Falkland Pound"/>
+      <xs:enumeration value="Fiji Dollar"/>
+      <xs:enumeration value="Finnish Markka"/>
+      <xs:enumeration value="French Franc"/>
+      <xs:enumeration value="Gambia Dalasi"/>
+      <xs:enumeration value="Georgia Lari"/>
+      <xs:enumeration value="Ghana Cedi"/>
+      <xs:enumeration value="Gibraltar Pound"/>
+      <xs:enumeration value="Greek Drachma"/>
+      <xs:enumeration value="Guatemala Quetzal"/>
+      <xs:enumeration value="Guyana Dollar"/>
+      <xs:enumeration value="Haiti Gourde"/>
+      <xs:enumeration value="Honduras Lempira"/>
+      <xs:enumeration value="Hong Kong Dollar"/>
+      <xs:enumeration value="Hungary Forint"/>
+      <xs:enumeration value="Icelandic Krona"/>
+      <xs:enumeration value="Indian Rupee"/>
+      <xs:enumeration value="Indonesia Rupiah"/>
+      <xs:enumeration value="Iranian Riyal"/>
+      <xs:enumeration value="Iraqi Dinar"/>
+      <xs:enumeration value="Irish Punt"/>
+      <xs:enumeration value="Israel Shekel"/>
+      <xs:enumeration value="Italian Lira"/>
+      <xs:enumeration value="Jamaican Dollar"/>
+      <xs:enumeration value="Japanese Yen"/>
+      <xs:enumeration value="Jordanian Dinar"/>
+      <xs:enumeration value="Kazakhstan Tenge"/>
+      <xs:enumeration value="Kenyan Shilling"/>
+      <xs:enumeration value="Kuwaiti Dinar"/>
+      <xs:enumeration value="Kyrgyzstan Som"/>
+      <xs:enumeration value="Laos Kip"/>
+      <xs:enumeration value="Latvia Lat"/>
+      <xs:enumeration value="Lebanese Pound"/>
+      <xs:enumeration value="Lesotho Maloti"/>
+      <xs:enumeration value="Liberian Dollar"/>
+      <xs:enumeration value="Libyan Dinar"/>
+      <xs:enumeration value="Lithuania Litas"/>
+      <xs:enumeration value="Luxembourg Franc"/>
+      <xs:enumeration value="Macao Pataca"/>
+      <xs:enumeration value="Macedonian Denar"/>
+      <xs:enumeration value="Malagasy Franc"/>
+      <xs:enumeration value="Malawian Kwacha"/>
+      <xs:enumeration value="Malaysian Ringgit"/>
+      <xs:enumeration value="Maldives Rufiyaa"/>
+      <xs:enumeration value="Maltese Lira"/>
+      <xs:enumeration value="Mauritania Ouguiya"/>
+      <xs:enumeration value="Mauritius Rupee"/>
+      <xs:enumeration value="Mexican Peso"/>
+      <xs:enumeration value="Moldovian Leu"/>
+      <xs:enumeration value="Mongolia Tugrik"/>
+      <xs:enumeration value="Moroccan Dirham"/>
+      <xs:enumeration value="Mozambique Metical"/>
+      <xs:enumeration value="Myanmar Kyat"/>
+      <xs:enumeration value="Namibian Dollar"/>
+      <xs:enumeration value="Nepalese Rupee"/>
+      <xs:enumeration value="Netherlands Antilles Guilder"/>
+      <xs:enumeration value="New Zaire"/>
+      <xs:enumeration value="New Zealand Dollar"/>
+      <xs:enumeration value="Nicaragua Cordoba"/>
+      <xs:enumeration value="Nigeria Naira"/>
+      <xs:enumeration value="North Korean Won"/>
+      <xs:enumeration value="Norwegian Krone"/>
+      <xs:enumeration value="Pakistani Rupee"/>
+      <xs:enumeration value="Panama Balboa"/>
+      <xs:enumeration value="Papua New Guinea Kina"/>
+      <xs:enumeration value="Paraguay Guarani"/>
+      <xs:enumeration value="Peru New Sol"/>
+      <xs:enumeration value="Philippine Peso"/>
+      <xs:enumeration value="Poland New Zloty"/>
+      <xs:enumeration value="Portuguese Escudo"/>
+      <xs:enumeration value="Qatari Riyal"/>
+      <xs:enumeration value="Riyal Omani"/>
+      <xs:enumeration value="Romanian Leu"/>
+      <xs:enumeration value="Russian Federation Rouble"/>
+      <xs:enumeration value="Rwanda Franc"/>
+      <xs:enumeration value="Sao Tome and Principe Dobra"/>
+      <xs:enumeration value="Saudi Riyal"/>
+      <xs:enumeration value="Seychelles Rupee"/>
+      <xs:enumeration value="Sierra Leone Leone"/>
+      <xs:enumeration value="Singapore Dollar"/>
+      <xs:enumeration value="Slovak Doruna"/>
+      <xs:enumeration value="Slovenia Tolar"/>
+      <xs:enumeration value="Soloman Islands Dollar"/>
+      <xs:enumeration value="Somalia Shilling"/>
+      <xs:enumeration value="South African Rand"/>
+      <xs:enumeration value="South Koerean Won"/>
+      <xs:enumeration value="Spanish Peseta"/>
+      <xs:enumeration value="Sri Lankan Rupee"/>
+      <xs:enumeration value="St Helena Pound"/>
+      <xs:enumeration value="Sterling"/>
+      <xs:enumeration value="Sudanese Pound"/>
+      <xs:enumeration value="Surinam Guilder"/>
+      <xs:enumeration value="Swaziland Lilangeni"/>
+      <xs:enumeration value="Swedish Krona"/>
+      <xs:enumeration value="Swiss Franc"/>
+      <xs:enumeration value="Syrian Pound"/>
+      <xs:enumeration value="Taiwanese NT Dollar"/>
+      <xs:enumeration value="Tajikistan Ruble"/>
+      <xs:enumeration value="Tanzanian Shilling"/>
+      <xs:enumeration value="Thailand Baht"/>
+      <xs:enumeration value="Timor Escudo"/>
+      <xs:enumeration value="Tonga Palanga"/>
+      <xs:enumeration value="Trinidad and Tobago Dollar"/>
+      <xs:enumeration value="Tunasia Tunisian Dinar"/>
+      <xs:enumeration value="Turkish Lira"/>
+      <xs:enumeration value="Turkmenistan Manat"/>
+      <xs:enumeration value="UAE Dirham"/>
+      <xs:enumeration value="Ugandian Shilling"/>
+      <xs:enumeration value="Ukraine Hryvna"/>
+      <xs:enumeration value="Uruguayan New Peso"/>
+      <xs:enumeration value="United States of America Dollar"/>
+      <xs:enumeration value="Uzbekistani Sum"/>
+      <xs:enumeration value="Vanuatu Vatu"/>
+      <xs:enumeration value="Venezuela Bolivar"/>
+      <xs:enumeration value="Vietnam Dong"/>
+      <xs:enumeration value="Western Somoa Tala"/>
+      <xs:enumeration value="Yemen Riyal"/>
+      <xs:enumeration value="Yugoslavia New Dinar"/>
+      <xs:enumeration value="Zambian Kwacha"/>
+      <xs:enumeration value="Zimbabwe Dollar"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CurrencyCodeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AFA"/>
+      <xs:enumeration value="ALL"/>
+      <xs:enumeration value="DZD"/>
+      <xs:enumeration value="AON"/>
+      <xs:enumeration value="ARS"/>
+      <xs:enumeration value="AMD"/>
+      <xs:enumeration value="AWG"/>
+      <xs:enumeration value="AUD"/>
+      <xs:enumeration value="ATS"/>
+      <xs:enumeration value="AZM"/>
+      <xs:enumeration value="BSD"/>
+      <xs:enumeration value="BHD"/>
+      <xs:enumeration value="BDT"/>
+      <xs:enumeration value="BBD"/>
+      <xs:enumeration value="BYR"/>
+      <xs:enumeration value="BEF"/>
+      <xs:enumeration value="BZD"/>
+      <xs:enumeration value="BMD"/>
+      <xs:enumeration value="BTN"/>
+      <xs:enumeration value="BOB"/>
+      <xs:enumeration value="BAM"/>
+      <xs:enumeration value="BWP"/>
+      <xs:enumeration value="BRL"/>
+      <xs:enumeration value="BND"/>
+      <xs:enumeration value="BGL"/>
+      <xs:enumeration value="BIF"/>
+      <xs:enumeration value="KHR"/>
+      <xs:enumeration value="CAD"/>
+      <xs:enumeration value="CVE"/>
+      <xs:enumeration value="KYD"/>
+      <xs:enumeration value="XOF"/>
+      <xs:enumeration value="XAF"/>
+      <xs:enumeration value="XPF"/>
+      <xs:enumeration value="CLP"/>
+      <xs:enumeration value="CNY"/>
+      <xs:enumeration value="COP"/>
+      <xs:enumeration value="KMF"/>
+      <xs:enumeration value="CDF"/>
+      <xs:enumeration value="CRC"/>
+      <xs:enumeration value="HRK"/>
+      <xs:enumeration value="CUP"/>
+      <xs:enumeration value="CYP"/>
+      <xs:enumeration value="CZK"/>
+      <xs:enumeration value="DKK"/>
+      <xs:enumeration value="DEM"/>
+      <xs:enumeration value="DJF"/>
+      <xs:enumeration value="DOP"/>
+      <xs:enumeration value="NLG"/>
+      <xs:enumeration value="XCD"/>
+      <xs:enumeration value="ECS"/>
+      <xs:enumeration value="EGP"/>
+      <xs:enumeration value="SVC"/>
+      <xs:enumeration value="ERN"/>
+      <xs:enumeration value="EEK"/>
+      <xs:enumeration value="ETB"/>
+      <xs:enumeration value="EUR"/>
+      <xs:enumeration value="FKP"/>
+      <xs:enumeration value="FJD"/>
+      <xs:enumeration value="FIM"/>
+      <xs:enumeration value="FRF"/>
+      <xs:enumeration value="GMD"/>
+      <xs:enumeration value="GEL"/>
+      <xs:enumeration value="GHC"/>
+      <xs:enumeration value="GIP"/>
+      <xs:enumeration value="GRD"/>
+      <xs:enumeration value="GTQ"/>
+      <xs:enumeration value="GYD"/>
+      <xs:enumeration value="HTG"/>
+      <xs:enumeration value="HNL"/>
+      <xs:enumeration value="HKD"/>
+      <xs:enumeration value="HUF"/>
+      <xs:enumeration value="ISK"/>
+      <xs:enumeration value="INR"/>
+      <xs:enumeration value="IDR"/>
+      <xs:enumeration value="IRR"/>
+      <xs:enumeration value="IQD"/>
+      <xs:enumeration value="IEP"/>
+      <xs:enumeration value="ILS"/>
+      <xs:enumeration value="ITL"/>
+      <xs:enumeration value="JMD"/>
+      <xs:enumeration value="JPY"/>
+      <xs:enumeration value="JOD"/>
+      <xs:enumeration value="KZT"/>
+      <xs:enumeration value="KES"/>
+      <xs:enumeration value="KWD"/>
+      <xs:enumeration value="KGS"/>
+      <xs:enumeration value="LAK"/>
+      <xs:enumeration value="LVL"/>
+      <xs:enumeration value="LBP"/>
+      <xs:enumeration value="LSL"/>
+      <xs:enumeration value="LRD"/>
+      <xs:enumeration value="LYD"/>
+      <xs:enumeration value="LTL"/>
+      <xs:enumeration value="LUF"/>
+      <xs:enumeration value="MOP"/>
+      <xs:enumeration value="MKD"/>
+      <xs:enumeration value="MGF"/>
+      <xs:enumeration value="MWK"/>
+      <xs:enumeration value="MYR"/>
+      <xs:enumeration value="MVR"/>
+      <xs:enumeration value="MTL"/>
+      <xs:enumeration value="MRO"/>
+      <xs:enumeration value="MUR"/>
+      <xs:enumeration value="MXN"/>
+      <xs:enumeration value="MDL"/>
+      <xs:enumeration value="MNT"/>
+      <xs:enumeration value="MAD"/>
+      <xs:enumeration value="MZM"/>
+      <xs:enumeration value="MMK"/>
+      <xs:enumeration value="NAD"/>
+      <xs:enumeration value="NPR"/>
+      <xs:enumeration value="ANG"/>
+      <xs:enumeration value="ZRN"/>
+      <xs:enumeration value="NZD"/>
+      <xs:enumeration value="NIC"/>
+      <xs:enumeration value="NGN"/>
+      <xs:enumeration value="KPW"/>
+      <xs:enumeration value="NOK"/>
+      <xs:enumeration value="PKR"/>
+      <xs:enumeration value="PAB"/>
+      <xs:enumeration value="PGK"/>
+      <xs:enumeration value="PYG"/>
+      <xs:enumeration value="PEN"/>
+      <xs:enumeration value="PHP"/>
+      <xs:enumeration value="PLN"/>
+      <xs:enumeration value="PTE"/>
+      <xs:enumeration value="QAR"/>
+      <xs:enumeration value="OMR"/>
+      <xs:enumeration value="ROL"/>
+      <xs:enumeration value="RUR"/>
+      <xs:enumeration value="RWF"/>
+      <xs:enumeration value="STD"/>
+      <xs:enumeration value="SAR"/>
+      <xs:enumeration value="SCR"/>
+      <xs:enumeration value="SLL"/>
+      <xs:enumeration value="SGD"/>
+      <xs:enumeration value="SKK"/>
+      <xs:enumeration value="SIT"/>
+      <xs:enumeration value="SBD"/>
+      <xs:enumeration value="SOS"/>
+      <xs:enumeration value="ZAR"/>
+      <xs:enumeration value="KRW"/>
+      <xs:enumeration value="ESP"/>
+      <xs:enumeration value="LKR"/>
+      <xs:enumeration value="SHP"/>
+      <xs:enumeration value="GBP"/>
+      <xs:enumeration value="SDP"/>
+      <xs:enumeration value="SRG"/>
+      <xs:enumeration value="SZL"/>
+      <xs:enumeration value="SEK"/>
+      <xs:enumeration value="CHF"/>
+      <xs:enumeration value="SYP"/>
+      <xs:enumeration value="TWD"/>
+      <xs:enumeration value="TJR"/>
+      <xs:enumeration value="TZS"/>
+      <xs:enumeration value="THB"/>
+      <xs:enumeration value="TPE"/>
+      <xs:enumeration value="TOP"/>
+      <xs:enumeration value="TTD"/>
+      <xs:enumeration value="TND"/>
+      <xs:enumeration value="TRL"/>
+      <xs:enumeration value="TMM"/>
+      <xs:enumeration value="AED"/>
+      <xs:enumeration value="UGX"/>
+      <xs:enumeration value="UAH"/>
+      <xs:enumeration value="UYU"/>
+      <xs:enumeration value="USD"/>
+      <xs:enumeration value="UZS"/>
+      <xs:enumeration value="VUV"/>
+      <xs:enumeration value="VEB"/>
+      <xs:enumeration value="VND"/>
+      <xs:enumeration value="WST"/>
+      <xs:enumeration value="YER"/>
+      <xs:enumeration value="YUM"/>
+      <xs:enumeration value="ZMK"/>
+      <xs:enumeration value="ZWD"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CurrencyNumberType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="004"/>
+      <xs:enumeration value="008"/>
+      <xs:enumeration value="012"/>
+      <xs:enumeration value="024"/>
+      <xs:enumeration value="032"/>
+      <xs:enumeration value="051"/>
+      <xs:enumeration value="533"/>
+      <xs:enumeration value="036"/>
+      <xs:enumeration value="040"/>
+      <xs:enumeration value="031"/>
+      <xs:enumeration value="044"/>
+      <xs:enumeration value="048"/>
+      <xs:enumeration value="050"/>
+      <xs:enumeration value="052"/>
+      <xs:enumeration value="974"/>
+      <xs:enumeration value="056"/>
+      <xs:enumeration value="084"/>
+      <xs:enumeration value="060"/>
+      <xs:enumeration value="064"/>
+      <xs:enumeration value="068"/>
+      <xs:enumeration value="977"/>
+      <xs:enumeration value="072"/>
+      <xs:enumeration value="986"/>
+      <xs:enumeration value="096"/>
+      <xs:enumeration value="100"/>
+      <xs:enumeration value="108"/>
+      <xs:enumeration value="116"/>
+      <xs:enumeration value="124"/>
+      <xs:enumeration value="132"/>
+      <xs:enumeration value="136"/>
+      <xs:enumeration value="952"/>
+      <xs:enumeration value="950"/>
+      <xs:enumeration value="953"/>
+      <xs:enumeration value="152"/>
+      <xs:enumeration value="156"/>
+      <xs:enumeration value="170"/>
+      <xs:enumeration value="174"/>
+      <xs:enumeration value="976"/>
+      <xs:enumeration value="188"/>
+      <xs:enumeration value="191"/>
+      <xs:enumeration value="192"/>
+      <xs:enumeration value="196"/>
+      <xs:enumeration value="203"/>
+      <xs:enumeration value="208"/>
+      <xs:enumeration value="276"/>
+      <xs:enumeration value="262"/>
+      <xs:enumeration value="214"/>
+      <xs:enumeration value="528"/>
+      <xs:enumeration value="951"/>
+      <xs:enumeration value="218"/>
+      <xs:enumeration value="818"/>
+      <xs:enumeration value="222"/>
+      <xs:enumeration value="232"/>
+      <xs:enumeration value="233"/>
+      <xs:enumeration value="230"/>
+      <xs:enumeration value="978"/>
+      <xs:enumeration value="238"/>
+      <xs:enumeration value="242"/>
+      <xs:enumeration value="246"/>
+      <xs:enumeration value="250"/>
+      <xs:enumeration value="270"/>
+      <xs:enumeration value="268"/>
+      <xs:enumeration value="288"/>
+      <xs:enumeration value="292"/>
+      <xs:enumeration value="300"/>
+      <xs:enumeration value="320"/>
+      <xs:enumeration value="328"/>
+      <xs:enumeration value="332"/>
+      <xs:enumeration value="340"/>
+      <xs:enumeration value="344"/>
+      <xs:enumeration value="348"/>
+      <xs:enumeration value="352"/>
+      <xs:enumeration value="356"/>
+      <xs:enumeration value="360"/>
+      <xs:enumeration value="364"/>
+      <xs:enumeration value="368"/>
+      <xs:enumeration value="372"/>
+      <xs:enumeration value="376"/>
+      <xs:enumeration value="380"/>
+      <xs:enumeration value="388"/>
+      <xs:enumeration value="392"/>
+      <xs:enumeration value="400"/>
+      <xs:enumeration value="398"/>
+      <xs:enumeration value="404"/>
+      <xs:enumeration value="414"/>
+      <xs:enumeration value="417"/>
+      <xs:enumeration value="418"/>
+      <xs:enumeration value="428"/>
+      <xs:enumeration value="422"/>
+      <xs:enumeration value="426"/>
+      <xs:enumeration value="430"/>
+      <xs:enumeration value="434"/>
+      <xs:enumeration value="440"/>
+      <xs:enumeration value="442"/>
+      <xs:enumeration value="446"/>
+      <xs:enumeration value="807"/>
+      <xs:enumeration value="450"/>
+      <xs:enumeration value="454"/>
+      <xs:enumeration value="458"/>
+      <xs:enumeration value="462"/>
+      <xs:enumeration value="470"/>
+      <xs:enumeration value="478"/>
+      <xs:enumeration value="480"/>
+      <xs:enumeration value="484"/>
+      <xs:enumeration value="498"/>
+      <xs:enumeration value="496"/>
+      <xs:enumeration value="504"/>
+      <xs:enumeration value="508"/>
+      <xs:enumeration value="104"/>
+      <xs:enumeration value="516"/>
+      <xs:enumeration value="524"/>
+      <xs:enumeration value="532"/>
+      <xs:enumeration value="186"/>
+      <xs:enumeration value="554"/>
+      <xs:enumeration value="558"/>
+      <xs:enumeration value="566"/>
+      <xs:enumeration value="408"/>
+      <xs:enumeration value="578"/>
+      <xs:enumeration value="586"/>
+      <xs:enumeration value="590"/>
+      <xs:enumeration value="598"/>
+      <xs:enumeration value="600"/>
+      <xs:enumeration value="604"/>
+      <xs:enumeration value="608"/>
+      <xs:enumeration value="985"/>
+      <xs:enumeration value="620"/>
+      <xs:enumeration value="634"/>
+      <xs:enumeration value="512"/>
+      <xs:enumeration value="642"/>
+      <xs:enumeration value="810"/>
+      <xs:enumeration value="646"/>
+      <xs:enumeration value="678"/>
+      <xs:enumeration value="682"/>
+      <xs:enumeration value="690"/>
+      <xs:enumeration value="694"/>
+      <xs:enumeration value="702"/>
+      <xs:enumeration value="703"/>
+      <xs:enumeration value="705"/>
+      <xs:enumeration value="090"/>
+      <xs:enumeration value="706"/>
+      <xs:enumeration value="710"/>
+      <xs:enumeration value="410"/>
+      <xs:enumeration value="724"/>
+      <xs:enumeration value="144"/>
+      <xs:enumeration value="654"/>
+      <xs:enumeration value="826"/>
+      <xs:enumeration value="736"/>
+      <xs:enumeration value="740"/>
+      <xs:enumeration value="748"/>
+      <xs:enumeration value="752"/>
+      <xs:enumeration value="756"/>
+      <xs:enumeration value="760"/>
+      <xs:enumeration value="901"/>
+      <xs:enumeration value="762"/>
+      <xs:enumeration value="834"/>
+      <xs:enumeration value="764"/>
+      <xs:enumeration value="626"/>
+      <xs:enumeration value="776"/>
+      <xs:enumeration value="780"/>
+      <xs:enumeration value="788"/>
+      <xs:enumeration value="792"/>
+      <xs:enumeration value="795"/>
+      <xs:enumeration value="784"/>
+      <xs:enumeration value="800"/>
+      <xs:enumeration value="980"/>
+      <xs:enumeration value="858"/>
+      <xs:enumeration value="840"/>
+      <xs:enumeration value="860"/>
+      <xs:enumeration value="548"/>
+      <xs:enumeration value="862"/>
+      <xs:enumeration value="704"/>
+      <xs:enumeration value="882"/>
+      <xs:enumeration value="886"/>
+      <xs:enumeration value="891"/>
+      <xs:enumeration value="894"/>
+      <xs:enumeration value="716"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.com/invoice/wsdl/GetInvoicesResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/Invoice/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/Invoice/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/Invoice/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/Invoice/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/Invoice/1.0.0/SharedObjects/" schemaLocation="SharedObjectsInvoice.xsd"/>
+  <xsd:element name="Invoice">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:invoiceNumber"/>
+        <xsd:element ref="ns3:invoiceType"/>
+        <xsd:element ref="ns3:invoiceDate"/>
+        <xsd:element ref="ns3:purchaseOrderNumber" minOccurs="0"/>
+        <xsd:element name="BillTo">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns3:AccountInfo"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="SoldTo">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns3:AccountInfo"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="ns3:terms" minOccurs="0"/>
+        <xsd:element ref="ns3:currency" minOccurs="0"/>
+        <xsd:element ref="ns3:fob" minOccurs="0"/>
+        <xsd:element ref="ns3:salesAmount"/>
+        <xsd:element ref="ns3:totalAmount"/>
+        <xsd:element ref="ns3:shippingAndHandlingAmount"/>
+        <xsd:element ref="ns3:advancePaymentAmount"/>
+        <xsd:element ref="ns3:invoiceAmount"/>
+        <xsd:element name="InvoiceLineItemsArray">
+          <xsd:annotation>
+            <xsd:documentation>An Array of invoice lines</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns3:InvoiceLineItem" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="SalesOrderNumberArray">
+          <xsd:annotation>
+            <xsd:documentation>An Array of sales orders</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns3:salesOrderNumber" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetInvoicesResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="InvoiceArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>An Array of invoices</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:Invoice" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="ns3:ErrorMessage" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://devservices.alphabroder.com/invoice/service/index.php</con:endpoint></con:endpoints><con:operation id="99986b91-64b2-4862-821b-bdb3e4018462" isOneWay="false" action="getInvoices" name="getInvoices" bindingOperationName="getInvoices" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="45d0dd66-faa6-41c1-93a5-71e5e4100ef8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.com/invoice/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/Invoice/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/Invoice/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetInvoicesRequest>\r
+         <shar:wsVersion>?</shar:wsVersion>\r
+         <!--Optional:-->\r
+         <shar:id>?</shar:id>\r
+         <shar:password>?</shar:password>\r
+         <shar:queryType>?</shar:queryType>\r
+         <!--Optional:-->\r
+         <shar:referenceNumber>?</shar:referenceNumber>\r
+         <!--Optional:-->\r
+         <shar:invoiceRequestedDate>?</shar:invoiceRequestedDate>\r
+      </ns:GetInvoicesRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getInvoices"/></con:call></con:operation></con:interface><con:testSuite id="af22c9e3-0329-489a-b0d3-dc11eafd6d48" name="InvoiceServiceBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="7a681af2-a0ab-4f35-9c8b-56343f574aec" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getInvoices TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="fdadf9b8-46c9-4295-bc4c-8c59a097ed50" name="Positive cases" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>InvoiceServiceBinding</con:interface><con:operation>getInvoices</con:operation><con:request name="Positive cases" id="d9f6b36a-1000-45e4-92d2-05de0d7b13e2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.com/invoice/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/Invoice/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/Invoice/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetInvoicesRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <!--Optional:-->\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <shar:queryType>${#TestCase#QUERY}</shar:queryType>\r
+         <!--Optional:-->\r
+         <shar:referenceNumber>${#TestCase#REFNUM}</shar:referenceNumber>\r
+         <!--Optional:-->\r
+         <shar:invoiceRequestedDate>${#TestCase#DATE}</shar:invoiceRequestedDate>\r
+      </ns:GetInvoicesRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="4d7eb0b1-4103-4f32-afcd-713902a1e66d" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="edbb3492-5240-4efd-8748-1818c39ce23b" name="SOAP Response"/><con:assertion type="Schema Compliance" id="7e0bd1da-eb75-40fa-a876-c6f160f56cd6" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getInvoices" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="e86f7e54-b5e6-4897-a35e-3d36dedf9e06" name="Sample"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>InvoiceServiceBinding</con:interface><con:operation>getInvoices</con:operation><con:request name="Sample" id="d9f6b36a-1000-45e4-92d2-05de0d7b13e2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.com/invoice/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/Invoice/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/Invoice/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetInvoicesRequest>\r
+         <shar:wsVersion>0.0.1</shar:wsVersion>\r
+         <!--Optional:-->\r
+         <shar:id>grace35</shar:id>\r
+         <shar:password>35827</shar:password>\r
+         <shar:queryType>3</shar:queryType>\r
+         <!--Optional:-->\r
+         <shar:referenceNumber>37103882</shar:referenceNumber>\r
+         <!--Optional:-->\r
+         <shar:invoiceRequestedDate>2012-05-10</shar:invoiceRequestedDate>\r
+      </ns:GetInvoicesRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="4d7eb0b1-4103-4f32-afcd-713902a1e66d" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="edbb3492-5240-4efd-8748-1818c39ce23b" name="SOAP Response"/><con:assertion type="Schema Compliance" id="7e0bd1da-eb75-40fa-a876-c6f160f56cd6" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getInvoices" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Run" id="1f92262b-cf97-4f0c-975e-1d92e761d3b8"><con:settings/><con:config><script>//use to keep track of iterations when saving to files
+stepCount = 1
+
+//get the test case name and remove ' test case' from the end of it
+testName = testRunner.testCase.getName().substring(0, testRunner.testCase.getName().indexOf(" "))
+testSuite = testRunner.testCase.testSuite.getName().substring(0, testRunner.testCase.testSuite.getName().indexOf("Binding"))
+log.info(testSuite)
+
+//delete old test results if they exist
+testDir = new File("G:\\"+testSuite+"(ABcom)Positive cases\\"+testName)
+if(testDir.exists()) {
+	testDir.deleteDir()
+}
+
+//reset version
+testRunner.testCase.setPropertyValue('VERSIONSTRING',"0.0.1")
+
+
+//reset user ID
+testRunner.testCase.setPropertyValue('USERID',"pkunta1")
+
+
+//reset password
+testRunner.testCase.setPropertyValue('PASSWORD',"QAbodek1234")
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"1")
+
+//positive test cases
+String[] PO  = [  "SO-323-1"] as String[]
+
+positiveReqTest(PO,'REFNUM')
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"2")
+
+//positive tests for so
+String[] SO  = [  "94908449"] as String[]
+
+positiveReqTest(SO,'REFNUM')
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"3")
+
+//positive test for date
+String[] DATE  = [  "2018-03-23"] as String[]
+
+positiveReqTest(DATE,'DATE')
+
+//reset user ID
+testRunner.testCase.setPropertyValue('USERID',"grace671")
+
+
+//reset password
+testRunner.testCase.setPropertyValue('PASSWORD',"grace671")
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"1")
+
+String[] PO1  = [  "01262018-15", "01302018-11", "904652-0"] as String[]
+
+positiveReqTest(PO1,'REFNUM')
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"2")
+
+String[] SO1  = [ "43450138", "43450136", "43450135"] as String[]
+
+positiveReqTest(SO1,'REFNUM')
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"3")
+
+String[] DATE1  = [ "2018-05-23", "2018-05-24"] as String[]
+
+positiveReqTest(DATE1,'DATE')
+
+//reset user ID
+testRunner.testCase.setPropertyValue('USERID',"grace35")
+
+
+//reset password
+testRunner.testCase.setPropertyValue('PASSWORD',"35827")
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"1")
+
+positiveReqTest(PO1,'REFNUM')
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"2")
+
+positiveReqTest(SO1,'REFNUM')
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"3")
+
+positiveReqTest(DATE1,'DATE')
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"1")
+
+String[] PO2  = [ "02072018-10"] as String[]
+
+positiveReqTest(PO2,'REFNUM')
+
+String[] IO2  = [ "94901014"] as String[]
+
+positiveReqTest(IO2,'REFNUM')
+
+	def positiveReqTest(String[] testData, String propName)
+	{
+		String templatename='Positive cases';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			String filename="PositiveCase of Step_"+stepCount+"_"+propName
+			log.info("Testing Positive case of "+propName+" "+testData[i])
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+
+     def positiveReqTestWithOnlyStepname(String filename)
+	{
+		String templatename='PositiveCases';
+		log.info("Testing Positive case of "+filename)
+		testRunner.runTestStepByName(templatename)
+		saveToFile(filename,templatename)
+		
+	}
+	
+
+	//save the req and req to files
+	def saveToFile(String fileName, String templateName) 
+	{
+		File reqDir = new File(testDir.getAbsolutePath()+"\\Positive case Requests")
+		File resDir = new File(testDir.getAbsolutePath()+"\\Positive case Responses")
+		
+		//create directories if they don't exist
+		if(!testDir.exists()) {
+			reqDir.mkdirs()
+			resDir.mkdirs()
+		}
+				
+		//Request File
+		def myRequest=reqDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def request=context.expand('${'+templateName+'#Request}')
+		new File (myRequest).write(request,"UTF-8")
+		
+		//Response File
+		def myResponse=resDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def response=context.expand('${'+templateName+'#Response}')
+		new File (myResponse).write(response,"UTF-8")
+	}
+
+testRunner.testCase.getTestStepByName("Run 1").run(testRunner, context)
+</script></con:config></con:testStep><con:testStep type="request" id="b1e4dc87-78ce-4d2c-b2dd-7baf45aa99db" name="Negative cases" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>InvoiceServiceBinding</con:interface><con:operation>getInvoices</con:operation><con:request name="Negative cases" id="d9f6b36a-1000-45e4-92d2-05de0d7b13e2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.com/invoice/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/Invoice/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/Invoice/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetInvoicesRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <!--Optional:-->\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <shar:queryType>${#TestCase#QUERY}</shar:queryType>\r
+         <!--Optional:-->\r
+         <shar:referenceNumber>${#TestCase#REFNUM}</shar:referenceNumber>\r
+         <!--Optional:-->\r
+         <shar:invoiceRequestedDate>${#TestCase#DATE}</shar:invoiceRequestedDate>\r
+      </ns:GetInvoicesRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="4d7eb0b1-4103-4f32-afcd-713902a1e66d" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="edbb3492-5240-4efd-8748-1818c39ce23b" name="SOAP Response"/><con:assertion type="Schema Compliance" id="7e0bd1da-eb75-40fa-a876-c6f160f56cd6" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="XPath Match" id="d612415d-7fe7-41fb-a071-d43dc63e0827" name="XPath Match"><con:configuration><path>declare namespace ns1='http://www.codesynthesis.com/xmlns/xsstl';
+
+//ns1:code</path><content>${#TestCase#ERRORCODE}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getInvoices" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Run 1" id="0c3e6c22-6bfb-4211-8dd0-c98721361942"><con:settings/><con:config><script>//use to keep track of iterations when saving to files
+stepCount = 1
+
+//get the test case name and remove ' test case' from the end of it
+testName = testRunner.testCase.getName().substring(0, testRunner.testCase.getName().indexOf(" "))
+testSuite = testRunner.testCase.testSuite.getName().substring(0, testRunner.testCase.testSuite.getName().indexOf("Binding"))
+log.info(testSuite)
+
+//delete old test results if they exist
+testDir = new File("G:\\"+testSuite+"(ABcom)Negative cases\\"+testName)
+if(testDir.exists()) {
+	testDir.deleteDir()
+}
+
+//test version
+String[] VERSION = ["",    "1",   "1.A", "*",   "123", "version"] as String[]
+String[] ERROR   = ["120", "125", "125", "125", "125", "125"] as String[]
+
+availLocationsReqTest(VERSION, ERROR, 'VERSIONSTRING')
+
+//reset version
+testRunner.testCase.setPropertyValue('VERSIONSTRING',"1.0.0")
+
+
+//test user ID
+String[] USER  = ["",    "1910", "jack", "*",   "Jill123"] as String[]
+	    ERROR = ["120", "105",  "105",  "105", "105"] as String[]
+
+availLocationsReqTest(USER, ERROR, 'USERID')
+
+//reset user ID
+testRunner.testCase.setPropertyValue('USERID',"grace671")
+
+
+//test password
+String[] PASS  = ["",    "20",  "pass", "a2b", "p@\$\$"] as String[]
+	    ERROR = ["110", "105", "105",  "105", "105"] as String[]
+
+availLocationsReqTest(PASS, ERROR, 'PASSWORD')
+
+//reset password
+testRunner.testCase.setPropertyValue('PASSWORD',"grace671")
+
+
+//test prod ID
+String[] QUERY  = ["",    "20",  "abc", "123abc", "p@n7s"] as String[]
+	    ERROR = ["120", "125", "125", "125", "125"] as String[]
+
+availLocationsReqTest(QUERY, ERROR, 'QUERY')
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('QUERY',"1")
+
+//test refnum for query 1
+String[] REFNUM  = [ "20",  "abc", "123abc", "p@n7s",  "!@#%"] as String[]
+	    ERROR = [ "120", "125", "125", "125", "125"] as String[]
+
+availLocationsReqTest(REFNUM, ERROR, 'REFNUM')
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"2")
+
+//test refnum for query 2
+availLocationsReqTest(REFNUM, ERROR, 'REFNUM')
+
+//reset query
+testRunner.testCase.setPropertyValue('QUERY',"3")
+
+//test dates for query 3
+String[] DATES  = [ "20",  "abc", "123abc", "p@n7s",  "!@#%"] as String[]
+	    ERROR = [ "", "", "",    "",  ""] as String[]
+
+availLocationsReqTest(DATES, ERROR, 'DATE')
+
+
+	//method that does the work
+	def availLocationsReqTest(String[] testData, String[] errorCodes, String propName)
+	{
+		String templatename='Negative cases';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			testRunner.testCase.setPropertyValue('ERRORCODE',errorCodes[i])
+			String filename="Step_"+stepCount+"_"+propName
+			log.info("Testing "+propName+" "+testData[i]+" Error Code: "+context.expand('${#TestCase#ERRORCODE}'))
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+
+	//save the req and req to files
+	def saveToFile(String fileName, String templateName) 
+	{
+		File reqDir = new File(testDir.getAbsolutePath()+"\\Negative case Requests")
+		File resDir = new File(testDir.getAbsolutePath()+"\\Negative case Responses")
+		//create directories if they don't exist
+		if(!testDir.exists()) {
+			reqDir.mkdirs()
+			resDir.mkdirs()
+		}
+		//Request File
+		def myRequest=reqDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def request=context.expand('${'+templateName+'#Request}')
+		new File (myRequest).write(request,"UTF-8")
+		
+		//Response File
+		def myResponse=resDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def response=context.expand('${'+templateName+'#Response}')
+		new File (myResponse).write(response,"UTF-8")
+	}
+</script></con:config></con:testStep><con:properties><con:property><con:name>VERSIONSTRING</con:name><con:value>1.0.0</con:value></con:property><con:property><con:name>USERID</con:name><con:value>grace671</con:value></con:property><con:property><con:name>PASSWORD</con:name><con:value>grace671</con:value></con:property><con:property><con:name>QUERY</con:name><con:value>3</con:value></con:property><con:property><con:name>REFNUM</con:name><con:value>!@#%</con:value></con:property><con:property><con:name>DATE</con:name><con:value>!@#%</con:value></con:property><con:property><con:name>ERRORCODE</con:name><con:value/></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

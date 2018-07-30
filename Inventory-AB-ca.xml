@@ -1,0 +1,1783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="a3ec97ef-385d-4378-9cb5-2ec564db154e" activeEnvironment="Default" name="Inventory_AB_ca" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="255bd34f-e75a-4e0e-b23f-ede7e9c2f29b" wsaVersion="NONE" name="InventoryServiceBindingV2" type="wsdl" bindingName="{http://www.promostandards.org/WSDL/Inventory/2.0.0/}InventoryServiceBindingV2" soapVersion="1_1" anonymous="optional" definition="https://devservices.alphabroder.ca/inventory-2-0/wsdl/InventoryService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://devservices.alphabroder.ca/inventory-2-0/wsdl/InventoryService.wsdl"><con:part><con:url>https://devservices.alphabroder.ca/inventory-2-0/wsdl/InventoryService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="Inventory_v2_0_0" targetNamespace="http://www.promostandards.org/WSDL/Inventory/2.0.0/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.promostandards.org/WSDL/Inventory/2.0.0/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/" xmlns:ns1="http://www.codesynthesis.com/xmlns/xsstl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/Inventory/2.0.0/" schemaLocation="GetFilterValuesRequest.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/Inventory/2.0.0/" schemaLocation="GetFilterValuesResponse.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/Inventory/2.0.0/" schemaLocation="GetInventoryLevelsRequest.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/Inventory/2.0.0/" schemaLocation="GetInventoryLevelsResponse.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetFilterValuesRequestMessage">
+    <wsdl:part name="GetFilterValuesRequest" element="tns:GetFilterValuesRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetFilterValuesResponseMessage">
+    <wsdl:part name="GetFilterValuesResponse" element="tns:GetFilterValuesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getInventoryLevelsRequest">
+    <wsdl:part name="GetInventoryLevelsRequest" element="tns:GetInventoryLevelsRequest"/>
+  </wsdl:message>
+  <wsdl:message name="getInventoryLevelsResponse">
+    <wsdl:part name="GetInventoryLevelsResponse" element="tns:GetInventoryLevelsResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="InventoryService">
+    <wsdl:operation name="getFilterValues">
+      <wsdl:input message="tns:GetFilterValuesRequestMessage"/>
+      <wsdl:output message="tns:GetFilterValuesResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getInventoryLevels">
+      <wsdl:input message="tns:getInventoryLevelsRequest"/>
+      <wsdl:output message="tns:getInventoryLevelsResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InventoryServiceBindingV2" type="tns:InventoryService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getFilterValues">
+      <soap:operation soapAction="getFilterValues" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInventoryLevels">
+      <soap:operation soapAction="getInventoryLevels" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InventoryServiceV2">
+    <wsdl:port name="InventoryServiceBinding" binding="tns:InventoryServiceBindingV2">
+      <soap:address location="https://devservices.alphabroder.ca/inventory-2-0/service/index.php"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/inventory-2-0/wsdl/GetFilterValuesRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/Inventory/2.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/Inventory/2.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/" schemaLocation="SharedObjectsInventory.xsd"/>
+  <xsd:element name="GetFilterValuesRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:wsVersion"/>
+        <xsd:element ref="ns2:id"/>
+        <xsd:element ref="ns2:password" minOccurs="0"/>
+        <xsd:element ref="ns2:productId"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/inventory-2-0/wsdl/SharedObjectsInventory.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/" elementFormDefault="qualified" xmlns:ns1="http://www.promostandards.org/WSDL/Inventory/2.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/" xmlns:ns3="http://www.codesynthesis.com/xmlns/xsstl" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://www.codesynthesis.com/xmlns/xsstl" schemaLocation="iso3166-country-code.xsd"/>
+  <xsd:element name="attributeSelection">
+    <xsd:annotation>
+      <xsd:documentation>Description of the generic selection criteria</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:maxLength value="64"/>
+        <xsd:minLength value="1"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="buyToOrder">
+    <xsd:annotation>
+      <xsd:documentation>Is it a made to order(unlimited inventory) item?</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:boolean"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="ServiceMessageArray">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:ServiceMessage" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ServiceMessage">
+    <xsd:annotation>
+      <xsd:documentation>Response for any message requiring notification to requestor</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="code" type="xsd:int">
+          <xsd:annotation>
+            <xsd:documentation>Response for any message requiring notification to requestor</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="description">
+          <xsd:annotation>
+            <xsd:documentation>Response for any message requiring notification to requestor</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:maxLength value="256"/>
+              <xsd:minLength value="1"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="severity">
+          <xsd:annotation>
+            <xsd:documentation>The severity of the message. Values are enumerated: {Error, Information, Warning}</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="ns2:SeverityType">
+              <xsd:maxLength value="64"/>
+              <xsd:minLength value="1"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="FilterValues">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Filters" minOccurs="0">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Filter">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element ref="ns2:LabelSizeArray" maxOccurs="unbounded"/>
+                    <xsd:element ref="ns2:PartColorArray" maxOccurs="unbounded"/>
+                    <xsd:element ref="ns2:SelectionArray" maxOccurs="unbounded"/>
+                    <xsd:element ref="ns2:partId" minOccurs="0"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="ns2:productId"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Filter">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:partId" minOccurs="0"/>
+        <xsd:element ref="ns2:LabelSizeArray" minOccurs="0"/>
+        <xsd:element ref="ns2:PartColorArray" minOccurs="0"/>
+        <xsd:element ref="ns2:SelectionArray" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="FutureAvailabilityArray">
+    <xsd:annotation>
+      <xsd:documentation>An array of future incoming stock</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:FutureAvailability" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="availableOn" type="xsd:dateTime">
+    <xsd:annotation>
+      <xsd:documentation>A date timestamp in UTC specifying the valid timestamp depicting when the inventory will be available for allocation to sales orders.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="FutureAvailability">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:Quantity"/>
+        <xsd:element ref="ns2:availableOn"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="id">
+    <xsd:annotation>
+      <xsd:documentation>The customer Id or any other agreed upon Id.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:maxLength value="64"/>
+        <xsd:minLength value="1"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="Inventory">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:productId"/>
+        <xsd:element ref="ns2:PartInventoryArray" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="LabelSizeArray">
+    <xsd:annotation>
+      <xsd:documentation>A list of sizes to be used when filtering.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:labelSize" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="labelSize">
+    <xsd:annotation>
+      <xsd:documentation>The apparel items tagged size. e.g. XSmall, Small, etc.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="ns2:labelSizeEnum">
+        <xsd:maxLength value="6"/>
+        <xsd:minLength value="1"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="mainPart">
+    <xsd:annotation>
+      <xsd:documentation>Is it a main part or accessory?</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:boolean"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="manufacturedItem">
+    <xsd:annotation>
+      <xsd:documentation>Is it a manufactured item?</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:boolean"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="PartColorArray">
+    <xsd:annotation>
+      <xsd:documentation>A list of colors to be used when filtering.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:partColor" maxOccurs="unbounded">
+          <xsd:annotation>
+            <xsd:documentation>Part Color</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="partColor">
+    <xsd:annotation>
+      <xsd:documentation>Description of the color of the part</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:maxLength value="64"/>
+        <xsd:minLength value="1"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="partDescription">
+    <xsd:annotation>
+      <xsd:documentation>Part’s description</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:maxLength value="256"/>
+        <xsd:minLength value="1"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="partId">
+    <xsd:annotation>
+      <xsd:documentation>The part ID</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:maxLength value="64"/>
+        <xsd:minLength value="1"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="PartInventoryArray">
+    <xsd:annotation>
+      <xsd:documentation>An array of inventory levels grouped by variation.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="PartInventory" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns2:partId"/>
+              <xsd:element ref="ns2:mainPart">
+                <xsd:annotation>
+                  <xsd:documentation>A boolean value indicating if this is a main part of the product. In a tumbler with an optional lid configuration, the parts associated with the tumbler would be set to TRUE. The parts associated with the Lid would be set to false.</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="ns2:partColor" minOccurs="0">
+                <xsd:annotation>
+                  <xsd:documentation>Description of the color of the part</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="ns2:labelSize" minOccurs="0">
+                <xsd:annotation>
+                  <xsd:documentation>The apparel items tagged size. e.g. XSmall, Small, etc.</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="ns2:partDescription" minOccurs="0">
+                <xsd:annotation>
+                  <xsd:documentation>Description of the part</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="ns2:quantityAvailable" minOccurs="0">
+                <xsd:annotation>
+                  <xsd:documentation>An integer which shows the sum of inventory of all warehouses of the part</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="ns2:manufacturedItem">
+                <xsd:annotation>
+                  <xsd:documentation>Indicates that the supplier produces this part according to demand. The supplier may keep a limited amount of inventory or inventory may be 0.</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="ns2:buyToOrder">
+                <xsd:annotation>
+                  <xsd:documentation>Indicates that the supplier purchases this product to order. The supplier may keep a limited amount of inventory, show available inventory to buy, or it might be 0.</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="ns2:attributeSelection" minOccurs="0">
+                <xsd:annotation>
+                  <xsd:documentation>A string describing the attribute of the product other than size and color</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="ns2:InventoryLocationArray" minOccurs="0">
+                <xsd:annotation>
+                  <xsd:documentation>An array of InventoryLocation objects</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="ns2:lastModified" minOccurs="0">
+                <xsd:annotation>
+                  <xsd:documentation>A date timestamp in UTC specifying the last time inventory was modified.</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="password">
+    <xsd:annotation>
+      <xsd:documentation>The password associated with the Id</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:maxLength value="64"/>
+        <xsd:minLength value="1"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="productId">
+    <xsd:annotation>
+      <xsd:documentation>The product ID</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:maxLength value="64"/>
+        <xsd:minLength value="1"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="quantityAvailable">
+    <xsd:annotation>
+      <xsd:documentation>The quantity available</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:Quantity"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Quantity">
+    <xsd:annotation>
+      <xsd:documentation>The quantity object that contains the value and unit of measure</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="uom">
+          <xsd:annotation>
+            <xsd:documentation>The unit of measure; values are enumerated.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="ns2:QuantityUomType">
+              <xsd:maxLength value="2"/>
+              <xsd:minLength value="1"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="value" type="xsd:decimal">
+          <xsd:annotation>
+            <xsd:documentation>The quantity value</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SelectionArray">
+    <xsd:annotation>
+      <xsd:documentation>A list of selections to be used when filtering.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:selection" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="selection">
+    <xsd:annotation>
+      <xsd:documentation>Selection</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:maxLength value="256"/>
+        <xsd:minLength value="1"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="lastModified" type="xsd:dateTime">
+    <xsd:annotation>
+      <xsd:documentation>The last time inventory was modified</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="InventoryLocationArray">
+    <xsd:annotation>
+      <xsd:documentation>An array of inventory locations</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:InventoryLocation" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="inventoryLocationId">
+    <xsd:annotation>
+      <xsd:documentation>The inventory location ID</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:maxLength value="64"/>
+        <xsd:minLength value="1"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="inventoryLocationName">
+    <xsd:annotation>
+      <xsd:documentation>Inventory location name</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:maxLength value="64"/>
+        <xsd:minLength value="1"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="inventoryLocationQuantity">
+    <xsd:annotation>
+      <xsd:documentation>The quantity available</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:Quantity"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="InventoryLocation">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:inventoryLocationId">
+          <xsd:annotation>
+            <xsd:documentation>The inventory location ID</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element ref="ns2:inventoryLocationName" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Inventory location name</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="postalCode" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The postal code</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="64"/>
+              <xsd:minLength value="1"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="country" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The country</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="ns3:ISO3166CountyCode">
+              <xsd:maxLength value="2"/>
+              <xsd:minLength value="1"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element ref="ns2:inventoryLocationQuantity">
+          <xsd:annotation>
+            <xsd:documentation>The quantity available in a workcenter</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element ref="ns2:FutureAvailabilityArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>An array of future incoming stock</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="wsVersion">
+    <xsd:annotation>
+      <xsd:documentation>The Standard Version of the Web Service being referenced</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:maxLength value="64"/>
+        <xsd:minLength value="1"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:simpleType name="labelSizeEnum">
+    <xsd:annotation>
+      <xsd:documentation/>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="2XL"/>
+      <xsd:enumeration value="2XS"/>
+      <xsd:enumeration value="3XL"/>
+      <xsd:enumeration value="3XS"/>
+      <xsd:enumeration value="4XL"/>
+      <xsd:enumeration value="4XS"/>
+      <xsd:enumeration value="5XL"/>
+      <xsd:enumeration value="5XS"/>
+      <xsd:enumeration value="6XL"/>
+      <xsd:enumeration value="6XS"/>
+      <xsd:enumeration value="CUSTOM"/>
+      <xsd:enumeration value="L"/>
+      <xsd:enumeration value="M"/>
+      <xsd:enumeration value="OSFA"/>
+      <xsd:enumeration value="S"/>
+      <xsd:enumeration value="XL"/>
+      <xsd:enumeration value="XS"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="QuantityUomType">
+    <xsd:annotation>
+      <xsd:documentation>The type of Quantity UOM</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="BX"/>
+      <xsd:enumeration value="CA"/>
+      <xsd:enumeration value="DZ"/>
+      <xsd:enumeration value="EA"/>
+      <xsd:enumeration value="KT"/>
+      <xsd:enumeration value="PK"/>
+      <xsd:enumeration value="PR"/>
+      <xsd:enumeration value="RL"/>
+      <xsd:enumeration value="SL"/>
+      <xsd:enumeration value="ST"/>
+      <xsd:enumeration value="TH"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SeverityType">
+    <xsd:annotation>
+      <xsd:documentation>The severity type</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Error"/>
+      <xsd:enumeration value="Information"/>
+      <xsd:enumeration value="Warning"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/inventory-2-0/wsdl/iso3166-country-code.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.codesynthesis.com/xmlns/xsstl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:stl="http://www.codesynthesis.com/xmlns/xsstl">
+  <xsd:annotation>
+    <xsd:documentation>Copyright (C) 2006-2007 Code Synthesis Tools CC
+
+      Redistribution and use with or without modification are permitted
+      under the terms of the new BSD license. See the accompanying LICENSE
+      file.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:simpleType name="ISO3166CountyCode">
+    <xsd:annotation>
+      <xsd:documentation>Two-letter (alpha-2) ISO 3166-1 code for one of the 243 countries.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="AF"/>
+      <!--AFGHANISTAN-->
+      <xsd:enumeration value="AX"/>
+      <!--&Aring;LAND ISLANDS-->
+      <xsd:enumeration value="AL"/>
+      <!--ALBANIA-->
+      <xsd:enumeration value="DZ"/>
+      <!--ALGERIA-->
+      <xsd:enumeration value="AS"/>
+      <!--AMERICAN SAMOA-->
+      <xsd:enumeration value="AD"/>
+      <!--ANDORRA-->
+      <xsd:enumeration value="AO"/>
+      <!--ANGOLA-->
+      <xsd:enumeration value="AI"/>
+      <!--ANGUILLA-->
+      <xsd:enumeration value="AQ"/>
+      <!--ANTARCTICA-->
+      <xsd:enumeration value="AG"/>
+      <!--ANTIGUA AND BARBUDA-->
+      <xsd:enumeration value="AR"/>
+      <!--ARGENTINA-->
+      <xsd:enumeration value="AM"/>
+      <!--ARMENIA-->
+      <xsd:enumeration value="AW"/>
+      <!--ARUBA-->
+      <xsd:enumeration value="AU"/>
+      <!--AUSTRALIA-->
+      <xsd:enumeration value="AT"/>
+      <!--AUSTRIA-->
+      <xsd:enumeration value="AZ"/>
+      <!--AZERBAIJAN-->
+      <xsd:enumeration value="BS"/>
+      <!--BAHAMAS-->
+      <xsd:enumeration value="BH"/>
+      <!--BAHRAIN-->
+      <xsd:enumeration value="BD"/>
+      <!--BANGLADESH-->
+      <xsd:enumeration value="BB"/>
+      <!--BARBADOS-->
+      <xsd:enumeration value="BY"/>
+      <!--BELARUS-->
+      <xsd:enumeration value="BE"/>
+      <!--BELGIUM-->
+      <xsd:enumeration value="BZ"/>
+      <!--BELIZE-->
+      <xsd:enumeration value="BJ"/>
+      <!--BENIN-->
+      <xsd:enumeration value="BM"/>
+      <!--BERMUDA-->
+      <xsd:enumeration value="BT"/>
+      <!--BHUTAN-->
+      <xsd:enumeration value="BO"/>
+      <!--BOLIVIA-->
+      <xsd:enumeration value="BA"/>
+      <!--BOSNIA AND HERZEGOVINA-->
+      <xsd:enumeration value="BW"/>
+      <!--BOTSWANA-->
+      <xsd:enumeration value="BV"/>
+      <!--BOUVET ISLAND-->
+      <xsd:enumeration value="BR"/>
+      <!--BRAZIL-->
+      <xsd:enumeration value="IO"/>
+      <!--BRITISH INDIAN OCEAN TERRITORY-->
+      <xsd:enumeration value="BN"/>
+      <!--BRUNEI DARUSSALAM-->
+      <xsd:enumeration value="BG"/>
+      <!--BULGARIA-->
+      <xsd:enumeration value="BF"/>
+      <!--BURKINA FASO-->
+      <xsd:enumeration value="BI"/>
+      <!--BURUNDI-->
+      <xsd:enumeration value="KH"/>
+      <!--CAMBODIA-->
+      <xsd:enumeration value="CM"/>
+      <!--CAMEROON-->
+      <xsd:enumeration value="CA"/>
+      <!--CANADA-->
+      <xsd:enumeration value="CV"/>
+      <!--CAPE VERDE-->
+      <xsd:enumeration value="KY"/>
+      <!--CAYMAN ISLANDS-->
+      <xsd:enumeration value="CF"/>
+      <!--CENTRAL AFRICAN REPUBLIC-->
+      <xsd:enumeration value="TD"/>
+      <!--CHAD-->
+      <xsd:enumeration value="CL"/>
+      <!--CHILE-->
+      <xsd:enumeration value="CN"/>
+      <!--CHINA-->
+      <xsd:enumeration value="CX"/>
+      <!--CHRISTMAS ISLAND-->
+      <xsd:enumeration value="CC"/>
+      <!--COCOS (KEELING) ISLANDS-->
+      <xsd:enumeration value="CO"/>
+      <!--COLOMBIA-->
+      <xsd:enumeration value="KM"/>
+      <!--COMOROS-->
+      <xsd:enumeration value="CG"/>
+      <!--CONGO-->
+      <xsd:enumeration value="CD"/>
+      <!--CONGO, THE DEMOCRATIC REPUBLIC OF THE-->
+      <xsd:enumeration value="CK"/>
+      <!--COOK ISLANDS-->
+      <xsd:enumeration value="CR"/>
+      <!--COSTA RICA-->
+      <xsd:enumeration value="CI"/>
+      <!--COTE D'IVOIRE-->
+      <xsd:enumeration value="HR"/>
+      <!--CROATIA-->
+      <xsd:enumeration value="CU"/>
+      <!--CUBA-->
+      <xsd:enumeration value="CY"/>
+      <!--CYPRUS-->
+      <xsd:enumeration value="CZ"/>
+      <!--CZECH REPUBLIC-->
+      <xsd:enumeration value="DK"/>
+      <!--DENMARK-->
+      <xsd:enumeration value="DJ"/>
+      <!--DJIBOUTI-->
+      <xsd:enumeration value="DM"/>
+      <!--DOMINICA-->
+      <xsd:enumeration value="DO"/>
+      <!--DOMINICAN REPUBLIC-->
+      <xsd:enumeration value="EC"/>
+      <!--ECUADOR-->
+      <xsd:enumeration value="EG"/>
+      <!--EGYPT-->
+      <xsd:enumeration value="SV"/>
+      <!--EL SALVADOR-->
+      <xsd:enumeration value="GQ"/>
+      <!--EQUATORIAL GUINEA-->
+      <xsd:enumeration value="ER"/>
+      <!--ERITREA-->
+      <xsd:enumeration value="EE"/>
+      <!--ESTONIA-->
+      <xsd:enumeration value="ET"/>
+      <!--ETHIOPIA-->
+      <xsd:enumeration value="FK"/>
+      <!--FALKLAND ISLANDS (MALVINAS)-->
+      <xsd:enumeration value="FO"/>
+      <!--FAROE ISLANDS-->
+      <xsd:enumeration value="FJ"/>
+      <!--FIJI-->
+      <xsd:enumeration value="FI"/>
+      <!--FINLAND-->
+      <xsd:enumeration value="FR"/>
+      <!--FRANCE-->
+      <xsd:enumeration value="GF"/>
+      <!--FRENCH GUIANA-->
+      <xsd:enumeration value="PF"/>
+      <!--FRENCH POLYNESIA-->
+      <xsd:enumeration value="TF"/>
+      <!--FRENCH SOUTHERN TERRITORIES-->
+      <xsd:enumeration value="GA"/>
+      <!--GABON-->
+      <xsd:enumeration value="GM"/>
+      <!--GAMBIA-->
+      <xsd:enumeration value="GE"/>
+      <!--GEORGIA-->
+      <xsd:enumeration value="DE"/>
+      <!--GERMANY-->
+      <xsd:enumeration value="GH"/>
+      <!--GHANA-->
+      <xsd:enumeration value="GI"/>
+      <!--GIBRALTAR-->
+      <xsd:enumeration value="GR"/>
+      <!--GREECE-->
+      <xsd:enumeration value="GL"/>
+      <!--GREENLAND-->
+      <xsd:enumeration value="GD"/>
+      <!--GRENADA-->
+      <xsd:enumeration value="GP"/>
+      <!--GUADELOUPE-->
+      <xsd:enumeration value="GU"/>
+      <!--GUAM-->
+      <xsd:enumeration value="GT"/>
+      <!--GUATEMALA-->
+      <xsd:enumeration value="GG"/>
+      <!--GUERNSEY-->
+      <xsd:enumeration value="GN"/>
+      <!--GUINEA-->
+      <xsd:enumeration value="GW"/>
+      <!--GUINEA-BISSAU-->
+      <xsd:enumeration value="GY"/>
+      <!--GUYANA-->
+      <xsd:enumeration value="HT"/>
+      <!--HAITI-->
+      <xsd:enumeration value="HM"/>
+      <!--HEARD ISLAND AND MCDONALD ISLANDS-->
+      <xsd:enumeration value="VA"/>
+      <!--HOLY SEE (VATICAN CITY STATE)-->
+      <xsd:enumeration value="HN"/>
+      <!--HONDURAS-->
+      <xsd:enumeration value="HK"/>
+      <!--HONG KONG-->
+      <xsd:enumeration value="HU"/>
+      <!--HUNGARY-->
+      <xsd:enumeration value="IS"/>
+      <!--ICELAND-->
+      <xsd:enumeration value="IN"/>
+      <!--INDIA-->
+      <xsd:enumeration value="ID"/>
+      <!--INDONESIA-->
+      <xsd:enumeration value="IR"/>
+      <!--IRAN, ISLAMIC REPUBLIC OF-->
+      <xsd:enumeration value="IQ"/>
+      <!--IRAQ-->
+      <xsd:enumeration value="IE"/>
+      <!--IRELAND-->
+      <xsd:enumeration value="IM"/>
+      <!--ISLE OF MAN-->
+      <xsd:enumeration value="IL"/>
+      <!--ISRAEL-->
+      <xsd:enumeration value="IT"/>
+      <!--ITALY-->
+      <xsd:enumeration value="JM"/>
+      <!--JAMAICA-->
+      <xsd:enumeration value="JP"/>
+      <!--JAPAN-->
+      <xsd:enumeration value="JE"/>
+      <!--JERSEY-->
+      <xsd:enumeration value="JO"/>
+      <!--JORDAN-->
+      <xsd:enumeration value="KZ"/>
+      <!--KAZAKHSTAN-->
+      <xsd:enumeration value="KE"/>
+      <!--KENYA-->
+      <xsd:enumeration value="KI"/>
+      <!--KIRIBATI-->
+      <xsd:enumeration value="KP"/>
+      <!--KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF-->
+      <xsd:enumeration value="KR"/>
+      <!--KOREA, REPUBLIC OF-->
+      <xsd:enumeration value="KW"/>
+      <!--KUWAIT-->
+      <xsd:enumeration value="KG"/>
+      <!--KYRGYZSTAN-->
+      <xsd:enumeration value="LA"/>
+      <!--LAO PEOPLE'S DEMOCRATIC REPUBLIC-->
+      <xsd:enumeration value="LV"/>
+      <!--LATVIA-->
+      <xsd:enumeration value="LB"/>
+      <!--LEBANON-->
+      <xsd:enumeration value="LS"/>
+      <!--LESOTHO-->
+      <xsd:enumeration value="LR"/>
+      <!--LIBERIA-->
+      <xsd:enumeration value="LY"/>
+      <!--LIBYAN ARAB JAMAHIRIYA-->
+      <xsd:enumeration value="LI"/>
+      <!--LIECHTENSTEIN-->
+      <xsd:enumeration value="LT"/>
+      <!--LITHUANIA-->
+      <xsd:enumeration value="LU"/>
+      <!--LUXEMBOURG-->
+      <xsd:enumeration value="MO"/>
+      <!--MACAO-->
+      <xsd:enumeration value="MK"/>
+      <!--MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF-->
+      <xsd:enumeration value="MG"/>
+      <!--MADAGASCAR-->
+      <xsd:enumeration value="MW"/>
+      <!--MALAWI-->
+      <xsd:enumeration value="MY"/>
+      <!--MALAYSIA-->
+      <xsd:enumeration value="MV"/>
+      <!--MALDIVES-->
+      <xsd:enumeration value="ML"/>
+      <!--MALI-->
+      <xsd:enumeration value="MT"/>
+      <!--MALTA-->
+      <xsd:enumeration value="MH"/>
+      <!--MARSHALL ISLANDS-->
+      <xsd:enumeration value="MQ"/>
+      <!--MARTINIQUE-->
+      <xsd:enumeration value="MR"/>
+      <!--MAURITANIA-->
+      <xsd:enumeration value="MU"/>
+      <!--MAURITIUS-->
+      <xsd:enumeration value="YT"/>
+      <!--MAYOTTE-->
+      <xsd:enumeration value="MX"/>
+      <!--MEXICO-->
+      <xsd:enumeration value="FM"/>
+      <!--MICRONESIA, FEDERATED STATES OF-->
+      <xsd:enumeration value="MD"/>
+      <!--MOLDOVA, REPUBLIC OF-->
+      <xsd:enumeration value="MC"/>
+      <!--MONACO-->
+      <xsd:enumeration value="MN"/>
+      <!--MONGOLIA-->
+      <xsd:enumeration value="MS"/>
+      <!--MONTSERRAT-->
+      <xsd:enumeration value="MA"/>
+      <!--MOROCCO-->
+      <xsd:enumeration value="MZ"/>
+      <!--MOZAMBIQUE-->
+      <xsd:enumeration value="MM"/>
+      <!--MYANMAR-->
+      <xsd:enumeration value="NA"/>
+      <!--NAMIBIA-->
+      <xsd:enumeration value="NR"/>
+      <!--NAURU-->
+      <xsd:enumeration value="NP"/>
+      <!--NEPAL-->
+      <xsd:enumeration value="NL"/>
+      <!--NETHERLANDS-->
+      <xsd:enumeration value="AN"/>
+      <!--NETHERLANDS ANTILLES-->
+      <xsd:enumeration value="NC"/>
+      <!--NEW CALEDONIA-->
+      <xsd:enumeration value="NZ"/>
+      <!--NEW ZEALAND-->
+      <xsd:enumeration value="NI"/>
+      <!--NICARAGUA-->
+      <xsd:enumeration value="NE"/>
+      <!--NIGER-->
+      <xsd:enumeration value="NG"/>
+      <!--NIGERIA-->
+      <xsd:enumeration value="NU"/>
+      <!--NIUE-->
+      <xsd:enumeration value="NF"/>
+      <!--NORFOLK ISLAND-->
+      <xsd:enumeration value="MP"/>
+      <!--NORTHERN MARIANA ISLANDS-->
+      <xsd:enumeration value="NO"/>
+      <!--NORWAY-->
+      <xsd:enumeration value="OM"/>
+      <!--OMAN-->
+      <xsd:enumeration value="PK"/>
+      <!--PAKISTAN-->
+      <xsd:enumeration value="PW"/>
+      <!--PALAU-->
+      <xsd:enumeration value="PS"/>
+      <!--PALESTINIAN TERRITORY, OCCUPIED-->
+      <xsd:enumeration value="PA"/>
+      <!--PANAMA-->
+      <xsd:enumeration value="PG"/>
+      <!--PAPUA NEW GUINEA-->
+      <xsd:enumeration value="PY"/>
+      <!--PARAGUAY-->
+      <xsd:enumeration value="PE"/>
+      <!--PERU-->
+      <xsd:enumeration value="PH"/>
+      <!--PHILIPPINES-->
+      <xsd:enumeration value="PN"/>
+      <!--PITCAIRN-->
+      <xsd:enumeration value="PL"/>
+      <!--POLAND-->
+      <xsd:enumeration value="PT"/>
+      <!--PORTUGAL-->
+      <xsd:enumeration value="PR"/>
+      <!--PUERTO RICO-->
+      <xsd:enumeration value="QA"/>
+      <!--QATAR-->
+      <xsd:enumeration value="RE"/>
+      <!--REUNION-->
+      <xsd:enumeration value="RO"/>
+      <!--ROMANIA-->
+      <xsd:enumeration value="RU"/>
+      <!--RUSSIAN FEDERATION-->
+      <xsd:enumeration value="RW"/>
+      <!--RWANDA-->
+      <xsd:enumeration value="SH"/>
+      <!--SAINT HELENA-->
+      <xsd:enumeration value="KN"/>
+      <!--SAINT KITTS AND NEVIS-->
+      <xsd:enumeration value="LC"/>
+      <!--SAINT LUCIA-->
+      <xsd:enumeration value="PM"/>
+      <!--SAINT PIERRE AND MIQUELON-->
+      <xsd:enumeration value="VC"/>
+      <!--SAINT VINCENT AND THE GRENADINES-->
+      <xsd:enumeration value="WS"/>
+      <!--SAMOA-->
+      <xsd:enumeration value="SM"/>
+      <!--SAN MARINO-->
+      <xsd:enumeration value="ST"/>
+      <!--SAO TOME AND PRINCIPE-->
+      <xsd:enumeration value="SA"/>
+      <!--SAUDI ARABIA-->
+      <xsd:enumeration value="SN"/>
+      <!--SENEGAL-->
+      <xsd:enumeration value="CS"/>
+      <!--SERBIA AND MONTENEGRO-->
+      <xsd:enumeration value="SC"/>
+      <!--SEYCHELLES-->
+      <xsd:enumeration value="SL"/>
+      <!--SIERRA LEONE-->
+      <xsd:enumeration value="SG"/>
+      <!--SINGAPORE-->
+      <xsd:enumeration value="SK"/>
+      <!--SLOVAKIA-->
+      <xsd:enumeration value="SI"/>
+      <!--SLOVENIA-->
+      <xsd:enumeration value="SB"/>
+      <!--SOLOMON ISLANDS-->
+      <xsd:enumeration value="SO"/>
+      <!--SOMALIA-->
+      <xsd:enumeration value="ZA"/>
+      <!--SOUTH AFRICA-->
+      <xsd:enumeration value="GS"/>
+      <!--SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS-->
+      <xsd:enumeration value="ES"/>
+      <!--SPAIN-->
+      <xsd:enumeration value="LK"/>
+      <!--SRI LANKA-->
+      <xsd:enumeration value="SD"/>
+      <!--SUDAN-->
+      <xsd:enumeration value="SR"/>
+      <!--SURINAME-->
+      <xsd:enumeration value="SJ"/>
+      <!--SVALBARD AND JAN MAYEN-->
+      <xsd:enumeration value="SZ"/>
+      <!--SWAZILAND-->
+      <xsd:enumeration value="SE"/>
+      <!--SWEDEN-->
+      <xsd:enumeration value="CH"/>
+      <!--SWITZERLAND-->
+      <xsd:enumeration value="SY"/>
+      <!--SYRIAN ARAB REPUBLIC-->
+      <xsd:enumeration value="TW"/>
+      <!--TAIWAN, PROVINCE OF CHINA-->
+      <xsd:enumeration value="TJ"/>
+      <!--TAJIKISTAN-->
+      <xsd:enumeration value="TZ"/>
+      <!--TANZANIA, UNITED REPUBLIC OF-->
+      <xsd:enumeration value="TH"/>
+      <!--THAILAND-->
+      <xsd:enumeration value="TL"/>
+      <!--TIMOR-LESTE-->
+      <xsd:enumeration value="TG"/>
+      <!--TOGO-->
+      <xsd:enumeration value="TK"/>
+      <!--TOKELAU-->
+      <xsd:enumeration value="TO"/>
+      <!--TONGA-->
+      <xsd:enumeration value="TT"/>
+      <!--TRINIDAD AND TOBAGO-->
+      <xsd:enumeration value="TN"/>
+      <!--TUNISIA-->
+      <xsd:enumeration value="TR"/>
+      <!--TURKEY-->
+      <xsd:enumeration value="TM"/>
+      <!--TURKMENISTAN-->
+      <xsd:enumeration value="TC"/>
+      <!--TURKS AND CAICOS ISLANDS-->
+      <xsd:enumeration value="TV"/>
+      <!--TUVALU-->
+      <xsd:enumeration value="UG"/>
+      <!--UGANDA-->
+      <xsd:enumeration value="UA"/>
+      <!--UKRAINE-->
+      <xsd:enumeration value="AE"/>
+      <!--UNITED ARAB EMIRATES-->
+      <xsd:enumeration value="GB"/>
+      <!--UNITED KINGDOM-->
+      <xsd:enumeration value="US"/>
+      <!--UNITED STATES-->
+      <xsd:enumeration value="UM"/>
+      <!--UNITED STATES MINOR OUTLYING ISLANDS-->
+      <xsd:enumeration value="UY"/>
+      <!--URUGUAY-->
+      <xsd:enumeration value="UZ"/>
+      <!--UZBEKISTAN-->
+      <xsd:enumeration value="VU"/>
+      <!--VANUATU-->
+      <xsd:enumeration value="VE"/>
+      <!--VENEZUELA-->
+      <xsd:enumeration value="VN"/>
+      <!--VIET NAM-->
+      <xsd:enumeration value="VG"/>
+      <!--VIRGIN ISLANDS, BRITISH-->
+      <xsd:enumeration value="VI"/>
+      <!--VIRGIN ISLANDS, U.S.-->
+      <xsd:enumeration value="WF"/>
+      <!--WALLIS AND FUTUNA-->
+      <xsd:enumeration value="EH"/>
+      <!--WESTERN SAHARA-->
+      <xsd:enumeration value="YE"/>
+      <!--YEMEN-->
+      <xsd:enumeration value="ZM"/>
+      <!--ZAMBIA-->
+      <xsd:enumeration value="ZW"/>
+      <!--ZIMBABWE-->
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/inventory-2-0/wsdl/GetFilterValuesResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/Inventory/2.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/Inventory/2.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/" schemaLocation="SharedObjectsInventory.xsd"/>
+  <xsd:element name="GetFilterValuesResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="FilterValues" minOccurs="0">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns2:productId"/>
+              <xsd:element ref="ns2:Filter"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="ns2:ServiceMessageArray" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/inventory-2-0/wsdl/GetInventoryLevelsRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/Inventory/2.0.0/" elementFormDefault="qualified" xmlns:ns1="http://www.promostandards.org/WSDL/Inventory/2.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/" schemaLocation="SharedObjectsInventory.xsd"/>
+  <xsd:element name="GetInventoryLevelsRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:wsVersion"/>
+        <xsd:element ref="ns2:id"/>
+        <xsd:element ref="ns2:password" minOccurs="0"/>
+        <xsd:element ref="ns2:productId"/>
+        <xsd:element ref="ns2:Filter" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://devservices.alphabroder.ca/inventory-2-0/wsdl/GetInventoryLevelsResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/Inventory/2.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/Inventory/2.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/" schemaLocation="SharedObjectsInventory.xsd"/>
+  <xsd:element name="GetInventoryLevelsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:Inventory" minOccurs="0"/>
+        <xsd:element ref="ns2:ServiceMessageArray" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://devservices.alphabroder.ca/inventory-2-0/service/index.php</con:endpoint></con:endpoints><con:operation id="39f4584b-6483-47f7-9625-53f062a6ab14" isOneWay="false" action="getFilterValues" name="getFilterValues" bindingOperationName="getFilterValues" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4d3afd02-b9af-4bf9-9aff-e009a1616377" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/inventory-2-0/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/Inventory/2.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetFilterValuesRequest>\r
+         <shar:wsVersion>?</shar:wsVersion>\r
+         <shar:id>?</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>?</shar:password>\r
+         <shar:productId>?</shar:productId>\r
+      </ns:GetFilterValuesRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getFilterValues"/></con:call></con:operation><con:operation id="85c1995d-1ff2-4e34-8d77-3b76a0c5c50d" isOneWay="false" action="getInventoryLevels" name="getInventoryLevels" bindingOperationName="getInventoryLevels" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="29c0109a-73e1-46f2-b928-2e5f25fb3e55" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/inventory-2-0/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/Inventory/2.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetInventoryLevelsRequest>\r
+         <shar:wsVersion>?</shar:wsVersion>\r
+         <shar:id>?</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>?</shar:password>\r
+         <shar:productId>?</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:Filter>\r
+            <!--Optional:-->\r
+            <shar:partId>?</shar:partId>\r
+            <!--Optional:-->\r
+            <shar:LabelSizeArray>\r
+               <!--1 or more repetitions:-->\r
+               <shar:labelSize>?</shar:labelSize>\r
+            </shar:LabelSizeArray>\r
+            <!--Optional:-->\r
+            <shar:PartColorArray>\r
+               <!--1 or more repetitions:-->\r
+               <shar:partColor>?</shar:partColor>\r
+            </shar:PartColorArray>\r
+            <!--Optional:-->\r
+            <shar:SelectionArray>\r
+               <!--1 or more repetitions:-->\r
+               <shar:selection>?</shar:selection>\r
+            </shar:SelectionArray>\r
+         </shar:Filter>\r
+      </ns:GetInventoryLevelsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getInventoryLevels"/></con:call></con:operation></con:interface><con:testSuite id="49ab60fe-7b35-4cb1-959d-8f93e6773941" name="InventoryServiceBindingV2 TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="801a2a6b-ed71-46db-94b5-ff9c1461ae70" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getFilterValues TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="bd09e2ed-fb1a-4213-87aa-189f28e4ec98" name="Sample"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>InventoryServiceBindingV2</con:interface><con:operation>getFilterValues</con:operation><con:request name="Sample" id="0fea2b7b-dd8b-4855-8538-2cdeb4bbc0c1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/inventory-2-0/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/Inventory/2.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetFilterValuesRequest>\r
+         <shar:wsVersion>2.0.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <shar:productId>G200</shar:productId>\r
+      </ns:GetFilterValuesRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="556ad166-c74a-4e13-9f49-f8793727fef5" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="813549da-6a41-4ac9-a63d-19cf3f0b35e5" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" id="f0aab9af-3da2-4662-a56f-e2bbd2451741" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getFilterValues" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="9fa5bee8-f5f6-4459-a263-df0e1b2f10a7" name="getFilterValues" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>InventoryServiceBindingV2</con:interface><con:operation>getFilterValues</con:operation><con:request name="getFilterValues" id="3b0551cb-c5b6-47f0-b3ec-5e27f1d76f41"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/inventory-2-0/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/Inventory/2.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetFilterValuesRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <shar:productId>${#TestCase#PRODID}</shar:productId>\r
+      </ns:GetFilterValuesRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="c51cb4e9-a244-4f71-a6f0-fab8feb558d6" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="1af33fe1-b02c-4b7a-b6ea-f60040e6ea8b" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" id="3b7c3822-4420-4c33-a68b-d6d80cae79bb" name="Not SOAP Fault"/><con:assertion type="XPath Match" id="a8e72119-3948-41b3-b906-6a52e3baf643" name="XPath Match"><con:configuration><path>declare namespace ns1='http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/';
+//ns1:code</path><content>${#TestCase#ERRORCODE}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getFilterValues" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="5f7420a0-94f1-4494-8027-84dfb66dd058" name="PositiveCasegetFilterValues" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>InventoryServiceBindingV2</con:interface><con:operation>getFilterValues</con:operation><con:request name="PositiveCasegetFilterValues" id="3b0551cb-c5b6-47f0-b3ec-5e27f1d76f41"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/inventory-2-0/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/Inventory/2.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetFilterValuesRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <shar:productId>${#TestCase#PRODID}</shar:productId>\r
+      </ns:GetFilterValuesRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="c51cb4e9-a244-4f71-a6f0-fab8feb558d6" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="1af33fe1-b02c-4b7a-b6ea-f60040e6ea8b" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" id="3b7c3822-4420-4c33-a68b-d6d80cae79bb" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getFilterValues" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Run" id="8f0ff48f-ada4-4591-a53d-cc5ccb377065"><con:settings/><con:config><script>//use to keep track of iterations when saving to files
+stepCount = 1
+
+//get the test case name and remove ' test case' from the end of it
+testName = testRunner.testCase.getName().substring(0, testRunner.testCase.getName().indexOf(" "))
+testSuite = testRunner.testCase.testSuite.getName().substring(0, testRunner.testCase.testSuite.getName().indexOf("Binding"))
+log.info(testSuite)
+
+//delete old test results if they exist
+testDir = new File("G:\\"+testSuite+"(ABca)Negative cases\\"+testName)
+if(testDir.exists()) {
+	testDir.deleteDir()
+}
+
+
+//test version
+String[] VERSION = ["",    "1",   "1.A", "*",   "123", "version"] as String[]
+String[] ERROR   = ["120", "125", "125", "125", "125", "125"] as String[]
+
+availLocationsReqTest(VERSION, ERROR, 'VERSIONSTRING')
+
+//reset version
+testRunner.testCase.setPropertyValue('VERSIONSTRING',"2.0.0")
+
+
+//test user ID
+String[] USER  = ["",    "1910", "jack", "*",   "Jill123"] as String[]
+	    ERROR = ["120", "105",  "105",  "105", "105"] as String[]
+
+availLocationsReqTest(USER, ERROR, 'USERID')
+
+//reset user ID
+testRunner.testCase.setPropertyValue('USERID',"19")
+
+
+//test password
+String[] PASS  = ["",    "20",  "pass", "a2b", "p@\$\$"] as String[]
+	    ERROR = ["110", "105", "105",  "105", "105"] as String[]
+
+availLocationsReqTest(PASS, ERROR, 'PASSWORD')
+
+//reset password
+testRunner.testCase.setPropertyValue('PASSWORD',"19")
+
+
+//test prod ID
+String[] PROD  = ["",    "20",  "abc", "123abc", "p@n7s"] as String[]
+	    ERROR = ["120", "600", "600", "600",    "600"] as String[]
+
+availLocationsReqTest(PROD, ERROR, 'PRODID')
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('PRODID',"d100")
+
+
+	//method that does the work
+	def availLocationsReqTest(String[] testData, String[] errorCodes, String propName)
+	{
+		String templatename='getFilterValues';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			testRunner.testCase.setPropertyValue('ERRORCODE',errorCodes[i])
+			String filename="Step_"+stepCount+"_"+propName
+			log.info("Testing "+propName+" "+testData[i]+" Error Code: "+context.expand('${#TestCase#ERRORCODE}'))
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+
+	//save the req and req to files
+	def saveToFile(String fileName, String templateName) 
+	{
+		File reqDir = new File(testDir.getAbsolutePath()+"\\Negative case Requests")
+		File resDir = new File(testDir.getAbsolutePath()+"\\Negative case Responses")
+		//create directories if they don't exist
+		if(!testDir.exists()) {
+			reqDir.mkdirs()
+			resDir.mkdirs()
+		}
+		//Request File
+		def myRequest=reqDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def request=context.expand('${'+templateName+'#Request}')
+		new File (myRequest).write(request,"UTF-8")
+		
+		//Response File
+		def myResponse=resDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def response=context.expand('${'+templateName+'#Response}')
+		new File (myResponse).write(response,"UTF-8")
+	}
+
+testRunner.testCase.getTestStepByName("Positive cases run").run(testRunner, context)</script></con:config></con:testStep><con:testStep type="groovy" name="Positive cases run" id="ded02133-3d51-482c-b20d-4818d1e60984"><con:settings/><con:config><script>//use to keep track of iterations when saving to files
+stepCount = 1
+
+//get the test case name and remove ' test case' from the end of it
+testName = testRunner.testCase.getName().substring(0, testRunner.testCase.getName().indexOf(" "))
+testSuite = testRunner.testCase.testSuite.getName().substring(0, testRunner.testCase.testSuite.getName().indexOf("Binding"))
+log.info(testSuite)
+
+//delete old test results if they exist
+testDir = new File("G:\\"+testSuite+"(ABca)Positive cases\\"+testName)
+if(testDir.exists()) {
+	testDir.deleteDir()
+}
+
+
+//reset version
+testRunner.testCase.setPropertyValue('VERSIONSTRING',"2.0.0")
+
+//reset user ID
+testRunner.testCase.setPropertyValue('USERID',"19")
+
+//reset password
+testRunner.testCase.setPropertyValue('PASSWORD',"19")
+
+
+//positive test cases
+String[] PRODUCTS  = ["D100",    "G200",  "G640", "G500", "G800"] as String[]
+
+positiveReqTest(PRODUCTS,'PRODID')
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('PRODID',"d100")
+
+
+	def positiveReqTest(String[] testData, String propName)
+	{
+		String templatename='PositiveCasegetFilterValues';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			String filename="PositiveCase of Step_"+stepCount+"_"+propName
+			log.info("Testing Positive case of "+propName+" "+testData[i])
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+	//save the req and req to files
+	def saveToFile(String fileName, String templateName) 
+	{
+		File reqDir = new File(testDir.getAbsolutePath()+"\\Positive case Requests")
+		File resDir = new File(testDir.getAbsolutePath()+"\\Positive case Responses")
+		//create directories if they don't exist
+		if(!testDir.exists()) {
+			reqDir.mkdirs()
+			resDir.mkdirs()
+		}
+		//Request File
+		def myRequest=reqDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def request=context.expand('${'+templateName+'#Request}')
+		new File (myRequest).write(request,"UTF-8")
+		
+		//Response File
+		def myResponse=resDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def response=context.expand('${'+templateName+'#Response}')
+		new File (myResponse).write(response,"UTF-8")
+	}
+
+//testRunner.testCase.getTestStepByName("Sample run").run(testRunner, context)</script></con:config></con:testStep><con:properties><con:property><con:name>VERSIONSTRING</con:name><con:value>2.0.0</con:value></con:property><con:property><con:name>ERRORCODE</con:name><con:value>600</con:value></con:property><con:property><con:name>USERID</con:name><con:value>19</con:value></con:property><con:property><con:name>PASSWORD</con:name><con:value>19</con:value></con:property><con:property><con:name>PRODID</con:name><con:value>d100</con:value></con:property></con:properties></con:testCase><con:testCase id="2de6a72e-6fbd-4e04-b7ec-35111c805dc7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getInventoryLevels TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="c0b54d6e-c24c-45aa-a817-923c712d4ab9" name="Sample"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>InventoryServiceBindingV2</con:interface><con:operation>getInventoryLevels</con:operation><con:request name="Sample" id="618a3132-55dd-4bbf-98d0-c28971320cf8"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/inventory-2-0/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/Inventory/2.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetInventoryLevelsRequest>\r
+         <shar:wsVersion>2.0.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:Filter>\r
+            <!--Optional:-->\r
+           <shar:partId>B21058510</shar:partId>
+           <!--Optional:-->\r
+            <shar:LabelSizeArray>
+               <!--1 or more repetitions:-->\r
+               <shar:labelSize></shar:labelSize>\r
+            </shar:LabelSizeArray>
+            <!--Optional:-->\r
+           <shar:PartColorArray>\r
+               <!--1 or more repetitions:-->\r
+              <shar:partColor></shar:partColor>
+           </shar:PartColorArray>
+            <!--Optional:-->\r
+            <shar:SelectionArray>\r
+               <!--1 or more repetitions:-->\r
+               <shar:selection>?</shar:selection>\r
+            </shar:SelectionArray>\r
+         </shar:Filter>\r
+      </ns:GetInventoryLevelsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="766cb96e-c387-4d41-aadf-f82cb6b75242" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" id="8e3459a4-10ba-4f4b-9049-3d27aecd8953" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="407d3679-4d7a-4c5c-9296-e74874cfa8eb" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getInventoryLevels" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Run" id="77f5c087-1aa6-403e-8eab-80ee7bf2a814"><con:settings/><con:config><script>//use to keep track of iterations when saving to files
+stepCount = 1
+
+//get the test case name and remove ' test case' from the end of it
+testName = testRunner.testCase.getName().substring(0, testRunner.testCase.getName().indexOf(" "))
+testSuite = testRunner.testCase.testSuite.getName().substring(0, testRunner.testCase.testSuite.getName().indexOf("Binding"))
+log.info(testSuite)
+
+//delete old test results if they exist
+testDir = new File("G:\\"+testSuite+"(ABca)Positive cases\\"+testName)
+if(testDir.exists()) {
+	testDir.deleteDir()
+}
+
+//reset version
+testRunner.testCase.setPropertyValue('VERSIONSTRING',"2.0.0")
+
+
+//reset user ID
+testRunner.testCase.setPropertyValue('USERID',"19")
+
+
+//reset password
+testRunner.testCase.setPropertyValue('PASSWORD',"19")
+
+//positive test cases
+String[] PRODUCTS  = ["D100",    "G200",  "G640", "G500", "G800"] as String[]
+
+positiveReqTest(PRODUCTS,'PRODID')
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('PRODID',"d100")
+
+String[] PARTID  = ["B21058517",    "B21058510"] as String[]
+
+positiveReqTest(PARTID, 'PARTID1')
+
+//reset part ID
+testRunner.testCase.setPropertyValue('PARTID1',"")
+
+String[] SIZE  = ["2XL",    "5XL"] as String[]
+
+positiveReqTest(SIZE, 'SIZE1')
+
+//reset size
+testRunner.testCase.setPropertyValue('SIZE1',"")
+
+String[] COLOR  = ["BLACK",    "BLACK"] as String[]
+
+positiveReqTest(COLOR, 'COLOR1')
+
+//reset color
+testRunner.testCase.setPropertyValue('COLOR1',"")
+
+runsinglestep('PARTID1',"B21058517",'Positive cases 1','request with partId')
+
+runsinglestep('SIZE1',"2XL",'Positive cases 1','request with partId,size')
+
+runsinglestep('COLOR1',"BLACK",'Positive cases 1','request with partId,size,color')
+
+
+
+
+
+	def positiveReqTest(String[] testData, String propName)
+	{
+		String templatename='Positive cases 1';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			String filename="PositiveCase of Step_"+stepCount+"_"+propName
+			log.info("Testing Positive case of "+propName+" "+testData[i])
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+
+	def runsinglestep(String propName,String value,String templatename,String stepname)
+	{
+		testRunner.testCase.setPropertyValue(propName, value)
+		String filename="PositiveCase for SingleStep_"+stepname+"_"+propName
+		log.info("Testing Positive case of "+propName+" "+value)
+		testRunner.runTestStepByName(templatename)
+		saveToFile(filename,templatename)
+	}
+	
+	//save the req and req to files
+	def saveToFile(String fileName, String templateName) 
+	{
+		File reqDir = new File(testDir.getAbsolutePath()+"\\Positive case Requests")
+		File resDir = new File(testDir.getAbsolutePath()+"\\Positive case Responses")
+		
+		//create directories if they don't exist
+		if(!testDir.exists()) {
+			reqDir.mkdirs()
+			resDir.mkdirs()
+		}
+		
+		//Request File
+		def myRequest=reqDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def request=context.expand('${'+templateName+'#Request}')
+		new File (myRequest).write(request,"UTF-8")
+		
+		//Response File
+		def myResponse=resDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def response=context.expand('${'+templateName+'#Response}')
+		new File (myResponse).write(response,"UTF-8")
+	}
+
+testRunner.testCase.getTestStepByName("Positive cases run 2").run(testRunner, context)
+</script></con:config></con:testStep><con:testStep type="request" id="dd554fd0-c4c4-4dc0-8420-7c6c48866fbb" name="Positive cases 1" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>InventoryServiceBindingV2</con:interface><con:operation>getInventoryLevels</con:operation><con:request name="Positive cases 1" id="ea7ed5d6-eca2-4ce0-8392-c48eda271ed1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/inventory-2-0/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/Inventory/2.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetInventoryLevelsRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <shar:productId>${#TestCase#PRODID}</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:Filter>\r
+         <shar:partId>${#TestCase#PARTID1}</shar:partId>
+         <shar:LabelSizeArray>
+               <!--1 or more repetitions:-->
+              <shar:labelSize>${#TestCase#SIZE1}</shar:labelSize>
+         </shar:LabelSizeArray>
+            <!--Optional:-->
+         <shar:PartColorArray>
+               <!--1 or more repetitions:-->
+              <shar:partColor>${#TestCase#COLOR1}</shar:partColor>
+         </shar:PartColorArray>
+         </shar:Filter>\r
+      </ns:GetInventoryLevelsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="7b570b59-c718-4089-918e-91b62d482a83" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="09ca9317-fc0a-45c4-a7ae-f3823ffb2f47" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" id="86c19335-5f2d-489d-8f2f-6c19f910af69" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getInventoryLevels" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Positive cases run 2" id="1e5e3719-29ae-4ca0-b98f-f2903f5092e3"><con:settings/><con:config><script>//use to keep track of iterations when saving to files
+stepCount = 1
+
+//get the test case name and remove ' test case' from the end of it
+testName = testRunner.testCase.getName().substring(0, testRunner.testCase.getName().indexOf(" "))
+testSuite = testRunner.testCase.testSuite.getName().substring(0, testRunner.testCase.testSuite.getName().indexOf("Binding"))
+log.info(testSuite)
+
+testDir = new File("G:\\"+testSuite+"(ABca)Positive cases\\"+testName)
+
+//reset version
+testRunner.testCase.setPropertyValue('VERSIONSTRING',"2.0.0")
+
+
+//reset user ID
+testRunner.testCase.setPropertyValue('USERID',"19")
+
+
+//reset password
+testRunner.testCase.setPropertyValue('PASSWORD',"19")
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('PRODID',"G200")
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('PARTID1',"B11107717")
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('PARTID2',"B11107718")
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('SIZE1',"2XL")
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('SIZE2',"3XL")
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('COLOR1',"ANTIQ CHERRY RED")
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('COLOR2',"ANTIQ CHERRY RED")
+
+runsinglestep('Positive cases 2',"MULTIPLEVALUES")
+
+	def runsinglestep(String templatename,String stepname)
+	{
+		String filename="PositiveCase for SingleStep_"+stepname
+		log.info("Testing Positive case of multiplevalues of filter")
+		testRunner.runTestStepByName(templatename)
+		saveToFile(filename,templatename)
+	}
+	
+	
+	//save the req and req to files
+	def saveToFile(String fileName, String templateName) 
+	{
+		File reqDir = new File(testDir.getAbsolutePath()+"\\Positive case Requests")
+		File resDir = new File(testDir.getAbsolutePath()+"\\Positive case Responses")
+		//create directories if they don't exist
+		if(!testDir.exists()) {
+			reqDir.mkdirs()
+			resDir.mkdirs()
+		}
+		//Request File
+		def myRequest=reqDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def request=context.expand('${'+templateName+'#Request}')
+		new File (myRequest).write(request,"UTF-8")
+		
+		//Response File
+		def myResponse=resDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def response=context.expand('${'+templateName+'#Response}')
+		new File (myResponse).write(response,"UTF-8")
+	}
+
+testRunner.testCase.getTestStepByName("Negative cases run").run(testRunner, context)
+</script></con:config></con:testStep><con:testStep type="request" id="ec2e12b3-1905-4e6f-9c47-8828a93dca42" name="Positive cases 2" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>InventoryServiceBindingV2</con:interface><con:operation>getInventoryLevels</con:operation><con:request name="Positive cases 2" id="ea7ed5d6-eca2-4ce0-8392-c48eda271ed1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/inventory-2-0/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/Inventory/2.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetInventoryLevelsRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <shar:productId>${#TestCase#PRODID}</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:Filter>\r
+         <shar:partId>${#TestCase#PARTID1}</shar:partId>
+         <shar:partId>${#TestCase#PARTID2}</shar:partId>
+         <shar:LabelSizeArray>
+              <shar:labelSize>${#TestCase#SIZE1}</shar:labelSize>
+              <shar:labelSize>${#TestCase#SIZE2}</shar:labelSize>
+         </shar:LabelSizeArray>            
+         <shar:PartColorArray>
+              <shar:partColor>${#TestCase#COLOR1}</shar:partColor>
+              <shar:partColor>${#TestCase#COLOR2}</shar:partColor>
+         </shar:PartColorArray>
+         </shar:Filter>\r
+      </ns:GetInventoryLevelsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="7b570b59-c718-4089-918e-91b62d482a83" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="09ca9317-fc0a-45c4-a7ae-f3823ffb2f47" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" id="86c19335-5f2d-489d-8f2f-6c19f910af69" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getInventoryLevels" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="c3b1cfe3-4e11-4f61-8715-8944052f0ec7" name="Negative cases" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>InventoryServiceBindingV2</con:interface><con:operation>getInventoryLevels</con:operation><con:request name="Negative cases" id="ea7ed5d6-eca2-4ce0-8392-c48eda271ed1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/inventory-2-0/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/Inventory/2.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/Inventory/2.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetInventoryLevelsRequest>\r
+         <shar:wsVersion>${#TestCase#VERSIONSTRING}</shar:wsVersion>\r
+         <shar:id>${#TestCase#USERID}</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>${#TestCase#PASSWORD}</shar:password>\r
+         <shar:productId>${#TestCase#PRODID}</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:Filter>\r
+         <shar:partId>${#TestCase#PARTID}</shar:partId>
+         <shar:LabelSizeArray>
+               <!--1 or more repetitions:-->
+              <shar:labelSize>${#TestCase#SIZE}</shar:labelSize>
+         </shar:LabelSizeArray>
+            <!--Optional:-->
+         <shar:PartColorArray>
+               <!--1 or more repetitions:-->
+              <shar:partColor>${#TestCase#COLOR}</shar:partColor>
+         </shar:PartColorArray>
+         </shar:Filter>\r
+      </ns:GetInventoryLevelsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Schema Compliance" id="7b570b59-c718-4089-918e-91b62d482a83" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Response" id="09ca9317-fc0a-45c4-a7ae-f3823ffb2f47" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" id="86c19335-5f2d-489d-8f2f-6c19f910af69" name="Not SOAP Fault"/><con:assertion type="XPath Match" id="91c7fb8f-eeeb-4839-97a5-506b2d6b4033" name="XPath Match"><con:configuration><path>declare namespace ns1='http://www.promostandards.org/WSDL/Inventory/2.0.0/';
+
+//ns1:code</path><content>${#TestCase#ERRORCODE}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getInventoryLevels" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Negative cases run" id="2aaa3d43-afae-4ac4-bec3-2c18451dfa20"><con:settings/><con:config><script>//use to keep track of iterations when saving to files
+stepCount = 1
+
+//get the test case name and remove ' test case' from the end of it
+testName = testRunner.testCase.getName().substring(0, testRunner.testCase.getName().indexOf(" "))
+testSuite = testRunner.testCase.testSuite.getName().substring(0, testRunner.testCase.testSuite.getName().indexOf("Binding"))
+log.info(testSuite)
+
+//delete old test results if they exist
+testDir = new File("G:\\"+testSuite+"(ABca)Negative cases\\"+testName)
+if(testDir.exists()) {
+	testDir.deleteDir()
+}
+
+//test version
+String[] VERSION = ["",    "1",   "1.A", "*",   "123", "version"] as String[]
+String[] ERROR   = ["120", "125", "125", "125", "125", "125"] as String[]
+
+availLocationsReqTest(VERSION, ERROR, 'VERSIONSTRING')
+
+//reset version
+testRunner.testCase.setPropertyValue('VERSIONSTRING',"1.0.0")
+
+
+//test user ID
+String[] USER  = ["",    "1910", "jack", "*",   "Jill123"] as String[]
+	    ERROR = ["120", "105",  "105",  "105", "105"] as String[]
+
+availLocationsReqTest(USER, ERROR, 'USERID')
+
+//reset user ID
+testRunner.testCase.setPropertyValue('USERID',"19")
+
+
+//test password
+String[] PASS  = ["",    "20",  "pass", "a2b", "p@\$\$"] as String[]
+	    ERROR = ["110", "105", "105",  "105", "105"] as String[]
+
+availLocationsReqTest(PASS, ERROR, 'PASSWORD')
+
+//reset password
+testRunner.testCase.setPropertyValue('PASSWORD',"19")
+
+
+//test prod ID
+String[] PROD  = ["",    "20",  "abc", "123abc", "p@n7s"] as String[]
+	    ERROR = ["120", "130", "130", "130",    "130"] as String[]
+
+availLocationsReqTest(PROD, ERROR, 'PRODID')
+
+//reset prod ID
+testRunner.testCase.setPropertyValue('PRODID',"d100")
+
+//test part ID
+String[] PARTID1  = [ "20",  "abc", "123abc", "p@n7s",  "!@#%"] as String[]
+	    ERROR = [ "630", "630", "630",    "630",  "630"] as String[]
+
+availLocationsReqTest(PARTID1, ERROR, 'PARTID')
+
+//reset partId
+testRunner.testCase.setPropertyValue('PARTID',"B21058517")
+
+//test size
+String[] SIZE1  = [ "20",  "abc", "123abc", "p@n7s", "!@#"] as String[]
+	    ERROR = [ "630", "630", "630",    "630", "630"] as String[]
+
+availLocationsReqTest(SIZE1, ERROR, 'SIZE')
+
+//reset size
+testRunner.testCase.setPropertyValue('SIZE',"2XL")
+
+//test color
+String[] COLOR1  = [ "20",  "abc", "123abc", "p@n7s", "!@#"] as String[]
+	    ERROR = [ "630", "630", "630",    "630", "630"] as String[]
+
+availLocationsReqTest(COLOR1, ERROR, 'COLOR')
+
+//reset size
+testRunner.testCase.setPropertyValue('COLOR',"BLACK")
+
+
+	//method that does the work
+	def availLocationsReqTest(String[] testData, String[] errorCodes, String propName)
+	{
+		String templatename='Negative cases';
+		for(int i=0;i&lt;testData.length;i++) {
+			testRunner.testCase.setPropertyValue(propName, testData[i])
+			testRunner.testCase.setPropertyValue('ERRORCODE',errorCodes[i])
+			String filename="Step_"+stepCount+"_"+propName
+			log.info("Testing "+propName+" "+testData[i]+" Error Code: "+context.expand('${#TestCase#ERRORCODE}'))
+			testRunner.runTestStepByName(templatename)
+			stepCount++
+			saveToFile(filename,templatename)
+		}
+	}
+
+	//save the req and req to files
+	def saveToFile(String fileName, String templateName) 
+	{
+		File reqDir = new File(testDir.getAbsolutePath()+"\\Negative case Requests")
+		File resDir = new File(testDir.getAbsolutePath()+"\\Negative case Responses")
+		//create directories if they don't exist
+		if(!testDir.exists()) {
+			reqDir.mkdirs()
+			resDir.mkdirs()
+		}
+		//Request File
+		def myRequest=reqDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def request=context.expand('${'+templateName+'#Request}')
+		new File (myRequest).write(request,"UTF-8")
+		
+		//Response File
+		def myResponse=resDir.getAbsolutePath() +"\\"+ fileName+".xml"
+		def response=context.expand('${'+templateName+'#Response}')
+		new File (myResponse).write(response,"UTF-8")
+	}
+</script></con:config></con:testStep><con:properties><con:property><con:name>VERSIONSTRING</con:name><con:value>1.0.0</con:value></con:property><con:property><con:name>USERID</con:name><con:value>19</con:value></con:property><con:property><con:name>PASSWORD</con:name><con:value>19</con:value></con:property><con:property><con:name>PRODID</con:name><con:value>d100</con:value></con:property><con:property><con:name>PARTID1</con:name><con:value>B11107717</con:value></con:property><con:property><con:name>SIZE1</con:name><con:value>2XL</con:value></con:property><con:property><con:name>COLOR1</con:name><con:value>ANTIQ CHERRY RED</con:value></con:property><con:property><con:name>PARTID2</con:name><con:value>B11107718</con:value></con:property><con:property><con:name>SIZE2</con:name><con:value>3XL</con:value></con:property><con:property><con:name>COLOR2</con:name><con:value>ANTIQ CHERRY RED</con:value></con:property><con:property><con:name>ERRORCODE</con:name><con:value>630</con:value></con:property><con:property><con:name>PARTID</con:name><con:value>B21058517</con:value></con:property><con:property><con:name>SIZE</con:name><con:value>2XL</con:value></con:property><con:property><con:name>COLOR</con:name><con:value>BLACK</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

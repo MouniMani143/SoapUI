@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="45bd7966-ee02-401a-8771-cf20136c4f86" activeEnvironment="Default" name="MediaContentService" soapui-version="5.4.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="087694d1-4350-4caa-b734-71b3302f80fa" wsaVersion="NONE" name="MediaContentServiceBinding" type="wsdl" bindingName="{http://www.promostandards.org/WSDL/MediaService/1.0.0/}MediaContentServiceBinding" soapVersion="1_1" anonymous="optional" definition="http://devservices.alphabroder.com/media/wsdl/MediaContentService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://devservices.alphabroder.com/media/wsdl/MediaContentService.wsdl"><con:part><con:url>http://devservices.alphabroder.com/media/wsdl/MediaContentService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="Media_v1_0_0" targetNamespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" schemaLocation="GetMediaContentRequest.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" schemaLocation="GetMediaContentResponse.xsd"/>
+    </xsd:schema>
+    <!--<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" schemaLocation="GetMediaFeedRequest.xsd"/>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" schemaLocation="GetMediaFeedResponse.xsd"/>
+		</xsd:schema>-->
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" schemaLocation="GetMediaDateModifiedRequest.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" schemaLocation="GetMediaDateModifiedResponse.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetMediaContentResponseMessage">
+    <wsdl:part name="GetMediaContentResponse" element="tns:GetMediaContentResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetMediaContentRequestMessage">
+    <wsdl:part name="GetMediaContentRequest" element="tns:GetMediaContentRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetMediaDateModifiedRequestMessage">
+    <wsdl:part name="parameter" element="tns:GetMediaDateModifiedRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetMediaDateModifiedResponseMessage">
+    <wsdl:part name="parameter" element="tns:GetMediaDateModifiedResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="MediaContentService">
+    <wsdl:operation name="getMediaContent">
+      <wsdl:input message="tns:GetMediaContentRequestMessage"/>
+      <wsdl:output message="tns:GetMediaContentResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getMediaDateModified">
+      <wsdl:input message="tns:GetMediaDateModifiedRequestMessage"/>
+      <wsdl:output message="tns:GetMediaDateModifiedResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MediaContentServiceBinding" type="tns:MediaContentService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getMediaContent">
+      <soap:operation soapAction="getMediaContent" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMediaDateModified">
+      <soap:operation soapAction="urn:getMediaDateModified" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MediaContentService">
+    <wsdl:port name="MediaServiceBinding" binding="tns:MediaContentServiceBinding">
+      <soap:address location="https://devservices.alphabroder.com/media/service/index.php"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://devservices.alphabroder.com/media/wsdl/GetMediaContentRequest.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2016 (x64) (http://www.altova.com) by Network Admin (Leedsworld Inc.)-->
+<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/" schemaLocation="SharedMediaObjects.xsd"/>
+  <xsd:element name="GetMediaContentRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:wsVersion"/>
+        <xsd:element ref="ns2:id"/>
+        <xsd:element ref="ns2:password" minOccurs="0"/>
+        <xsd:element ref="ns2:cultureName" minOccurs="0"/>
+        <xsd:element ref="ns2:mediaType"/>
+        <xsd:element ref="ns2:productId"/>
+        <xsd:element ref="ns2:partId" minOccurs="0"/>
+        <xsd:element name="classType" type="xsd:int" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The part ID associated to the product ID.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://devservices.alphabroder.com/media/wsdl/SharedMediaObjects.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">
+  <xsd:simpleType name="mediaTypeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Image"/>
+      <xsd:enumeration value="Video"/>
+      <xsd:enumeration value="Audio"/>
+      <xsd:enumeration value="Document"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="sourceTypeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Web"/>
+      <xsd:enumeration value="Ftp"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="wsVersion">
+    <xsd:annotation>
+      <xsd:documentation>The Standard Version of the Web Service being referenced</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="id">
+    <xsd:annotation>
+      <xsd:documentation>The customer Id or any other agreed upon Id.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="password">
+    <xsd:annotation>
+      <xsd:documentation>The password associated with the Id</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="cultureName" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>The language culture name.  This tailors the response to a specific culture. i.e. language, units of measure, etc. Null assumes en-US.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="errorMessage">
+    <xsd:annotation>
+      <xsd:documentation>Response for any error requiring notification to requestor</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="code" type="xsd:int">
+          <xsd:annotation>
+            <xsd:documentation>Response for any error requiring notification to requestor</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="description">
+          <xsd:annotation>
+            <xsd:documentation>Response for any error requiring notification to requestor</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="256"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="changeTimeStamp" type="xsd:dateTime">
+    <xsd:annotation>
+      <xsd:documentation>The date time since last change in UTC</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="productId">
+    <xsd:annotation>
+      <xsd:documentation>The product Id</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="partId">
+    <xsd:annotation>
+      <xsd:documentation>The part Id associated to the product ID.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="mediaType" type="ns2:mediaTypeType">
+    <xsd:annotation>
+      <xsd:documentation>The type of media</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://devservices.alphabroder.com/media/wsdl/GetMediaContentResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/" schemaLocation="SharedMediaObjects.xsd"/>
+  <xsd:element name="MediaContent">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:productId"/>
+        <xsd:element ref="ns2:partId" minOccurs="0"/>
+        <xsd:element name="url">
+          <xsd:annotation>
+            <xsd:documentation>The URL of the media location.  Any valid URL can be returned including prefixes like http and ftp.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="1024"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element ref="ns2:mediaType"/>
+        <xsd:element name="ClassTypeArray">
+          <xsd:annotation>
+            <xsd:documentation>An array of ClassType objects that classify of the media.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:ClassType" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="fileSize" type="xsd:double" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The file size</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="width" type="xsd:decimal" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Width</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="height" type="xsd:decimal" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Height</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="dpi" type="xsd:int" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Dots per inch</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="color" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The color description</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="256"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="DecorationArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>An array of decoration objects that describe the decorations associated with the media</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:Decoration" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="LocationArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>An array of location objects that describe the locations associated with the media</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:Location" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="decorationId" type="xsd:int" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Deprecated.  Use DecorationArray.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="description" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Information about the media</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="1024"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="singlePart" type="xsd:boolean">
+          <xsd:annotation>
+            <xsd:documentation>Identifies whether the partId one to one corresponds with the image</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element ref="ns2:changeTimeStamp" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ClassType">
+    <xsd:annotation>
+      <xsd:documentation>The type of media</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="classTypeId" type="xsd:int">
+          <xsd:annotation>
+            <xsd:documentation>The classification of the media</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="classTypeName">
+          <xsd:annotation>
+            <xsd:documentation>The classification short name</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Decoration">
+    <xsd:annotation>
+      <xsd:documentation>The type of media</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="decorationId" type="xsd:int">
+          <xsd:annotation>
+            <xsd:documentation>The decoration id associated with the media</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="decorationName">
+          <xsd:annotation>
+            <xsd:documentation>The name of the decoration associated with the id</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:maxLength value="64"/>
+              <xsd:minLength value="1"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Location">
+    <xsd:annotation>
+      <xsd:documentation>The type of media</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="locationId" type="xsd:int">
+          <xsd:annotation>
+            <xsd:documentation>The location id associated with the media</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="locationName">
+          <xsd:annotation>
+            <xsd:documentation>The name of the location associated with the id</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetMediaContentResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="MediaContentArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>An array of different selections the product is offered and can be provided as a filter to Inventory Service getInventoryLevels.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:MediaContent" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="ns2:errorMessage" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://devservices.alphabroder.com/media/wsdl/GetMediaDateModifiedRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/" schemaLocation="SharedMediaObjects.xsd"/>
+  <xsd:element name="GetMediaDateModifiedRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:wsVersion"/>
+        <xsd:element ref="ns2:id"/>
+        <xsd:element ref="ns2:password" minOccurs="0"/>
+        <xsd:element ref="ns2:cultureName" minOccurs="0"/>
+        <xsd:element ref="ns2:changeTimeStamp"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://devservices.alphabroder.com/media/wsdl/GetMediaDateModifiedResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/" schemaLocation="SharedMediaObjects.xsd"/>
+  <xsd:element name="MediaDateModified">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns2:productId"/>
+        <xsd:element ref="ns2:partId"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetMediaDateModifiedResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="MediaDateModifiedArray" minOccurs="0">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:MediaDateModified" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="ns2:errorMessage" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://devservices.alphabroder.com/media/service/index.php</con:endpoint></con:endpoints><con:operation id="4f104c36-9d4d-43af-8f2c-ea4880abc462" isOneWay="false" action="getMediaContent" name="getMediaContent" bindingOperationName="getMediaContent" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="58ffd90d-14b6-48ac-9fd0-b8ca41ad4fbe" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.com/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>Image</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType></ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getMediaContent"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="6985f9fb-973a-4522-b45d-a6f3446bfe18" isOneWay="false" action="urn:getMediaDateModified" name="getMediaDateModified" bindingOperationName="getMediaDateModified" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f40b8527-4bb9-46d8-8237-371c5c7739d6" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.com/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaDateModifiedRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>pdonthula</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>Welcome1</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName>en-US</shar:cultureName>\r
+         <shar:changeTimeStamp></shar:changeTimeStamp>\r
+      </ns:GetMediaDateModifiedRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:getMediaDateModified"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="478186e6-9717-4002-8677-ed486e681b6f" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="0b8ca93b-3bb9-40f1-8553-4be748e0a461" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" id="cc95e167-3f36-426b-afe3-3338c6e31a4f" name="getMediaContent - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MediaContentServiceBinding</con:interface><con:operation>getMediaContent</con:operation><con:request name="getMediaContent - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="66c40af1-3588-49db-8b15-9e41523c1742"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.com/media/service/index.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/MediaService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/MediaService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetMediaContentRequest>\r
+         <shar:wsVersion>1.1.0</shar:wsVersion>\r
+         <shar:id>19</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>19</shar:password>\r
+         <!--Optional:-->\r
+         <shar:cultureName></shar:cultureName>\r
+         <shar:mediaType>Image</shar:mediaType>\r
+         <shar:productId>D100</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+         <!--Optional:-->\r
+         <ns:classType></ns:classType>\r
+      </ns:GetMediaContentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="c4f5254c-2a6d-42c1-9067-13a34dd5c82d" name="SOAP Response"/><con:assertion type="Schema Compliance" id="42982431-444a-4ff0-a818-8130200eda6c" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="2d32e52f-a626-4583-b4d9-b5f7926ce36c" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getMediaContent"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

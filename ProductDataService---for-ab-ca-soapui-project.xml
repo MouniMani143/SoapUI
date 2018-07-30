@@ -1,0 +1,1731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c35d3d71-bc57-4fbc-893b-adfa445d04c5" activeEnvironment="Default" name="ProductDataService - for ab.ca" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="2a79bd6c-e0e9-4c3c-bc3d-c225b547eae8" wsaVersion="NONE" name="ProductDataServiceBinding" type="wsdl" bindingName="{http://www.promostandards.org/WSDL/ProductDataService/1.0.0/}ProductDataServiceBinding" soapVersion="1_1" anonymous="optional" definition="http://devservices.alphabroder.ca/productData/WSDL/1.0.0/ProductDataService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://devservices.alphabroder.ca/productData/WSDL/1.0.0/ProductDataService.wsdl"><con:part><con:url>http://devservices.alphabroder.ca/productData/WSDL/1.0.0/ProductDataService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ProductData_v1_0_0" targetNamespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/" xmlns:ns1="http://www.codesynthesis.com/xmlns/xsstl">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" schemaLocation="GetProductRequest.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" schemaLocation="GetProductResponse.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" schemaLocation="GetProductDateModifiedRequest.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" schemaLocation="GetProductDateModifiedResponse.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" schemaLocation="GetProductCloseOutRequest.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" schemaLocation="GetProductCloseOutResponse.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" schemaLocation="GetProductSellableRequest.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" schemaLocation="GetProductSellableResponse.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetProductRequestMessage">
+    <wsdl:part name="GetProductRequest" element="tns:GetProductRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetProductResponseMessage">
+    <wsdl:part name="GetProductResponse" element="tns:GetProductResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetProductDateModifiedRequestMessage">
+    <wsdl:part name="GetProductDateModifiedRequest" element="tns:GetProductDateModifiedRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetProductDateModifiedResponseMessage">
+    <wsdl:part name="GetProductDateModifiedResponse" element="tns:GetProductDateModifiedResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetProductCloseOutRequestMessage">
+    <wsdl:part name="GetProductCloseOutRequest" element="tns:GetProductCloseOutRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetProductCloseOutResponseMessage">
+    <wsdl:part name="GetProductCloseOutResponse" element="tns:GetProductCloseOutResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetProductSellableRequestMessage">
+    <wsdl:part name="GetProductSellableRequest" element="tns:GetProductSellableRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetProductSellableResponseMessage">
+    <wsdl:part name="GetProductSellableResponse" element="tns:GetProductSellableResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ProductDataService">
+    <wsdl:operation name="getProduct">
+      <wsdl:input message="tns:GetProductRequestMessage"/>
+      <wsdl:output message="tns:GetProductResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getProductDateModified">
+      <wsdl:input message="tns:GetProductDateModifiedRequestMessage"/>
+      <wsdl:output message="tns:GetProductDateModifiedResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getProductCloseOut">
+      <wsdl:input message="tns:GetProductCloseOutRequestMessage"/>
+      <wsdl:output message="tns:GetProductCloseOutResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getProductSellable">
+      <wsdl:input message="tns:GetProductSellableRequestMessage"/>
+      <wsdl:output message="tns:GetProductSellableResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProductDataServiceBinding" type="tns:ProductDataService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getProduct">
+      <soap:operation soapAction="getProduct" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductSellable">
+      <soap:operation soapAction="getProductSellable" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductCloseOut">
+      <soap:operation soapAction="getProductCloseOut" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductDateModified">
+      <soap:operation soapAction="getProductDateModified" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProductDataService">
+    <wsdl:port name="ProductDataServiceBinding" binding="tns:ProductDataServiceBinding">
+      <soap:address location="https://devservices.alphabroder.ca"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://devservices.alphabroder.ca/productData/WSDL/1.0.0/GetProductRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/" schemaLocation="SharedProductObjects.xsd"/>
+  <xsd:element name="GetProductRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:wsVersion"/>
+        <xsd:element ref="ns3:id"/>
+        <xsd:element ref="ns3:password" minOccurs="0"/>
+        <xsd:element ref="ns3:localizationCountry"/>
+        <xsd:element ref="ns3:localizationLanguage"/>
+        <xsd:element ref="ns3:productId"/>
+        <xsd:element ref="ns3:partId" minOccurs="0"/>
+        <xsd:element name="colorName" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>A specific part color for this product</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="ApparelSizeArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Used for returning specific apparel sizes.  Array of ApparelSize objects.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns3:ApparelSize" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://devservices.alphabroder.ca/productData/WSDL/1.0.0/SharedProductObjects.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/" xmlns:ns3="http://www.codesynthesis.com/xmlns/xsstl">
+  <xsd:import namespace="http://www.codesynthesis.com/xmlns/xsstl" schemaLocation="iso3166-country-code.xsd"/>
+  <xsd:simpleType name="specificationTypeEnum">
+    <xsd:annotation>
+      <xsd:documentation/>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Length"/>
+      <xsd:enumeration value="Thickness"/>
+      <xsd:enumeration value="Radius"/>
+      <xsd:enumeration value="Volume"/>
+      <xsd:enumeration value="Capacity"/>
+      <xsd:enumeration value="Memory"/>
+      <xsd:enumeration value="Data Ports"/>
+      <xsd:enumeration value="Capacitance"/>
+      <xsd:enumeration value="Voltage"/>
+      <xsd:enumeration value="Point Size"/>
+      <xsd:enumeration value="Sheet Size"/>
+      <xsd:enumeration value="Sheet Count"/>
+      <xsd:enumeration value="Pockets"/>
+      <xsd:enumeration value="Inseam"/>
+      <xsd:enumeration value="Bust"/>
+      <xsd:enumeration value="Chest"/>
+      <xsd:enumeration value="Waist"/>
+      <xsd:enumeration value="Hips"/>
+      <xsd:enumeration value="Cup"/>
+      <xsd:enumeration value="Rise"/>
+      <xsd:enumeration value="Neck"/>
+      <xsd:enumeration value="Thigh"/>
+      <xsd:enumeration value="Shoulders"/>
+      <xsd:enumeration value="Sleeve"/>
+      <xsd:enumeration value="Device Size"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="apparelStyleEnum">
+    <xsd:annotation>
+      <xsd:documentation/>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Unisex"/>
+      <xsd:enumeration value="Youth"/>
+      <xsd:enumeration value="Girls"/>
+      <xsd:enumeration value="Boys"/>
+      <xsd:enumeration value="Womens"/>
+      <xsd:enumeration value="WomensTall"/>
+      <xsd:enumeration value="Mens"/>
+      <xsd:enumeration value="MensTall"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="labelSizeEnum">
+    <xsd:annotation>
+      <xsd:documentation/>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="OSFA"/>
+      <xsd:enumeration value="6XS"/>
+      <xsd:enumeration value="5XS"/>
+      <xsd:enumeration value="4XS"/>
+      <xsd:enumeration value="3XS"/>
+      <xsd:enumeration value="2XS"/>
+      <xsd:enumeration value="XS"/>
+      <xsd:enumeration value="S"/>
+      <xsd:enumeration value="M"/>
+      <xsd:enumeration value="L"/>
+      <xsd:enumeration value="XL"/>
+      <xsd:enumeration value="2XL"/>
+      <xsd:enumeration value="3XL"/>
+      <xsd:enumeration value="4XL"/>
+      <xsd:enumeration value="5XL"/>
+      <xsd:enumeration value="6XL"/>
+      <xsd:enumeration value="CUSTOM"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="dimensionUomEnum">
+    <xsd:annotation>
+      <xsd:documentation/>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="MM"/>
+      <xsd:enumeration value="CM"/>
+      <xsd:enumeration value="MR"/>
+      <xsd:enumeration value="IN"/>
+      <xsd:enumeration value="FT"/>
+      <xsd:enumeration value="YD"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="weightUomEnum">
+    <xsd:annotation>
+      <xsd:documentation/>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ME"/>
+      <xsd:enumeration value="KG"/>
+      <xsd:enumeration value="OZ"/>
+      <xsd:enumeration value="LB"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="relationTypeEnum">
+    <xsd:annotation>
+      <xsd:documentation/>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Substitute"/>
+      <xsd:enumeration value="Companion Sell"/>
+      <xsd:enumeration value="Common Grouping"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="wsVersion">
+    <xsd:annotation>
+      <xsd:documentation>The Standard Version of the Web Service being referenced</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="id">
+    <xsd:annotation>
+      <xsd:documentation>The customer Id or any other agreed upon Id.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="password">
+    <xsd:annotation>
+      <xsd:documentation>The password associated with the Id</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="changeTimeStamp" type="xsd:dateTime">
+    <xsd:annotation>
+      <xsd:documentation>Beginning date time since last change in UTC</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="localizationCountry">
+    <xsd:annotation>
+      <xsd:documentation>ISO 3166-1 Alpha 2 code for Country</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:maxLength value="2"/>
+        <xsd:minLength value="2"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="localizationLanguage">
+    <xsd:annotation>
+      <xsd:documentation>ISO 639-1 Alpha 2 code for Language</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="2"/>
+        <xsd:maxLength value="2"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="ErrorMessage">
+    <xsd:annotation>
+      <xsd:documentation>Response for any error requiring notification to requestor</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="code" type="xsd:int">
+          <xsd:annotation>
+            <xsd:documentation>Response for any error requiring notification to requestor</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="description">
+          <xsd:annotation>
+            <xsd:documentation>Response for any error requiring notification to requestor</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="256"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="productId">
+    <xsd:annotation>
+      <xsd:documentation>The product ID</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="partId">
+    <xsd:annotation>
+      <xsd:documentation>The part ID</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="64"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="description">
+    <xsd:annotation>
+      <xsd:documentation>Description</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="2048"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="marketingDescription">
+    <xsd:annotation>
+      <xsd:documentation>Marketing description generally used for all public facing</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="1024"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="endDate" type="xsd:dateTime" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date this product expires from supplier availability</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="effectiveDate" type="xsd:dateTime" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date this product initially becomes available from the supplier</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="isCaution" type="xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Cautionary status to review for specific warnings about using product data</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="cautionComment">
+    <xsd:annotation>
+      <xsd:documentation>Cautionary comments</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:maxLength value="1024"/>
+        <xsd:minLength value="1"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="isSellable" type="xsd:boolean">
+    <xsd:annotation>
+      <xsd:documentation>Indicates if sellable</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="countryOfOrigin">
+    <xsd:annotation>
+      <xsd:documentation>Country of Origin</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="ns3:ISO3166CountyCode">
+        <xsd:maxLength value="2"/>
+        <xsd:minLength value="2"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="isCloseout" type="xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Indicates if a closeout</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="dimensionUom">
+    <xsd:annotation>
+      <xsd:documentation>The dimensional unit of measure</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="ns2:dimensionUomEnum">
+        <xsd:maxLength value="2"/>
+        <xsd:minLength value="1"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="depth" type="xsd:decimal" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The depth/length using the unit of measure specified in dimensionUom</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="height" type="xsd:decimal" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The height using the unit of measure specified in dimensionUom</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="weight" type="xsd:decimal" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The weight using the unit of measure specified in weightUom</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="width" type="xsd:decimal" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The width using the unit of measure specified in dimensionUom</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="weightUom">
+    <xsd:annotation>
+      <xsd:documentation>The weight unit of measure</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="ns2:weightUomEnum">
+        <xsd:maxLength value="2"/>
+        <xsd:minLength value="1"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="quantity" type="xsd:decimal">
+    <xsd:annotation>
+      <xsd:documentation>Quantity</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="packageType">
+    <xsd:annotation>
+      <xsd:documentation>Part specific rush service</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:minLength value="1"/>
+        <xsd:maxLength value="256"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="ApparelSize">
+    <xsd:annotation>
+      <xsd:documentation>Used to describe an apparel size</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="apparelStyle">
+          <xsd:annotation>
+            <xsd:documentation>Ladies, Men, Youth, etc.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="ns2:apparelStyleEnum">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="labelSize">
+          <xsd:annotation>
+            <xsd:documentation>The apparel items tagged size. e.g. XSmall, Small, etc.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="ns2:labelSizeEnum">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="6"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="customSize" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Used to communicate custom size when labelSize is CUSTOM.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SizeApparelArray">
+    <xsd:annotation>
+      <xsd:documentation>Size</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="SizeApparel" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="apparelStyle" type="ns2:apparelStyleEnum">
+                <xsd:annotation>
+                  <xsd:documentation>Ladies, Men, Youth, etc.</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="labelSize" type="ns2:labelSizeEnum">
+                <xsd:annotation>
+                  <xsd:documentation>The apparel items tagged size. e.g. XSmall, Small, etc.</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://devservices.alphabroder.ca/productData/WSDL/1.0.0/iso3166-country-code.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.codesynthesis.com/xmlns/xsstl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:stl="http://www.codesynthesis.com/xmlns/xsstl">
+  <xsd:annotation>
+    <xsd:documentation>Copyright (C) 2006-2007 Code Synthesis Tools CC
+
+      Redistribution and use with or without modification are permitted
+      under the terms of the new BSD license. See the accompanying LICENSE
+      file.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:simpleType name="ISO3166CountyCode">
+    <xsd:annotation>
+      <xsd:documentation>Two-letter (alpha-2) ISO 3166-1 code for one of the 243 countries.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="AF"/>
+      <!--AFGHANISTAN-->
+      <xsd:enumeration value="AX"/>
+      <!--&Aring;LAND ISLANDS-->
+      <xsd:enumeration value="AL"/>
+      <!--ALBANIA-->
+      <xsd:enumeration value="DZ"/>
+      <!--ALGERIA-->
+      <xsd:enumeration value="AS"/>
+      <!--AMERICAN SAMOA-->
+      <xsd:enumeration value="AD"/>
+      <!--ANDORRA-->
+      <xsd:enumeration value="AO"/>
+      <!--ANGOLA-->
+      <xsd:enumeration value="AI"/>
+      <!--ANGUILLA-->
+      <xsd:enumeration value="AQ"/>
+      <!--ANTARCTICA-->
+      <xsd:enumeration value="AG"/>
+      <!--ANTIGUA AND BARBUDA-->
+      <xsd:enumeration value="AR"/>
+      <!--ARGENTINA-->
+      <xsd:enumeration value="AM"/>
+      <!--ARMENIA-->
+      <xsd:enumeration value="AW"/>
+      <!--ARUBA-->
+      <xsd:enumeration value="AU"/>
+      <!--AUSTRALIA-->
+      <xsd:enumeration value="AT"/>
+      <!--AUSTRIA-->
+      <xsd:enumeration value="AZ"/>
+      <!--AZERBAIJAN-->
+      <xsd:enumeration value="BS"/>
+      <!--BAHAMAS-->
+      <xsd:enumeration value="BH"/>
+      <!--BAHRAIN-->
+      <xsd:enumeration value="BD"/>
+      <!--BANGLADESH-->
+      <xsd:enumeration value="BB"/>
+      <!--BARBADOS-->
+      <xsd:enumeration value="BY"/>
+      <!--BELARUS-->
+      <xsd:enumeration value="BE"/>
+      <!--BELGIUM-->
+      <xsd:enumeration value="BZ"/>
+      <!--BELIZE-->
+      <xsd:enumeration value="BJ"/>
+      <!--BENIN-->
+      <xsd:enumeration value="BM"/>
+      <!--BERMUDA-->
+      <xsd:enumeration value="BT"/>
+      <!--BHUTAN-->
+      <xsd:enumeration value="BO"/>
+      <!--BOLIVIA-->
+      <xsd:enumeration value="BA"/>
+      <!--BOSNIA AND HERZEGOVINA-->
+      <xsd:enumeration value="BW"/>
+      <!--BOTSWANA-->
+      <xsd:enumeration value="BV"/>
+      <!--BOUVET ISLAND-->
+      <xsd:enumeration value="BR"/>
+      <!--BRAZIL-->
+      <xsd:enumeration value="IO"/>
+      <!--BRITISH INDIAN OCEAN TERRITORY-->
+      <xsd:enumeration value="BN"/>
+      <!--BRUNEI DARUSSALAM-->
+      <xsd:enumeration value="BG"/>
+      <!--BULGARIA-->
+      <xsd:enumeration value="BF"/>
+      <!--BURKINA FASO-->
+      <xsd:enumeration value="BI"/>
+      <!--BURUNDI-->
+      <xsd:enumeration value="KH"/>
+      <!--CAMBODIA-->
+      <xsd:enumeration value="CM"/>
+      <!--CAMEROON-->
+      <xsd:enumeration value="CA"/>
+      <!--CANADA-->
+      <xsd:enumeration value="CV"/>
+      <!--CAPE VERDE-->
+      <xsd:enumeration value="KY"/>
+      <!--CAYMAN ISLANDS-->
+      <xsd:enumeration value="CF"/>
+      <!--CENTRAL AFRICAN REPUBLIC-->
+      <xsd:enumeration value="TD"/>
+      <!--CHAD-->
+      <xsd:enumeration value="CL"/>
+      <!--CHILE-->
+      <xsd:enumeration value="CN"/>
+      <!--CHINA-->
+      <xsd:enumeration value="CX"/>
+      <!--CHRISTMAS ISLAND-->
+      <xsd:enumeration value="CC"/>
+      <!--COCOS (KEELING) ISLANDS-->
+      <xsd:enumeration value="CO"/>
+      <!--COLOMBIA-->
+      <xsd:enumeration value="KM"/>
+      <!--COMOROS-->
+      <xsd:enumeration value="CG"/>
+      <!--CONGO-->
+      <xsd:enumeration value="CD"/>
+      <!--CONGO, THE DEMOCRATIC REPUBLIC OF THE-->
+      <xsd:enumeration value="CK"/>
+      <!--COOK ISLANDS-->
+      <xsd:enumeration value="CR"/>
+      <!--COSTA RICA-->
+      <xsd:enumeration value="CI"/>
+      <!--COTE D'IVOIRE-->
+      <xsd:enumeration value="HR"/>
+      <!--CROATIA-->
+      <xsd:enumeration value="CU"/>
+      <!--CUBA-->
+      <xsd:enumeration value="CY"/>
+      <!--CYPRUS-->
+      <xsd:enumeration value="CZ"/>
+      <!--CZECH REPUBLIC-->
+      <xsd:enumeration value="DK"/>
+      <!--DENMARK-->
+      <xsd:enumeration value="DJ"/>
+      <!--DJIBOUTI-->
+      <xsd:enumeration value="DM"/>
+      <!--DOMINICA-->
+      <xsd:enumeration value="DO"/>
+      <!--DOMINICAN REPUBLIC-->
+      <xsd:enumeration value="EC"/>
+      <!--ECUADOR-->
+      <xsd:enumeration value="EG"/>
+      <!--EGYPT-->
+      <xsd:enumeration value="SV"/>
+      <!--EL SALVADOR-->
+      <xsd:enumeration value="GQ"/>
+      <!--EQUATORIAL GUINEA-->
+      <xsd:enumeration value="ER"/>
+      <!--ERITREA-->
+      <xsd:enumeration value="EE"/>
+      <!--ESTONIA-->
+      <xsd:enumeration value="ET"/>
+      <!--ETHIOPIA-->
+      <xsd:enumeration value="FK"/>
+      <!--FALKLAND ISLANDS (MALVINAS)-->
+      <xsd:enumeration value="FO"/>
+      <!--FAROE ISLANDS-->
+      <xsd:enumeration value="FJ"/>
+      <!--FIJI-->
+      <xsd:enumeration value="FI"/>
+      <!--FINLAND-->
+      <xsd:enumeration value="FR"/>
+      <!--FRANCE-->
+      <xsd:enumeration value="GF"/>
+      <!--FRENCH GUIANA-->
+      <xsd:enumeration value="PF"/>
+      <!--FRENCH POLYNESIA-->
+      <xsd:enumeration value="TF"/>
+      <!--FRENCH SOUTHERN TERRITORIES-->
+      <xsd:enumeration value="GA"/>
+      <!--GABON-->
+      <xsd:enumeration value="GM"/>
+      <!--GAMBIA-->
+      <xsd:enumeration value="GE"/>
+      <!--GEORGIA-->
+      <xsd:enumeration value="DE"/>
+      <!--GERMANY-->
+      <xsd:enumeration value="GH"/>
+      <!--GHANA-->
+      <xsd:enumeration value="GI"/>
+      <!--GIBRALTAR-->
+      <xsd:enumeration value="GR"/>
+      <!--GREECE-->
+      <xsd:enumeration value="GL"/>
+      <!--GREENLAND-->
+      <xsd:enumeration value="GD"/>
+      <!--GRENADA-->
+      <xsd:enumeration value="GP"/>
+      <!--GUADELOUPE-->
+      <xsd:enumeration value="GU"/>
+      <!--GUAM-->
+      <xsd:enumeration value="GT"/>
+      <!--GUATEMALA-->
+      <xsd:enumeration value="GG"/>
+      <!--GUERNSEY-->
+      <xsd:enumeration value="GN"/>
+      <!--GUINEA-->
+      <xsd:enumeration value="GW"/>
+      <!--GUINEA-BISSAU-->
+      <xsd:enumeration value="GY"/>
+      <!--GUYANA-->
+      <xsd:enumeration value="HT"/>
+      <!--HAITI-->
+      <xsd:enumeration value="HM"/>
+      <!--HEARD ISLAND AND MCDONALD ISLANDS-->
+      <xsd:enumeration value="VA"/>
+      <!--HOLY SEE (VATICAN CITY STATE)-->
+      <xsd:enumeration value="HN"/>
+      <!--HONDURAS-->
+      <xsd:enumeration value="HK"/>
+      <!--HONG KONG-->
+      <xsd:enumeration value="HU"/>
+      <!--HUNGARY-->
+      <xsd:enumeration value="IS"/>
+      <!--ICELAND-->
+      <xsd:enumeration value="IN"/>
+      <!--INDIA-->
+      <xsd:enumeration value="ID"/>
+      <!--INDONESIA-->
+      <xsd:enumeration value="IR"/>
+      <!--IRAN, ISLAMIC REPUBLIC OF-->
+      <xsd:enumeration value="IQ"/>
+      <!--IRAQ-->
+      <xsd:enumeration value="IE"/>
+      <!--IRELAND-->
+      <xsd:enumeration value="IM"/>
+      <!--ISLE OF MAN-->
+      <xsd:enumeration value="IL"/>
+      <!--ISRAEL-->
+      <xsd:enumeration value="IT"/>
+      <!--ITALY-->
+      <xsd:enumeration value="JM"/>
+      <!--JAMAICA-->
+      <xsd:enumeration value="JP"/>
+      <!--JAPAN-->
+      <xsd:enumeration value="JE"/>
+      <!--JERSEY-->
+      <xsd:enumeration value="JO"/>
+      <!--JORDAN-->
+      <xsd:enumeration value="KZ"/>
+      <!--KAZAKHSTAN-->
+      <xsd:enumeration value="KE"/>
+      <!--KENYA-->
+      <xsd:enumeration value="KI"/>
+      <!--KIRIBATI-->
+      <xsd:enumeration value="KP"/>
+      <!--KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF-->
+      <xsd:enumeration value="KR"/>
+      <!--KOREA, REPUBLIC OF-->
+      <xsd:enumeration value="KW"/>
+      <!--KUWAIT-->
+      <xsd:enumeration value="KG"/>
+      <!--KYRGYZSTAN-->
+      <xsd:enumeration value="LA"/>
+      <!--LAO PEOPLE'S DEMOCRATIC REPUBLIC-->
+      <xsd:enumeration value="LV"/>
+      <!--LATVIA-->
+      <xsd:enumeration value="LB"/>
+      <!--LEBANON-->
+      <xsd:enumeration value="LS"/>
+      <!--LESOTHO-->
+      <xsd:enumeration value="LR"/>
+      <!--LIBERIA-->
+      <xsd:enumeration value="LY"/>
+      <!--LIBYAN ARAB JAMAHIRIYA-->
+      <xsd:enumeration value="LI"/>
+      <!--LIECHTENSTEIN-->
+      <xsd:enumeration value="LT"/>
+      <!--LITHUANIA-->
+      <xsd:enumeration value="LU"/>
+      <!--LUXEMBOURG-->
+      <xsd:enumeration value="MO"/>
+      <!--MACAO-->
+      <xsd:enumeration value="MK"/>
+      <!--MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF-->
+      <xsd:enumeration value="MG"/>
+      <!--MADAGASCAR-->
+      <xsd:enumeration value="MW"/>
+      <!--MALAWI-->
+      <xsd:enumeration value="MY"/>
+      <!--MALAYSIA-->
+      <xsd:enumeration value="MV"/>
+      <!--MALDIVES-->
+      <xsd:enumeration value="ML"/>
+      <!--MALI-->
+      <xsd:enumeration value="MT"/>
+      <!--MALTA-->
+      <xsd:enumeration value="MH"/>
+      <!--MARSHALL ISLANDS-->
+      <xsd:enumeration value="MQ"/>
+      <!--MARTINIQUE-->
+      <xsd:enumeration value="MR"/>
+      <!--MAURITANIA-->
+      <xsd:enumeration value="MU"/>
+      <!--MAURITIUS-->
+      <xsd:enumeration value="YT"/>
+      <!--MAYOTTE-->
+      <xsd:enumeration value="MX"/>
+      <!--MEXICO-->
+      <xsd:enumeration value="FM"/>
+      <!--MICRONESIA, FEDERATED STATES OF-->
+      <xsd:enumeration value="MD"/>
+      <!--MOLDOVA, REPUBLIC OF-->
+      <xsd:enumeration value="MC"/>
+      <!--MONACO-->
+      <xsd:enumeration value="MN"/>
+      <!--MONGOLIA-->
+      <xsd:enumeration value="MS"/>
+      <!--MONTSERRAT-->
+      <xsd:enumeration value="MA"/>
+      <!--MOROCCO-->
+      <xsd:enumeration value="MZ"/>
+      <!--MOZAMBIQUE-->
+      <xsd:enumeration value="MM"/>
+      <!--MYANMAR-->
+      <xsd:enumeration value="NA"/>
+      <!--NAMIBIA-->
+      <xsd:enumeration value="NR"/>
+      <!--NAURU-->
+      <xsd:enumeration value="NP"/>
+      <!--NEPAL-->
+      <xsd:enumeration value="NL"/>
+      <!--NETHERLANDS-->
+      <xsd:enumeration value="AN"/>
+      <!--NETHERLANDS ANTILLES-->
+      <xsd:enumeration value="NC"/>
+      <!--NEW CALEDONIA-->
+      <xsd:enumeration value="NZ"/>
+      <!--NEW ZEALAND-->
+      <xsd:enumeration value="NI"/>
+      <!--NICARAGUA-->
+      <xsd:enumeration value="NE"/>
+      <!--NIGER-->
+      <xsd:enumeration value="NG"/>
+      <!--NIGERIA-->
+      <xsd:enumeration value="NU"/>
+      <!--NIUE-->
+      <xsd:enumeration value="NF"/>
+      <!--NORFOLK ISLAND-->
+      <xsd:enumeration value="MP"/>
+      <!--NORTHERN MARIANA ISLANDS-->
+      <xsd:enumeration value="NO"/>
+      <!--NORWAY-->
+      <xsd:enumeration value="OM"/>
+      <!--OMAN-->
+      <xsd:enumeration value="PK"/>
+      <!--PAKISTAN-->
+      <xsd:enumeration value="PW"/>
+      <!--PALAU-->
+      <xsd:enumeration value="PS"/>
+      <!--PALESTINIAN TERRITORY, OCCUPIED-->
+      <xsd:enumeration value="PA"/>
+      <!--PANAMA-->
+      <xsd:enumeration value="PG"/>
+      <!--PAPUA NEW GUINEA-->
+      <xsd:enumeration value="PY"/>
+      <!--PARAGUAY-->
+      <xsd:enumeration value="PE"/>
+      <!--PERU-->
+      <xsd:enumeration value="PH"/>
+      <!--PHILIPPINES-->
+      <xsd:enumeration value="PN"/>
+      <!--PITCAIRN-->
+      <xsd:enumeration value="PL"/>
+      <!--POLAND-->
+      <xsd:enumeration value="PT"/>
+      <!--PORTUGAL-->
+      <xsd:enumeration value="PR"/>
+      <!--PUERTO RICO-->
+      <xsd:enumeration value="QA"/>
+      <!--QATAR-->
+      <xsd:enumeration value="RE"/>
+      <!--REUNION-->
+      <xsd:enumeration value="RO"/>
+      <!--ROMANIA-->
+      <xsd:enumeration value="RU"/>
+      <!--RUSSIAN FEDERATION-->
+      <xsd:enumeration value="RW"/>
+      <!--RWANDA-->
+      <xsd:enumeration value="SH"/>
+      <!--SAINT HELENA-->
+      <xsd:enumeration value="KN"/>
+      <!--SAINT KITTS AND NEVIS-->
+      <xsd:enumeration value="LC"/>
+      <!--SAINT LUCIA-->
+      <xsd:enumeration value="PM"/>
+      <!--SAINT PIERRE AND MIQUELON-->
+      <xsd:enumeration value="VC"/>
+      <!--SAINT VINCENT AND THE GRENADINES-->
+      <xsd:enumeration value="WS"/>
+      <!--SAMOA-->
+      <xsd:enumeration value="SM"/>
+      <!--SAN MARINO-->
+      <xsd:enumeration value="ST"/>
+      <!--SAO TOME AND PRINCIPE-->
+      <xsd:enumeration value="SA"/>
+      <!--SAUDI ARABIA-->
+      <xsd:enumeration value="SN"/>
+      <!--SENEGAL-->
+      <xsd:enumeration value="CS"/>
+      <!--SERBIA AND MONTENEGRO-->
+      <xsd:enumeration value="SC"/>
+      <!--SEYCHELLES-->
+      <xsd:enumeration value="SL"/>
+      <!--SIERRA LEONE-->
+      <xsd:enumeration value="SG"/>
+      <!--SINGAPORE-->
+      <xsd:enumeration value="SK"/>
+      <!--SLOVAKIA-->
+      <xsd:enumeration value="SI"/>
+      <!--SLOVENIA-->
+      <xsd:enumeration value="SB"/>
+      <!--SOLOMON ISLANDS-->
+      <xsd:enumeration value="SO"/>
+      <!--SOMALIA-->
+      <xsd:enumeration value="ZA"/>
+      <!--SOUTH AFRICA-->
+      <xsd:enumeration value="GS"/>
+      <!--SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS-->
+      <xsd:enumeration value="ES"/>
+      <!--SPAIN-->
+      <xsd:enumeration value="LK"/>
+      <!--SRI LANKA-->
+      <xsd:enumeration value="SD"/>
+      <!--SUDAN-->
+      <xsd:enumeration value="SR"/>
+      <!--SURINAME-->
+      <xsd:enumeration value="SJ"/>
+      <!--SVALBARD AND JAN MAYEN-->
+      <xsd:enumeration value="SZ"/>
+      <!--SWAZILAND-->
+      <xsd:enumeration value="SE"/>
+      <!--SWEDEN-->
+      <xsd:enumeration value="CH"/>
+      <!--SWITZERLAND-->
+      <xsd:enumeration value="SY"/>
+      <!--SYRIAN ARAB REPUBLIC-->
+      <xsd:enumeration value="TW"/>
+      <!--TAIWAN, PROVINCE OF CHINA-->
+      <xsd:enumeration value="TJ"/>
+      <!--TAJIKISTAN-->
+      <xsd:enumeration value="TZ"/>
+      <!--TANZANIA, UNITED REPUBLIC OF-->
+      <xsd:enumeration value="TH"/>
+      <!--THAILAND-->
+      <xsd:enumeration value="TL"/>
+      <!--TIMOR-LESTE-->
+      <xsd:enumeration value="TG"/>
+      <!--TOGO-->
+      <xsd:enumeration value="TK"/>
+      <!--TOKELAU-->
+      <xsd:enumeration value="TO"/>
+      <!--TONGA-->
+      <xsd:enumeration value="TT"/>
+      <!--TRINIDAD AND TOBAGO-->
+      <xsd:enumeration value="TN"/>
+      <!--TUNISIA-->
+      <xsd:enumeration value="TR"/>
+      <!--TURKEY-->
+      <xsd:enumeration value="TM"/>
+      <!--TURKMENISTAN-->
+      <xsd:enumeration value="TC"/>
+      <!--TURKS AND CAICOS ISLANDS-->
+      <xsd:enumeration value="TV"/>
+      <!--TUVALU-->
+      <xsd:enumeration value="UG"/>
+      <!--UGANDA-->
+      <xsd:enumeration value="UA"/>
+      <!--UKRAINE-->
+      <xsd:enumeration value="AE"/>
+      <!--UNITED ARAB EMIRATES-->
+      <xsd:enumeration value="GB"/>
+      <!--UNITED KINGDOM-->
+      <xsd:enumeration value="US"/>
+      <!--UNITED STATES-->
+      <xsd:enumeration value="UM"/>
+      <!--UNITED STATES MINOR OUTLYING ISLANDS-->
+      <xsd:enumeration value="UY"/>
+      <!--URUGUAY-->
+      <xsd:enumeration value="UZ"/>
+      <!--UZBEKISTAN-->
+      <xsd:enumeration value="VU"/>
+      <!--VANUATU-->
+      <xsd:enumeration value="VE"/>
+      <!--VENEZUELA-->
+      <xsd:enumeration value="VN"/>
+      <!--VIET NAM-->
+      <xsd:enumeration value="VG"/>
+      <!--VIRGIN ISLANDS, BRITISH-->
+      <xsd:enumeration value="VI"/>
+      <!--VIRGIN ISLANDS, U.S.-->
+      <xsd:enumeration value="WF"/>
+      <!--WALLIS AND FUTUNA-->
+      <xsd:enumeration value="EH"/>
+      <!--WESTERN SAHARA-->
+      <xsd:enumeration value="YE"/>
+      <!--YEMEN-->
+      <xsd:enumeration value="ZM"/>
+      <!--ZAMBIA-->
+      <xsd:enumeration value="ZW"/>
+      <!--ZIMBABWE-->
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://devservices.alphabroder.ca/productData/WSDL/1.0.0/GetProductResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/" schemaLocation="SharedProductObjects.xsd"/>
+  <xsd:simpleType name="shipmentDestinationTypeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Commercial"/>
+      <xsd:enumeration value="Residential"/>
+      <xsd:enumeration value="None"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="dimUOMType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Inches"/>
+      <xsd:enumeration value="Feet"/>
+      <xsd:enumeration value="mm"/>
+      <xsd:enumeration value="cm"/>
+      <xsd:enumeration value="Meters"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="weightUOMType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Ounces"/>
+      <xsd:enumeration value="Pounds"/>
+      <xsd:enumeration value="Grams"/>
+      <xsd:enumeration value="KG"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="Dimension">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:dimensionUom"/>
+        <xsd:element ref="ns3:depth"/>
+        <xsd:element ref="ns3:height"/>
+        <xsd:element ref="ns3:width"/>
+        <xsd:element ref="ns3:weightUom"/>
+        <xsd:element ref="ns3:weight"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ProductPackage">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="default" type="xsd:boolean">
+          <xsd:annotation>
+            <xsd:documentation>Defalult packaging</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element ref="ns3:packageType"/>
+        <xsd:element ref="ns3:description" minOccurs="0"/>
+        <xsd:element ref="ns3:quantity"/>
+        <xsd:element ref="ns3:dimensionUom"/>
+        <xsd:element ref="ns3:depth"/>
+        <xsd:element ref="ns3:height"/>
+        <xsd:element ref="ns3:width"/>
+        <xsd:element ref="ns3:weightUom"/>
+        <xsd:element ref="ns3:weight"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ShippingPackage">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:packageType"/>
+        <xsd:element ref="ns3:description" minOccurs="0"/>
+        <xsd:element ref="ns3:quantity"/>
+        <xsd:element ref="ns3:dimensionUom"/>
+        <xsd:element ref="ns3:depth"/>
+        <xsd:element ref="ns3:height"/>
+        <xsd:element ref="ns3:width"/>
+        <xsd:element ref="ns3:weightUom"/>
+        <xsd:element ref="ns3:weight"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Specification">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="specificationType">
+          <xsd:annotation>
+            <xsd:documentation>The type of size</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="ns3:specificationTypeEnum">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="SpecificationUom" nillable="true">
+          <xsd:annotation>
+            <xsd:documentation>Specification UOM</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="measurementValue">
+          <xsd:annotation>
+            <xsd:documentation>Specification Measurement Value.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ProductCategory">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="category">
+          <xsd:annotation>
+            <xsd:documentation>Product category</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="256"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="subCategory" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Product subcategory</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="256"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="RelatedProduct">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="relationType">
+          <xsd:annotation>
+            <xsd:documentation>The relationship type between two products</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="ns3:relationTypeEnum">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element ref="ns3:productId"/>
+        <xsd:element ref="ns3:partId" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ProductKeyword">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="keyword">
+          <xsd:annotation>
+            <xsd:documentation>A product keyword commonly utilized for search or other functions</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="16384"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ProductMarketingPoint">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="pointType" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Basic category or type of Marketing point being made.  e.g. Highlights, Size, Safety</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="pointCopy">
+          <xsd:annotation>
+            <xsd:documentation>Marketing bullet or point copy</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="1024"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Color">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="colorName">
+          <xsd:annotation>
+            <xsd:documentation>Supplier specific color name.  Go to market color</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="hex" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The HEX code representation .  This is not a supplement for product color but data used for generating web user interfaces</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="approximatePms" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The PMS code representation.  This is not a supplement for product color.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="64"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Product">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:productId"/>
+        <xsd:element name="productName">
+          <xsd:annotation>
+            <xsd:documentation>The supplier name for the product</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:minLength value="1"/>
+              <xsd:maxLength value="256"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element ref="ns3:description" maxOccurs="unbounded"/>
+        <xsd:element name="ProductMarketingPointArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Array of the marketing point type and content</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:ProductMarketingPoint" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="ProductKeywordArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Array of keywords often used in searching for this product</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:ProductKeyword" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="productBrand" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Product Brand</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:maxLength value="64"/>
+              <xsd:minLength value="1"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="export" type="xsd:boolean" nillable="true">
+          <xsd:annotation>
+            <xsd:documentation>Product status for export</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="ProductCategoryArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The product’s categorization array</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:ProductCategory" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="RelatedProductArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Array of all part specific product data</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:RelatedProduct" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="ProductPartArray" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Array of all part specific product data</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ProductPart" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element ref="ns3:partId"/>
+                    <xsd:element ref="ns3:description" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ns3:countryOfOrigin" minOccurs="0"/>
+                    <xsd:element name="ColorArray" minOccurs="0">
+                      <xsd:annotation>
+                        <xsd:documentation>Colors</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element ref="ns1:Color" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="primaryMaterial" minOccurs="0">
+                      <xsd:annotation>
+                        <xsd:documentation>Primary material of construction</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:token">
+                          <xsd:minLength value="1"/>
+                          <xsd:maxLength value="64"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="SpecificationArray" minOccurs="0">
+                      <xsd:annotation>
+                        <xsd:documentation>Specifications</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element ref="ns1:Specification" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="shape" minOccurs="0">
+                      <xsd:annotation>
+                        <xsd:documentation>General shape</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:token">
+                          <xsd:minLength value="1"/>
+                          <xsd:maxLength value="64"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element ref="ns3:ApparelSize" minOccurs="0"/>
+                    <xsd:element ref="ns1:Dimension" minOccurs="0">
+                      <xsd:annotation>
+                        <xsd:documentation>Physical dimensions and weight</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="leadTime" type="xsd:int" minOccurs="0">
+                      <xsd:annotation>
+                        <xsd:documentation>Lead time in days</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="unspsc" minOccurs="0">
+                      <xsd:annotation>
+                        <xsd:documentation>United Nations Standard Products and Services Code (UNSPSC)</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:token">
+                          <xsd:minLength value="1"/>
+                          <xsd:maxLength value="8"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="gtin" minOccurs="0">
+                      <xsd:annotation>
+                        <xsd:documentation>Global Trade Item Number (GTIN)</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:token">
+                          <xsd:minLength value="1"/>
+                          <xsd:maxLength value="14"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="isRushService" type="xsd:boolean" nillable="true">
+                      <xsd:annotation>
+                        <xsd:documentation>Part specific rush service</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="ProductPackagingArray" minOccurs="0">
+                      <xsd:annotation>
+                        <xsd:documentation>Packaging option details; e.g. Gift Box, Cello Pack, Sleeve</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element ref="ns1:ProductPackage" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="ShippingPackageArray" minOccurs="0">
+                      <xsd:annotation>
+                        <xsd:documentation>Shipping package option details for the partPackaging Default package type; e.g. Carton, Box, Pallet.</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element ref="ns1:ShippingPackage" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element ref="ns3:endDate"/>
+                    <xsd:element ref="ns3:effectiveDate"/>
+                    <xsd:element ref="ns3:isCloseout"/>
+                    <xsd:element ref="ns3:isCaution"/>
+                    <xsd:element ref="ns3:cautionComment" minOccurs="0"/>
+                    <xsd:element name="nmfcCode" type="xsd:decimal" minOccurs="0">
+                      <xsd:annotation>
+                        <xsd:documentation>National Motor Freight Classification Code</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="nmfcDescription" minOccurs="0">
+                      <xsd:annotation>
+                        <xsd:documentation>National Motor Freight Classification Description</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:token">
+                          <xsd:minLength value="1"/>
+                          <xsd:maxLength value="1024"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="nmfcNumber" minOccurs="0">
+                      <xsd:annotation>
+                        <xsd:documentation>National Motor Freight Classification Number</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:token">
+                          <xsd:minLength value="1"/>
+                          <xsd:maxLength value="64"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="isOnDemand" type="xsd:boolean" nillable="true">
+                      <xsd:annotation>
+                        <xsd:documentation>Manufactured on demand / Made to order</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="isHazmat" type="xsd:boolean" nillable="true">
+                      <xsd:annotation>
+                        <xsd:documentation>Contains hazardous material</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="lastChangeDate" type="xsd:dateTime">
+          <xsd:annotation>
+            <xsd:documentation>The date time stamp of the most recent change</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="creationDate" type="xsd:dateTime">
+          <xsd:annotation>
+            <xsd:documentation>The date time stamp when this products data initially became available</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element ref="ns3:endDate"/>
+        <xsd:element ref="ns3:effectiveDate"/>
+        <xsd:element ref="ns3:isCaution"/>
+        <xsd:element ref="ns3:cautionComment" minOccurs="0"/>
+        <xsd:element ref="ns3:isCloseout"/>
+        <xsd:element name="lineName" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Line Name / Division to which this product belongs</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:maxLength value="64"/>
+              <xsd:minLength value="1"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetProductResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns1:Product" minOccurs="0"/>
+        <xsd:element ref="ns3:ErrorMessage" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://devservices.alphabroder.ca/productData/WSDL/1.0.0/GetProductDateModifiedRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/" schemaLocation="SharedProductObjects.xsd"/>
+  <xsd:element name="GetProductDateModifiedRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:wsVersion"/>
+        <xsd:element ref="ns3:id"/>
+        <xsd:element ref="ns3:password" minOccurs="0"/>
+        <xsd:element ref="ns3:changeTimeStamp"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://devservices.alphabroder.ca/productData/WSDL/1.0.0/GetProductDateModifiedResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/" schemaLocation="SharedProductObjects.xsd"/>
+  <xsd:element name="ProductDateModified">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:productId"/>
+        <xsd:element ref="ns3:partId" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetProductDateModifiedResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ProductDateModifiedArray" minOccurs="0">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:ProductDateModified" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="ns3:ErrorMessage" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://devservices.alphabroder.ca/productData/WSDL/1.0.0/GetProductCloseOutRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/" schemaLocation="SharedProductObjects.xsd"/>
+  <xsd:element name="GetProductCloseOutRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:wsVersion"/>
+        <xsd:element ref="ns3:id"/>
+        <xsd:element ref="ns3:password" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://devservices.alphabroder.ca/productData/WSDL/1.0.0/GetProductCloseOutResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/" schemaLocation="SharedProductObjects.xsd"/>
+  <xsd:element name="ProductCloseOut">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:productId"/>
+        <xsd:element ref="ns3:partId" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetProductCloseOutResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ProductCloseOutArray" minOccurs="0">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="ns1:ProductCloseOut" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="ns3:ErrorMessage" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://devservices.alphabroder.ca/productData/WSDL/1.0.0/GetProductSellableRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/" schemaLocation="SharedProductObjects.xsd"/>
+  <xsd:element name="GetProductSellableRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ns3:wsVersion"/>
+        <xsd:element ref="ns3:id"/>
+        <xsd:element ref="ns3:password" minOccurs="0"/>
+        <xsd:element ref="ns3:productId" minOccurs="0"/>
+        <xsd:element ref="ns3:partId" minOccurs="0"/>
+        <xsd:element ref="ns3:isSellable"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://devservices.alphabroder.ca/productData/WSDL/1.0.0/GetProductSellableResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:ns2="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:ns3="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/">
+  <xsd:import namespace="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/" schemaLocation="SharedProductObjects.xsd"/>
+  <xsd:element name="GetProductSellableResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ProductSellableArray" minOccurs="0">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ProductSellable" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element ref="ns3:productId"/>
+                    <xsd:element ref="ns3:partId" minOccurs="0"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="ns3:ErrorMessage" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://devservices.alphabroder.ca</con:endpoint></con:endpoints><con:operation id="df1c0843-2adb-4357-b5df-38b8432689eb" isOneWay="false" action="getProduct" name="getProduct" bindingOperationName="getProduct" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b337dfed-7f72-4937-bab6-b285663aa4cb" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/ProductData/ProductDataService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetProductRequest>\r
+         <shar:wsVersion>1</shar:wsVersion>\r
+         <shar:id>3345319qa</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>3345319QA</shar:password>\r
+         <shar:localizationCountry>CA</shar:localizationCountry>\r
+         <shar:localizationLanguage>en</shar:localizationLanguage>\r
+         <shar:productId>1001</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId></shar:partId>\r
+      </ns:GetProductRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getProduct"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="79f87f33-d614-4cb1-a28a-e99fa3b0a040" isOneWay="false" action="getProductCloseOut" name="getProductCloseOut" bindingOperationName="getProductCloseOut" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a59d2972-0821-4f36-8669-14088bf492ce" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/ProductData/ProductDataService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetProductCloseOutRequest>\r
+         <shar:wsVersion>1</shar:wsVersion>\r
+         <shar:id>3345319qa</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>3345319QA</shar:password>\r
+      </ns:GetProductCloseOutRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getProductCloseOut"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7cd401ee-5522-4594-b260-f28f3d5203e3" isOneWay="false" action="getProductDateModified" name="getProductDateModified" bindingOperationName="getProductDateModified" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="eb8acec9-04b0-4e40-93d8-6e6db97a6d30" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/ProductData/ProductDataService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetProductDateModifiedRequest>\r
+         <shar:wsVersion>1</shar:wsVersion>\r
+         <shar:id>3345319qa</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>3345319QA</shar:password>\r
+         <shar:changeTimeStamp></shar:changeTimeStamp>\r
+      </ns:GetProductDateModifiedRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getProductDateModified"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7ade9dba-261c-4bd8-8651-2456ba7e1872" isOneWay="false" action="getProductSellable" name="getProductSellable" bindingOperationName="getProductSellable" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="40e9fc0b-3b11-46fc-a7b5-ffce7dc584b3" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://devservices.alphabroder.ca/ProductData/ProductDataService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/" xmlns:shar="http://www.promostandards.org/WSDL/ProductDataService/1.0.0/SharedObjects/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:GetProductSellableRequest>\r
+         <shar:wsVersion>1</shar:wsVersion>\r
+         <shar:id>3345319qa</shar:id>\r
+         <!--Optional:-->\r
+         <shar:password>3345319QA</shar:password>\r
+         <!--Optional:-->\r
+         <shar:productId>125220</shar:productId>\r
+         <!--Optional:-->\r
+         <shar:partId>B007AC6V4</shar:partId>\r
+         <shar:isSellable>true</shar:isSellable>\r
+      </ns:GetProductSellableRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getProductSellable"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
